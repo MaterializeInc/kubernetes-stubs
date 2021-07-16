@@ -1,0 +1,18 @@
+import datetime
+import typing
+
+import kubernetes.client
+
+class V1AWSElasticBlockStoreVolumeSource:
+    fs_type: typing.Optional[str]
+    partition: typing.Optional[int]
+    read_only: typing.Optional[bool]
+    volume_id: str
+    def __init__(
+        self,
+        *,
+        fs_type: typing.Optional[str] = ...,
+        partition: typing.Optional[int] = ...,
+        read_only: typing.Optional[bool] = ...,
+        volume_id: str
+    ) -> None: ...

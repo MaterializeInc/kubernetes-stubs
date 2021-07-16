@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "kubernetes-stubs"
+version = "17.7.0"
+description = "Type stubs for the Kubernetes Python API client"
+authors = ["Nikhil Benesch <nikhil.benesch@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+packages = [
+    { include = "kubernetes_ext" },
+    { include = "kubernetes-stubs" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "^21.6b0"
+isort = "^5.9.2"
+PyYAML = "^5.4.1"
+inflection = "^0.5.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
