@@ -8,7 +8,7 @@ class AuthenticationV1Api:
         self,
         body: kubernetes.client.V1TokenReview,
         *,
-        dryRun: typing.Optional[str] = ...,
-        fieldManager: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1TokenReview: ...

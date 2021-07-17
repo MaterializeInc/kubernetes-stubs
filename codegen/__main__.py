@@ -1,5 +1,6 @@
 import collections
 import json
+import keyword
 import shutil
 from dataclasses import dataclass
 from pathlib import Path
@@ -88,6 +89,13 @@ def make_type_name(config: dict[str, Any], is_optional: bool) -> str:
     return inner()
 
 
+def make_property_name(s: str):
+    s = inflection.underscore(s.replace("$", ""))
+    if keyword.iskeyword(s):
+        return "_" + s
+    return s
+
+
 @dataclass
 class Property:
     name: str
@@ -135,7 +143,7 @@ for name, config in schema["definitions"].items():
         is_optional = name not in required
         props.append(
             Property(
-                name=inflection.underscore(name),
+                name=make_property_name(name),
                 ty=make_type_name(config, is_optional=is_optional),
                 is_optional=is_optional,
             )
@@ -200,7 +208,7 @@ for name, api in apis.items():
                 i += 1
             params.append(
                 Property(
-                    name=param_name,
+                    name=make_property_name(param_name),
                     ty=make_type_name(param, is_optional=is_optional),
                     is_optional=is_optional,
                 )

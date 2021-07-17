@@ -9,31 +9,31 @@ class AuthorizationV1Api:
         namespace: str,
         body: kubernetes.client.V1LocalSubjectAccessReview,
         *,
-        dryRun: typing.Optional[str] = ...,
-        fieldManager: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1LocalSubjectAccessReview: ...
     def create_self_subject_access_review(
         self,
         body: kubernetes.client.V1SelfSubjectAccessReview,
         *,
-        dryRun: typing.Optional[str] = ...,
-        fieldManager: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1SelfSubjectAccessReview: ...
     def create_self_subject_rules_review(
         self,
         body: kubernetes.client.V1SelfSubjectRulesReview,
         *,
-        dryRun: typing.Optional[str] = ...,
-        fieldManager: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1SelfSubjectRulesReview: ...
     def create_subject_access_review(
         self,
         body: kubernetes.client.V1SubjectAccessReview,
         *,
-        dryRun: typing.Optional[str] = ...,
-        fieldManager: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1SubjectAccessReview: ...
