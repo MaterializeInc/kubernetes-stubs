@@ -3,6 +3,9 @@ import typing
 import kubernetes.client
 
 class EventsV1beta1Api:
+    def __init__(
+        self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...
+    ) -> None: ...
     def get_api_resources(self) -> kubernetes.client.V1APIResourceList: ...
     def list_event_for_all_namespaces(
         self,

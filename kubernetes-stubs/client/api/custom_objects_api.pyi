@@ -3,6 +3,9 @@ import typing
 import kubernetes.client
 
 class CustomObjectsApi:
+    def __init__(
+        self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...
+    ) -> None: ...
     def list_namespaced_custom_object(
         self,
         group: str,

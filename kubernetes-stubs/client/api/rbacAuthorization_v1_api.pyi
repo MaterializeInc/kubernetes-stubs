@@ -3,6 +3,9 @@ import typing
 import kubernetes.client
 
 class RbacAuthorizationV1Api:
+    def __init__(
+        self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...
+    ) -> None: ...
     def get_api_resources(self) -> kubernetes.client.V1APIResourceList: ...
     def list_cluster_role_binding(
         self,

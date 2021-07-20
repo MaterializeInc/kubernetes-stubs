@@ -191,6 +191,11 @@ for name, api in apis.items():
     buf.writeln("import typing")
     buf.writeln()
     buf.start_block(f"class {class_name}Api")
+    buf.start_block(
+        f"def __init__(self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...) -> None"
+    )
+    buf.writeln("...")
+    buf.end_block()
     for op in api:
         name = inflection.underscore(op["operationId"])
         responses = op["responses"]
