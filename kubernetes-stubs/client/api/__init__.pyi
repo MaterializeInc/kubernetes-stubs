@@ -14,8 +14,6 @@ from kubernetes.client.api.apiregistration_v1beta1 import \
 from kubernetes.client.api.apis import ApisApi
 from kubernetes.client.api.apps import AppsApi
 from kubernetes.client.api.apps_v1 import AppsV1Api
-from kubernetes.client.api.apps_v1beta1 import AppsV1beta1Api
-from kubernetes.client.api.apps_v1beta2 import AppsV1beta2Api
 from kubernetes.client.api.auditregistration import AuditregistrationApi
 from kubernetes.client.api.auditregistration_v1alpha1 import \
     AuditregistrationV1alpha1Api

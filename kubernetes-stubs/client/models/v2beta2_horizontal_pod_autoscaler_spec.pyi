@@ -4,6 +4,7 @@ import typing
 import kubernetes.client
 
 class V2beta2HorizontalPodAutoscalerSpec:
+    behavior: typing.Optional[kubernetes.client.V2beta2HorizontalPodAutoscalerBehavior]
     max_replicas: int
     metrics: typing.Optional[list[kubernetes.client.V2beta2MetricSpec]]
     min_replicas: typing.Optional[int]
@@ -11,6 +12,9 @@ class V2beta2HorizontalPodAutoscalerSpec:
     def __init__(
         self,
         *,
+        behavior: typing.Optional[
+            kubernetes.client.V2beta2HorizontalPodAutoscalerBehavior
+        ] = ...,
         max_replicas: int,
         metrics: typing.Optional[list[kubernetes.client.V2beta2MetricSpec]] = ...,
         min_replicas: typing.Optional[int] = ...,

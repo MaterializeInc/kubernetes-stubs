@@ -3,22 +3,16 @@ import typing
 
 import kubernetes.client
 
-class V1Secret:
+class V1beta1IngressClass:
     api_version: typing.Optional[str]
-    data: typing.Optional[dict[str, str]]
-    immutable: typing.Optional[bool]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
-    string_data: typing.Optional[dict[str, str]]
-    type: typing.Optional[str]
+    spec: typing.Optional[kubernetes.client.V1beta1IngressClassSpec]
     def __init__(
         self,
         *,
         api_version: typing.Optional[str] = ...,
-        data: typing.Optional[dict[str, str]] = ...,
-        immutable: typing.Optional[bool] = ...,
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
-        string_data: typing.Optional[dict[str, str]] = ...,
-        type: typing.Optional[str] = ...
+        spec: typing.Optional[kubernetes.client.V1beta1IngressClassSpec] = ...
     ) -> None: ...

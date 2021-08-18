@@ -8,7 +8,7 @@ class V1APIServiceSpec:
     group: typing.Optional[str]
     group_priority_minimum: int
     insecure_skip_tls_verify: typing.Optional[bool]
-    service: kubernetes.client.ApiregistrationV1ServiceReference
+    service: typing.Optional[kubernetes.client.ApiregistrationV1ServiceReference]
     version: typing.Optional[str]
     version_priority: int
     def __init__(
@@ -18,7 +18,9 @@ class V1APIServiceSpec:
         group: typing.Optional[str] = ...,
         group_priority_minimum: int,
         insecure_skip_tls_verify: typing.Optional[bool] = ...,
-        service: kubernetes.client.ApiregistrationV1ServiceReference,
+        service: typing.Optional[
+            kubernetes.client.ApiregistrationV1ServiceReference
+        ] = ...,
         version: typing.Optional[str] = ...,
         version_priority: int
     ) -> None: ...

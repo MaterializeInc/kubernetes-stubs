@@ -1034,7 +1034,7 @@ class CoreV1NamespacedPersistentVolumeClaimManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1PersistentVolumeClaim:
         return self.client.delete_namespaced_persistent_volume_claim(
             name=name,
             namespace=namespace,
@@ -1249,7 +1249,7 @@ class CoreV1NamespacedPodManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1Pod:
         return self.client.delete_namespaced_pod(
             name=name,
             namespace=namespace,
@@ -1881,7 +1881,7 @@ class CoreV1NamespacedPodTemplateManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1PodTemplate:
         return self.client.delete_namespaced_pod_template(
             name=name,
             namespace=namespace,
@@ -2311,7 +2311,7 @@ class CoreV1NamespacedResourceQuotaManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1ResourceQuota:
         return self.client.delete_namespaced_resource_quota(
             name=name,
             namespace=namespace,
@@ -2689,7 +2689,7 @@ class CoreV1NamespacedServiceAccountManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1ServiceAccount:
         return self.client.delete_namespaced_service_account(
             name=name,
             namespace=namespace,
@@ -3676,7 +3676,7 @@ class CoreV1PersistentVolumeManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1PersistentVolume:
         return self.client.delete_persistent_volume(
             name=name,
             pretty=pretty,
@@ -6700,2146 +6700,6 @@ class AppsV1StatefulSetForAllNamespacesManager:
         )
 
 
-class AppsV1beta1ControllerRevisionForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ControllerRevisionList:
-        return self.client.list_controller_revision_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta1DeploymentForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1DeploymentList:
-        return self.client.list_deployment_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta1NamespacedControllerRevisionManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ControllerRevisionList:
-        return self.client.list_namespaced_controller_revision(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta1ControllerRevision,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1ControllerRevision:
-        return self.client.create_namespaced_controller_revision(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ControllerRevision:
-        return self.client.read_namespaced_controller_revision(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1ControllerRevision,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1ControllerRevision:
-        return self.client.replace_namespaced_controller_revision(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_controller_revision(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ControllerRevision:
-        return self.client.patch_namespaced_controller_revision(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1CollectionNamespacedControllerRevisionManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_controller_revision(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta1NamespacedDeploymentManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1DeploymentList:
-        return self.client.list_namespaced_deployment(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.AppsV1beta1Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.create_namespaced_deployment(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.read_namespaced_deployment(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.AppsV1beta1Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.replace_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.patch_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1CollectionNamespacedDeploymentManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_deployment(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta1NamespacedDeploymentRollbackManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def create(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.AppsV1beta1DeploymentRollback,
-        *,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.create_namespaced_deployment_rollback(
-            name=name,
-            namespace=namespace,
-            body=body,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            pretty=pretty,
-        )
-
-
-class AppsV1beta1NamespacedDeploymentScaleManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Scale:
-        return self.client.read_namespaced_deployment_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.AppsV1beta1Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Scale:
-        return self.client.replace_namespaced_deployment_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1Scale:
-        return self.client.patch_namespaced_deployment_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1NamespacedDeploymentStatusManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.read_namespaced_deployment_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.AppsV1beta1Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.replace_namespaced_deployment_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1Deployment:
-        return self.client.patch_namespaced_deployment_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1NamespacedStatefulSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1StatefulSetList:
-        return self.client.list_namespaced_stateful_set(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta1StatefulSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.create_namespaced_stateful_set(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.read_namespaced_stateful_set(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1StatefulSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.replace_namespaced_stateful_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_stateful_set(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.patch_namespaced_stateful_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1CollectionNamespacedStatefulSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_stateful_set(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta1NamespacedStatefulSetScaleManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Scale:
-        return self.client.read_namespaced_stateful_set_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.AppsV1beta1Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.AppsV1beta1Scale:
-        return self.client.replace_namespaced_stateful_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.AppsV1beta1Scale:
-        return self.client.patch_namespaced_stateful_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1NamespacedStatefulSetStatusManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.read_namespaced_stateful_set_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1StatefulSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.replace_namespaced_stateful_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1StatefulSet:
-        return self.client.patch_namespaced_stateful_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta1StatefulSetForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1StatefulSetList:
-        return self.client.list_stateful_set_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta2ControllerRevisionForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ControllerRevisionList:
-        return self.client.list_controller_revision_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta2DaemonSetForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DaemonSetList:
-        return self.client.list_daemon_set_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta2DeploymentForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DeploymentList:
-        return self.client.list_deployment_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta2NamespacedControllerRevisionManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ControllerRevisionList:
-        return self.client.list_namespaced_controller_revision(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta2ControllerRevision,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2ControllerRevision:
-        return self.client.create_namespaced_controller_revision(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ControllerRevision:
-        return self.client.read_namespaced_controller_revision(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2ControllerRevision,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2ControllerRevision:
-        return self.client.replace_namespaced_controller_revision(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_controller_revision(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ControllerRevision:
-        return self.client.patch_namespaced_controller_revision(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2CollectionNamespacedControllerRevisionManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_controller_revision(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta2NamespacedDaemonSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DaemonSetList:
-        return self.client.list_namespaced_daemon_set(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta2DaemonSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.create_namespaced_daemon_set(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.read_namespaced_daemon_set(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2DaemonSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.replace_namespaced_daemon_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_daemon_set(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.patch_namespaced_daemon_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2CollectionNamespacedDaemonSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_daemon_set(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta2NamespacedDaemonSetStatusManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.read_namespaced_daemon_set_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2DaemonSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.replace_namespaced_daemon_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DaemonSet:
-        return self.client.patch_namespaced_daemon_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2NamespacedDeploymentManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2DeploymentList:
-        return self.client.list_namespaced_deployment(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta2Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.create_namespaced_deployment(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.read_namespaced_deployment(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.replace_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.patch_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2CollectionNamespacedDeploymentManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_deployment(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta2NamespacedDeploymentScaleManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.read_namespaced_deployment_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.replace_namespaced_deployment_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.patch_namespaced_deployment_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2NamespacedDeploymentStatusManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.read_namespaced_deployment_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.replace_namespaced_deployment_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2Deployment:
-        return self.client.patch_namespaced_deployment_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2NamespacedReplicaSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ReplicaSetList:
-        return self.client.list_namespaced_replica_set(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta2ReplicaSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.create_namespaced_replica_set(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.read_namespaced_replica_set(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2ReplicaSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.replace_namespaced_replica_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_replica_set(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.patch_namespaced_replica_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2CollectionNamespacedReplicaSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_replica_set(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta2NamespacedReplicaSetScaleManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.read_namespaced_replica_set_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.replace_namespaced_replica_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.patch_namespaced_replica_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2NamespacedReplicaSetStatusManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.read_namespaced_replica_set_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2ReplicaSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.replace_namespaced_replica_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ReplicaSet:
-        return self.client.patch_namespaced_replica_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2NamespacedStatefulSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2StatefulSetList:
-        return self.client.list_namespaced_stateful_set(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta2StatefulSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.create_namespaced_stateful_set(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.read_namespaced_stateful_set(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2StatefulSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.replace_namespaced_stateful_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_stateful_set(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.patch_namespaced_stateful_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2CollectionNamespacedStatefulSetManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_stateful_set(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class AppsV1beta2NamespacedStatefulSetScaleManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.read_namespaced_stateful_set_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.replace_namespaced_stateful_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2Scale:
-        return self.client.patch_namespaced_stateful_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2NamespacedStatefulSetStatusManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.read_namespaced_stateful_set_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta2StatefulSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.replace_namespaced_stateful_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2StatefulSet:
-        return self.client.patch_namespaced_stateful_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AppsV1beta2ReplicaSetForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2ReplicaSetList:
-        return self.client.list_replica_set_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class AppsV1beta2StatefulSetForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.AppsV1beta2Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta2StatefulSetList:
-        return self.client.list_stateful_set_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
 class AuditregistrationV1alpha1AuditSinkManager:
     def __init__(self, client: kubernetes.client.AuditregistrationV1alpha1Api) -> None:
         self.client = client
@@ -11626,66 +9486,6 @@ class EventsV1beta1CollectionNamespacedEventManager:
         )
 
 
-class ExtensionsV1beta1DaemonSetForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1DaemonSetList:
-        return self.client.list_daemon_set_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class ExtensionsV1beta1DeploymentForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1DeploymentList:
-        return self.client.list_deployment_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
 class ExtensionsV1beta1IngressForAllNamespacesManager:
     def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
         self.client = client
@@ -11713,512 +9513,6 @@ class ExtensionsV1beta1IngressForAllNamespacesManager:
             resource_version=resource_version,
             timeout_seconds=timeout_seconds,
             watch=watch,
-        )
-
-
-class ExtensionsV1beta1NamespacedDaemonSetManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1DaemonSetList:
-        return self.client.list_namespaced_daemon_set(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta1DaemonSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.create_namespaced_daemon_set(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.read_namespaced_daemon_set(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1DaemonSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.replace_namespaced_daemon_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_daemon_set(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.patch_namespaced_daemon_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1CollectionNamespacedDaemonSetManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_daemon_set(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class ExtensionsV1beta1NamespacedDaemonSetStatusManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.read_namespaced_daemon_set_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1DaemonSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.replace_namespaced_daemon_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1DaemonSet:
-        return self.client.patch_namespaced_daemon_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1NamespacedDeploymentManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1DeploymentList:
-        return self.client.list_namespaced_deployment(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.create_namespaced_deployment(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.read_namespaced_deployment(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.replace_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.patch_namespaced_deployment(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1CollectionNamespacedDeploymentManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_deployment(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class ExtensionsV1beta1NamespacedDeploymentRollbackManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def create(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1DeploymentRollback,
-        *,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.create_namespaced_deployment_rollback(
-            name=name,
-            namespace=namespace,
-            body=body,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            pretty=pretty,
-        )
-
-
-class ExtensionsV1beta1NamespacedDeploymentScaleManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.read_namespaced_deployment_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.replace_namespaced_deployment_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.patch_namespaced_deployment_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1NamespacedDeploymentStatusManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.read_namespaced_deployment_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1Deployment,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.replace_namespaced_deployment_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Deployment:
-        return self.client.patch_namespaced_deployment_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
         )
 
 
@@ -12434,695 +9728,6 @@ class ExtensionsV1beta1NamespacedIngressStatusManager:
             dry_run=dry_run,
             field_manager=field_manager,
             force=force,
-        )
-
-
-class ExtensionsV1beta1NamespacedNetworkPolicyManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1NetworkPolicyList:
-        return self.client.list_namespaced_network_policy(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta1NetworkPolicy,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1NetworkPolicy:
-        return self.client.create_namespaced_network_policy(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1NetworkPolicy:
-        return self.client.read_namespaced_network_policy(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1NetworkPolicy,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1NetworkPolicy:
-        return self.client.replace_namespaced_network_policy(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_network_policy(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1NetworkPolicy:
-        return self.client.patch_namespaced_network_policy(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1CollectionNamespacedNetworkPolicyManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_network_policy(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class ExtensionsV1beta1NamespacedReplicaSetManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ReplicaSetList:
-        return self.client.list_namespaced_replica_set(
-            namespace=namespace,
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        namespace: str,
-        body: kubernetes.client.V1beta1ReplicaSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.create_namespaced_replica_set(
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def read(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.read_namespaced_replica_set(
-            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1ReplicaSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.replace_namespaced_replica_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_namespaced_replica_set(
-            name=name,
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.patch_namespaced_replica_set(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1CollectionNamespacedReplicaSetManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        namespace: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_namespaced_replica_set(
-            namespace=namespace,
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class ExtensionsV1beta1NamespacedReplicaSetScaleManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.read_namespaced_replica_set_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.replace_namespaced_replica_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.patch_namespaced_replica_set_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1NamespacedReplicaSetStatusManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.read_namespaced_replica_set_status(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V1beta1ReplicaSet,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.replace_namespaced_replica_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ReplicaSet:
-        return self.client.patch_namespaced_replica_set_status(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1NamespacedReplicationControllerDummyScaleManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def read(
-        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.read_namespaced_replication_controller_dummy_scale(
-            name=name, namespace=namespace, pretty=pretty
-        )
-
-    def replace(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.ExtensionsV1beta1Scale,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.replace_namespaced_replication_controller_dummy_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def patch(
-        self,
-        name: str,
-        namespace: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1Scale:
-        return self.client.patch_namespaced_replication_controller_dummy_scale(
-            name=name,
-            namespace=namespace,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1NetworkPolicyForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1NetworkPolicyList:
-        return self.client.list_network_policy_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-
-class ExtensionsV1beta1PodSecurityPolicyManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1PodSecurityPolicyList:
-        return self.client.list_pod_security_policy(
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        body: kubernetes.client.ExtensionsV1beta1PodSecurityPolicy,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1PodSecurityPolicy:
-        return self.client.create_pod_security_policy(
-            body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
-        )
-
-    def read(
-        self,
-        name: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1PodSecurityPolicy:
-        return self.client.read_pod_security_policy(
-            name=name, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        body: kubernetes.client.ExtensionsV1beta1PodSecurityPolicy,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.ExtensionsV1beta1PodSecurityPolicy:
-        return self.client.replace_pod_security_policy(
-            name=name,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_pod_security_policy(
-            name=name,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.ExtensionsV1beta1PodSecurityPolicy:
-        return self.client.patch_pod_security_policy(
-            name=name,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class ExtensionsV1beta1CollectionPodSecurityPolicyManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_pod_security_policy(
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-        )
-
-
-class ExtensionsV1beta1ReplicaSetForAllNamespacesManager:
-    def __init__(self, client: kubernetes.client.ExtensionsV1beta1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        pretty: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1beta1ReplicaSetList:
-        return self.client.list_replica_set_for_all_namespaces(
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            pretty=pretty,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
         )
 
 
@@ -13716,6 +10321,153 @@ class NetworkingV1NetworkPolicyForAllNamespacesManager:
             resource_version=resource_version,
             timeout_seconds=timeout_seconds,
             watch=watch,
+        )
+
+
+class NetworkingV1beta1IngressClassManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1beta1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        resource_version: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1beta1IngressClassList:
+        return self.client.list_ingress_class(
+            pretty=pretty,
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            resource_version=resource_version,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+    def create(
+        self,
+        body: kubernetes.client.V1beta1IngressClass,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1beta1IngressClass:
+        return self.client.create_ingress_class(
+            body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
+        )
+
+    def read(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        exact: typing.Optional[bool] = None,
+        export: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1beta1IngressClass:
+        return self.client.read_ingress_class(
+            name=name, pretty=pretty, exact=exact, export=export
+        )
+
+    def replace(
+        self,
+        name: str,
+        body: kubernetes.client.V1beta1IngressClass,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1beta1IngressClass:
+        return self.client.replace_ingress_class(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def delete(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        dry_run: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_ingress_class(
+            name=name,
+            pretty=pretty,
+            body=body,
+            dry_run=dry_run,
+            grace_period_seconds=grace_period_seconds,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1beta1IngressClass:
+        return self.client.patch_ingress_class(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class NetworkingV1beta1CollectionIngressClassManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1beta1Api) -> None:
+        self.client = client
+
+    def delete(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        _continue: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_collection_ingress_class(
+            pretty=pretty,
+            body=body,
+            _continue=_continue,
+            dry_run=dry_run,
+            field_selector=field_selector,
+            grace_period_seconds=grace_period_seconds,
+            label_selector=label_selector,
+            limit=limit,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+            resource_version=resource_version,
+            timeout_seconds=timeout_seconds,
         )
 
 
@@ -14519,7 +11271,7 @@ class PolicyV1beta1PodSecurityPolicyManager:
         resource_version: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.PolicyV1beta1PodSecurityPolicyList:
+    ) -> kubernetes.client.V1beta1PodSecurityPolicyList:
         return self.client.list_pod_security_policy(
             pretty=pretty,
             allow_watch_bookmarks=allow_watch_bookmarks,
@@ -14534,12 +11286,12 @@ class PolicyV1beta1PodSecurityPolicyManager:
 
     def create(
         self,
-        body: kubernetes.client.PolicyV1beta1PodSecurityPolicy,
+        body: kubernetes.client.V1beta1PodSecurityPolicy,
         *,
         pretty: typing.Optional[str] = None,
         dry_run: typing.Optional[str] = None,
         field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.PolicyV1beta1PodSecurityPolicy:
+    ) -> kubernetes.client.V1beta1PodSecurityPolicy:
         return self.client.create_pod_security_policy(
             body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
         )
@@ -14551,7 +11303,7 @@ class PolicyV1beta1PodSecurityPolicyManager:
         pretty: typing.Optional[str] = None,
         exact: typing.Optional[bool] = None,
         export: typing.Optional[bool] = None
-    ) -> kubernetes.client.PolicyV1beta1PodSecurityPolicy:
+    ) -> kubernetes.client.V1beta1PodSecurityPolicy:
         return self.client.read_pod_security_policy(
             name=name, pretty=pretty, exact=exact, export=export
         )
@@ -14559,12 +11311,12 @@ class PolicyV1beta1PodSecurityPolicyManager:
     def replace(
         self,
         name: str,
-        body: kubernetes.client.PolicyV1beta1PodSecurityPolicy,
+        body: kubernetes.client.V1beta1PodSecurityPolicy,
         *,
         pretty: typing.Optional[str] = None,
         dry_run: typing.Optional[str] = None,
         field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.PolicyV1beta1PodSecurityPolicy:
+    ) -> kubernetes.client.V1beta1PodSecurityPolicy:
         return self.client.replace_pod_security_policy(
             name=name,
             body=body,
@@ -14583,7 +11335,7 @@ class PolicyV1beta1PodSecurityPolicyManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1beta1PodSecurityPolicy:
         return self.client.delete_pod_security_policy(
             name=name,
             pretty=pretty,
@@ -14603,7 +11355,7 @@ class PolicyV1beta1PodSecurityPolicyManager:
         dry_run: typing.Optional[str] = None,
         field_manager: typing.Optional[str] = None,
         force: typing.Optional[bool] = None
-    ) -> kubernetes.client.PolicyV1beta1PodSecurityPolicy:
+    ) -> kubernetes.client.V1beta1PodSecurityPolicy:
         return self.client.patch_pod_security_policy(
             name=name,
             body=body,
@@ -17246,6 +13998,153 @@ class SettingsV1alpha1PodPresetForAllNamespacesManager:
         )
 
 
+class StorageV1CsiDriverManager:
+    def __init__(self, client: kubernetes.client.StorageV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        resource_version: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CSIDriverList:
+        return self.client.list_csi_driver(
+            pretty=pretty,
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            resource_version=resource_version,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+    def create(
+        self,
+        body: kubernetes.client.V1CSIDriver,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CSIDriver:
+        return self.client.create_csi_driver(
+            body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
+        )
+
+    def read(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        exact: typing.Optional[bool] = None,
+        export: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CSIDriver:
+        return self.client.read_csi_driver(
+            name=name, pretty=pretty, exact=exact, export=export
+        )
+
+    def replace(
+        self,
+        name: str,
+        body: kubernetes.client.V1CSIDriver,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CSIDriver:
+        return self.client.replace_csi_driver(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def delete(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        dry_run: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CSIDriver:
+        return self.client.delete_csi_driver(
+            name=name,
+            pretty=pretty,
+            body=body,
+            dry_run=dry_run,
+            grace_period_seconds=grace_period_seconds,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CSIDriver:
+        return self.client.patch_csi_driver(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class StorageV1CollectionCsiDriverManager:
+    def __init__(self, client: kubernetes.client.StorageV1Api) -> None:
+        self.client = client
+
+    def delete(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        _continue: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_collection_csi_driver(
+            pretty=pretty,
+            body=body,
+            _continue=_continue,
+            dry_run=dry_run,
+            field_selector=field_selector,
+            grace_period_seconds=grace_period_seconds,
+            label_selector=label_selector,
+            limit=limit,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+            resource_version=resource_version,
+            timeout_seconds=timeout_seconds,
+        )
+
+
 class StorageV1CsiNodeManager:
     def __init__(self, client: kubernetes.client.StorageV1Api) -> None:
         self.client = client
@@ -17326,7 +14225,7 @@ class StorageV1CsiNodeManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1CSINode:
         return self.client.delete_csi_node(
             name=name,
             pretty=pretty,
@@ -17473,7 +14372,7 @@ class StorageV1StorageClassManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1StorageClass:
         return self.client.delete_storage_class(
             name=name,
             pretty=pretty,
@@ -17620,7 +14519,7 @@ class StorageV1VolumeAttachmentManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1VolumeAttachment:
         return self.client.delete_volume_attachment(
             name=name,
             pretty=pretty,
@@ -17813,7 +14712,7 @@ class StorageV1alpha1VolumeAttachmentManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1alpha1VolumeAttachment:
         return self.client.delete_volume_attachment(
             name=name,
             pretty=pretty,
@@ -17960,7 +14859,7 @@ class StorageV1beta1CsiDriverManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1beta1CSIDriver:
         return self.client.delete_csi_driver(
             name=name,
             pretty=pretty,
@@ -18107,7 +15006,7 @@ class StorageV1beta1CsiNodeManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1beta1CSINode:
         return self.client.delete_csi_node(
             name=name,
             pretty=pretty,
@@ -18254,7 +15153,7 @@ class StorageV1beta1StorageClassManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1beta1StorageClass:
         return self.client.delete_storage_class(
             name=name,
             pretty=pretty,
@@ -18401,7 +15300,7 @@ class StorageV1beta1VolumeAttachmentManager:
         grace_period_seconds: typing.Optional[int] = None,
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
+    ) -> kubernetes.client.V1beta1VolumeAttachment:
         return self.client.delete_volume_attachment(
             name=name,
             pretty=pretty,

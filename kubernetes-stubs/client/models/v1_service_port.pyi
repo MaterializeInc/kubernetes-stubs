@@ -4,6 +4,7 @@ import typing
 import kubernetes.client
 
 class V1ServicePort:
+    app_protocol: typing.Optional[str]
     name: typing.Optional[str]
     node_port: typing.Optional[int]
     port: int
@@ -12,6 +13,7 @@ class V1ServicePort:
     def __init__(
         self,
         *,
+        app_protocol: typing.Optional[str] = ...,
         name: typing.Optional[str] = ...,
         node_port: typing.Optional[int] = ...,
         port: int,

@@ -9,7 +9,7 @@ class V1LimitRangeItem:
     max: typing.Optional[dict[str, str]]
     max_limit_request_ratio: typing.Optional[dict[str, str]]
     min: typing.Optional[dict[str, str]]
-    type: typing.Optional[str]
+    type: str
     def __init__(
         self,
         *,
@@ -18,5 +18,5 @@ class V1LimitRangeItem:
         max: typing.Optional[dict[str, str]] = ...,
         max_limit_request_ratio: typing.Optional[dict[str, str]] = ...,
         min: typing.Optional[dict[str, str]] = ...,
-        type: typing.Optional[str] = ...
+        type: str
     ) -> None: ...

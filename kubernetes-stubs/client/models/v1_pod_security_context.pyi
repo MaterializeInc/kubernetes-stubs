@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1PodSecurityContext:
     fs_group: typing.Optional[int]
+    fs_group_change_policy: typing.Optional[str]
     run_as_group: typing.Optional[int]
     run_as_non_root: typing.Optional[bool]
     run_as_user: typing.Optional[int]
@@ -16,6 +17,7 @@ class V1PodSecurityContext:
         self,
         *,
         fs_group: typing.Optional[int] = ...,
+        fs_group_change_policy: typing.Optional[str] = ...,
         run_as_group: typing.Optional[int] = ...,
         run_as_non_root: typing.Optional[bool] = ...,
         run_as_user: typing.Optional[int] = ...,

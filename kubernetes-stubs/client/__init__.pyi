@@ -15,8 +15,6 @@ from kubernetes.client.api.apiregistration_v1beta1_api import \
 from kubernetes.client.api.apis_api import ApisApi
 from kubernetes.client.api.apps_api import AppsApi
 from kubernetes.client.api.apps_v1_api import AppsV1Api
-from kubernetes.client.api.apps_v1beta1_api import AppsV1beta1Api
-from kubernetes.client.api.apps_v1beta2_api import AppsV1beta2Api
 from kubernetes.client.api.auditregistration_api import AuditregistrationApi
 from kubernetes.client.api.auditregistration_v1alpha1_api import \
     AuditregistrationV1alpha1Api
@@ -108,59 +106,10 @@ from kubernetes.client.models.apiregistration_v1_service_reference import \
     ApiregistrationV1ServiceReference
 from kubernetes.client.models.apiregistration_v1beta1_service_reference import \
     ApiregistrationV1beta1ServiceReference
-from kubernetes.client.models.apps_v1beta1_deployment import \
-    AppsV1beta1Deployment
-from kubernetes.client.models.apps_v1beta1_deployment_condition import \
-    AppsV1beta1DeploymentCondition
-from kubernetes.client.models.apps_v1beta1_deployment_list import \
-    AppsV1beta1DeploymentList
-from kubernetes.client.models.apps_v1beta1_deployment_rollback import \
-    AppsV1beta1DeploymentRollback
-from kubernetes.client.models.apps_v1beta1_deployment_spec import \
-    AppsV1beta1DeploymentSpec
-from kubernetes.client.models.apps_v1beta1_deployment_status import \
-    AppsV1beta1DeploymentStatus
-from kubernetes.client.models.apps_v1beta1_deployment_strategy import \
-    AppsV1beta1DeploymentStrategy
-from kubernetes.client.models.apps_v1beta1_rollback_config import \
-    AppsV1beta1RollbackConfig
-from kubernetes.client.models.apps_v1beta1_rolling_update_deployment import \
-    AppsV1beta1RollingUpdateDeployment
-from kubernetes.client.models.apps_v1beta1_scale import AppsV1beta1Scale
-from kubernetes.client.models.apps_v1beta1_scale_spec import \
-    AppsV1beta1ScaleSpec
-from kubernetes.client.models.apps_v1beta1_scale_status import \
-    AppsV1beta1ScaleStatus
-from kubernetes.client.models.extensions_v1beta1_allowed_csi_driver import \
-    ExtensionsV1beta1AllowedCSIDriver
-from kubernetes.client.models.extensions_v1beta1_allowed_flex_volume import \
-    ExtensionsV1beta1AllowedFlexVolume
-from kubernetes.client.models.extensions_v1beta1_allowed_host_path import \
-    ExtensionsV1beta1AllowedHostPath
-from kubernetes.client.models.extensions_v1beta1_deployment import \
-    ExtensionsV1beta1Deployment
-from kubernetes.client.models.extensions_v1beta1_deployment_condition import \
-    ExtensionsV1beta1DeploymentCondition
-from kubernetes.client.models.extensions_v1beta1_deployment_list import \
-    ExtensionsV1beta1DeploymentList
-from kubernetes.client.models.extensions_v1beta1_deployment_rollback import \
-    ExtensionsV1beta1DeploymentRollback
-from kubernetes.client.models.extensions_v1beta1_deployment_spec import \
-    ExtensionsV1beta1DeploymentSpec
-from kubernetes.client.models.extensions_v1beta1_deployment_status import \
-    ExtensionsV1beta1DeploymentStatus
-from kubernetes.client.models.extensions_v1beta1_deployment_strategy import \
-    ExtensionsV1beta1DeploymentStrategy
-from kubernetes.client.models.extensions_v1beta1_fs_group_strategy_options import \
-    ExtensionsV1beta1FSGroupStrategyOptions
-from kubernetes.client.models.extensions_v1beta1_host_port_range import \
-    ExtensionsV1beta1HostPortRange
 from kubernetes.client.models.extensions_v1beta1_http_ingress_path import \
     ExtensionsV1beta1HTTPIngressPath
 from kubernetes.client.models.extensions_v1beta1_http_ingress_rule_value import \
     ExtensionsV1beta1HTTPIngressRuleValue
-from kubernetes.client.models.extensions_v1beta1_id_range import \
-    ExtensionsV1beta1IDRange
 from kubernetes.client.models.extensions_v1beta1_ingress import \
     ExtensionsV1beta1Ingress
 from kubernetes.client.models.extensions_v1beta1_ingress_backend import \
@@ -175,32 +124,6 @@ from kubernetes.client.models.extensions_v1beta1_ingress_status import \
     ExtensionsV1beta1IngressStatus
 from kubernetes.client.models.extensions_v1beta1_ingress_tls import \
     ExtensionsV1beta1IngressTLS
-from kubernetes.client.models.extensions_v1beta1_pod_security_policy import \
-    ExtensionsV1beta1PodSecurityPolicy
-from kubernetes.client.models.extensions_v1beta1_pod_security_policy_list import \
-    ExtensionsV1beta1PodSecurityPolicyList
-from kubernetes.client.models.extensions_v1beta1_pod_security_policy_spec import \
-    ExtensionsV1beta1PodSecurityPolicySpec
-from kubernetes.client.models.extensions_v1beta1_rollback_config import \
-    ExtensionsV1beta1RollbackConfig
-from kubernetes.client.models.extensions_v1beta1_rolling_update_deployment import \
-    ExtensionsV1beta1RollingUpdateDeployment
-from kubernetes.client.models.extensions_v1beta1_run_as_group_strategy_options import \
-    ExtensionsV1beta1RunAsGroupStrategyOptions
-from kubernetes.client.models.extensions_v1beta1_run_as_user_strategy_options import \
-    ExtensionsV1beta1RunAsUserStrategyOptions
-from kubernetes.client.models.extensions_v1beta1_runtime_class_strategy_options import \
-    ExtensionsV1beta1RuntimeClassStrategyOptions
-from kubernetes.client.models.extensions_v1beta1_scale import \
-    ExtensionsV1beta1Scale
-from kubernetes.client.models.extensions_v1beta1_scale_spec import \
-    ExtensionsV1beta1ScaleSpec
-from kubernetes.client.models.extensions_v1beta1_scale_status import \
-    ExtensionsV1beta1ScaleStatus
-from kubernetes.client.models.extensions_v1beta1_se_linux_strategy_options import \
-    ExtensionsV1beta1SELinuxStrategyOptions
-from kubernetes.client.models.extensions_v1beta1_supplemental_groups_strategy_options import \
-    ExtensionsV1beta1SupplementalGroupsStrategyOptions
 from kubernetes.client.models.flowcontrol_v1alpha1_subject import \
     FlowcontrolV1alpha1Subject
 from kubernetes.client.models.networking_v1beta1_http_ingress_path import \
@@ -221,34 +144,6 @@ from kubernetes.client.models.networking_v1beta1_ingress_status import \
     NetworkingV1beta1IngressStatus
 from kubernetes.client.models.networking_v1beta1_ingress_tls import \
     NetworkingV1beta1IngressTLS
-from kubernetes.client.models.policy_v1beta1_allowed_csi_driver import \
-    PolicyV1beta1AllowedCSIDriver
-from kubernetes.client.models.policy_v1beta1_allowed_flex_volume import \
-    PolicyV1beta1AllowedFlexVolume
-from kubernetes.client.models.policy_v1beta1_allowed_host_path import \
-    PolicyV1beta1AllowedHostPath
-from kubernetes.client.models.policy_v1beta1_fs_group_strategy_options import \
-    PolicyV1beta1FSGroupStrategyOptions
-from kubernetes.client.models.policy_v1beta1_host_port_range import \
-    PolicyV1beta1HostPortRange
-from kubernetes.client.models.policy_v1beta1_id_range import \
-    PolicyV1beta1IDRange
-from kubernetes.client.models.policy_v1beta1_pod_security_policy import \
-    PolicyV1beta1PodSecurityPolicy
-from kubernetes.client.models.policy_v1beta1_pod_security_policy_list import \
-    PolicyV1beta1PodSecurityPolicyList
-from kubernetes.client.models.policy_v1beta1_pod_security_policy_spec import \
-    PolicyV1beta1PodSecurityPolicySpec
-from kubernetes.client.models.policy_v1beta1_run_as_group_strategy_options import \
-    PolicyV1beta1RunAsGroupStrategyOptions
-from kubernetes.client.models.policy_v1beta1_run_as_user_strategy_options import \
-    PolicyV1beta1RunAsUserStrategyOptions
-from kubernetes.client.models.policy_v1beta1_runtime_class_strategy_options import \
-    PolicyV1beta1RuntimeClassStrategyOptions
-from kubernetes.client.models.policy_v1beta1_se_linux_strategy_options import \
-    PolicyV1beta1SELinuxStrategyOptions
-from kubernetes.client.models.policy_v1beta1_supplemental_groups_strategy_options import \
-    PolicyV1beta1SupplementalGroupsStrategyOptions
 from kubernetes.client.models.rbac_v1alpha1_subject import RbacV1alpha1Subject
 from kubernetes.client.models.v1_affinity import V1Affinity
 from kubernetes.client.models.v1_aggregation_rule import V1AggregationRule
@@ -325,6 +220,9 @@ from kubernetes.client.models.v1_controller_revision_list import \
     V1ControllerRevisionList
 from kubernetes.client.models.v1_cross_version_object_reference import \
     V1CrossVersionObjectReference
+from kubernetes.client.models.v1_csi_driver import V1CSIDriver
+from kubernetes.client.models.v1_csi_driver_list import V1CSIDriverList
+from kubernetes.client.models.v1_csi_driver_spec import V1CSIDriverSpec
 from kubernetes.client.models.v1_csi_node import V1CSINode
 from kubernetes.client.models.v1_csi_node_driver import V1CSINodeDriver
 from kubernetes.client.models.v1_csi_node_list import V1CSINodeList
@@ -822,6 +720,12 @@ from kubernetes.client.models.v1alpha1_webhook_throttle_config import \
     V1alpha1WebhookThrottleConfig
 from kubernetes.client.models.v1beta1_aggregation_rule import \
     V1beta1AggregationRule
+from kubernetes.client.models.v1beta1_allowed_csi_driver import \
+    V1beta1AllowedCSIDriver
+from kubernetes.client.models.v1beta1_allowed_flex_volume import \
+    V1beta1AllowedFlexVolume
+from kubernetes.client.models.v1beta1_allowed_host_path import \
+    V1beta1AllowedHostPath
 from kubernetes.client.models.v1beta1_api_service import V1beta1APIService
 from kubernetes.client.models.v1beta1_api_service_condition import \
     V1beta1APIServiceCondition
@@ -848,10 +752,6 @@ from kubernetes.client.models.v1beta1_cluster_role_binding_list import \
     V1beta1ClusterRoleBindingList
 from kubernetes.client.models.v1beta1_cluster_role_list import \
     V1beta1ClusterRoleList
-from kubernetes.client.models.v1beta1_controller_revision import \
-    V1beta1ControllerRevision
-from kubernetes.client.models.v1beta1_controller_revision_list import \
-    V1beta1ControllerRevisionList
 from kubernetes.client.models.v1beta1_cron_job import V1beta1CronJob
 from kubernetes.client.models.v1beta1_cron_job_list import V1beta1CronJobList
 from kubernetes.client.models.v1beta1_cron_job_spec import V1beta1CronJobSpec
@@ -891,17 +791,6 @@ from kubernetes.client.models.v1beta1_custom_resource_subresources import \
     V1beta1CustomResourceSubresources
 from kubernetes.client.models.v1beta1_custom_resource_validation import \
     V1beta1CustomResourceValidation
-from kubernetes.client.models.v1beta1_daemon_set import V1beta1DaemonSet
-from kubernetes.client.models.v1beta1_daemon_set_condition import \
-    V1beta1DaemonSetCondition
-from kubernetes.client.models.v1beta1_daemon_set_list import \
-    V1beta1DaemonSetList
-from kubernetes.client.models.v1beta1_daemon_set_spec import \
-    V1beta1DaemonSetSpec
-from kubernetes.client.models.v1beta1_daemon_set_status import \
-    V1beta1DaemonSetStatus
-from kubernetes.client.models.v1beta1_daemon_set_update_strategy import \
-    V1beta1DaemonSetUpdateStrategy
 from kubernetes.client.models.v1beta1_endpoint import V1beta1Endpoint
 from kubernetes.client.models.v1beta1_endpoint_conditions import \
     V1beta1EndpointConditions
@@ -916,7 +805,16 @@ from kubernetes.client.models.v1beta1_event_series import V1beta1EventSeries
 from kubernetes.client.models.v1beta1_eviction import V1beta1Eviction
 from kubernetes.client.models.v1beta1_external_documentation import \
     V1beta1ExternalDocumentation
-from kubernetes.client.models.v1beta1_ip_block import V1beta1IPBlock
+from kubernetes.client.models.v1beta1_fs_group_strategy_options import \
+    V1beta1FSGroupStrategyOptions
+from kubernetes.client.models.v1beta1_host_port_range import \
+    V1beta1HostPortRange
+from kubernetes.client.models.v1beta1_id_range import V1beta1IDRange
+from kubernetes.client.models.v1beta1_ingress_class import V1beta1IngressClass
+from kubernetes.client.models.v1beta1_ingress_class_list import \
+    V1beta1IngressClassList
+from kubernetes.client.models.v1beta1_ingress_class_spec import \
+    V1beta1IngressClassSpec
 from kubernetes.client.models.v1beta1_job_template_spec import \
     V1beta1JobTemplateSpec
 from kubernetes.client.models.v1beta1_json_schema_props import \
@@ -932,20 +830,6 @@ from kubernetes.client.models.v1beta1_mutating_webhook_configuration import \
     V1beta1MutatingWebhookConfiguration
 from kubernetes.client.models.v1beta1_mutating_webhook_configuration_list import \
     V1beta1MutatingWebhookConfigurationList
-from kubernetes.client.models.v1beta1_network_policy import \
-    V1beta1NetworkPolicy
-from kubernetes.client.models.v1beta1_network_policy_egress_rule import \
-    V1beta1NetworkPolicyEgressRule
-from kubernetes.client.models.v1beta1_network_policy_ingress_rule import \
-    V1beta1NetworkPolicyIngressRule
-from kubernetes.client.models.v1beta1_network_policy_list import \
-    V1beta1NetworkPolicyList
-from kubernetes.client.models.v1beta1_network_policy_peer import \
-    V1beta1NetworkPolicyPeer
-from kubernetes.client.models.v1beta1_network_policy_port import \
-    V1beta1NetworkPolicyPort
-from kubernetes.client.models.v1beta1_network_policy_spec import \
-    V1beta1NetworkPolicySpec
 from kubernetes.client.models.v1beta1_non_resource_attributes import \
     V1beta1NonResourceAttributes
 from kubernetes.client.models.v1beta1_non_resource_rule import \
@@ -959,20 +843,17 @@ from kubernetes.client.models.v1beta1_pod_disruption_budget_spec import \
     V1beta1PodDisruptionBudgetSpec
 from kubernetes.client.models.v1beta1_pod_disruption_budget_status import \
     V1beta1PodDisruptionBudgetStatus
+from kubernetes.client.models.v1beta1_pod_security_policy import \
+    V1beta1PodSecurityPolicy
+from kubernetes.client.models.v1beta1_pod_security_policy_list import \
+    V1beta1PodSecurityPolicyList
+from kubernetes.client.models.v1beta1_pod_security_policy_spec import \
+    V1beta1PodSecurityPolicySpec
 from kubernetes.client.models.v1beta1_policy_rule import V1beta1PolicyRule
 from kubernetes.client.models.v1beta1_priority_class import \
     V1beta1PriorityClass
 from kubernetes.client.models.v1beta1_priority_class_list import \
     V1beta1PriorityClassList
-from kubernetes.client.models.v1beta1_replica_set import V1beta1ReplicaSet
-from kubernetes.client.models.v1beta1_replica_set_condition import \
-    V1beta1ReplicaSetCondition
-from kubernetes.client.models.v1beta1_replica_set_list import \
-    V1beta1ReplicaSetList
-from kubernetes.client.models.v1beta1_replica_set_spec import \
-    V1beta1ReplicaSetSpec
-from kubernetes.client.models.v1beta1_replica_set_status import \
-    V1beta1ReplicaSetStatus
 from kubernetes.client.models.v1beta1_resource_attributes import \
     V1beta1ResourceAttributes
 from kubernetes.client.models.v1beta1_resource_rule import V1beta1ResourceRule
@@ -982,16 +863,20 @@ from kubernetes.client.models.v1beta1_role_binding_list import \
     V1beta1RoleBindingList
 from kubernetes.client.models.v1beta1_role_list import V1beta1RoleList
 from kubernetes.client.models.v1beta1_role_ref import V1beta1RoleRef
-from kubernetes.client.models.v1beta1_rolling_update_daemon_set import \
-    V1beta1RollingUpdateDaemonSet
-from kubernetes.client.models.v1beta1_rolling_update_stateful_set_strategy import \
-    V1beta1RollingUpdateStatefulSetStrategy
 from kubernetes.client.models.v1beta1_rule_with_operations import \
     V1beta1RuleWithOperations
+from kubernetes.client.models.v1beta1_run_as_group_strategy_options import \
+    V1beta1RunAsGroupStrategyOptions
+from kubernetes.client.models.v1beta1_run_as_user_strategy_options import \
+    V1beta1RunAsUserStrategyOptions
 from kubernetes.client.models.v1beta1_runtime_class import V1beta1RuntimeClass
 from kubernetes.client.models.v1beta1_runtime_class_list import \
     V1beta1RuntimeClassList
+from kubernetes.client.models.v1beta1_runtime_class_strategy_options import \
+    V1beta1RuntimeClassStrategyOptions
 from kubernetes.client.models.v1beta1_scheduling import V1beta1Scheduling
+from kubernetes.client.models.v1beta1_se_linux_strategy_options import \
+    V1beta1SELinuxStrategyOptions
 from kubernetes.client.models.v1beta1_self_subject_access_review import \
     V1beta1SelfSubjectAccessReview
 from kubernetes.client.models.v1beta1_self_subject_access_review_spec import \
@@ -1000,17 +885,6 @@ from kubernetes.client.models.v1beta1_self_subject_rules_review import \
     V1beta1SelfSubjectRulesReview
 from kubernetes.client.models.v1beta1_self_subject_rules_review_spec import \
     V1beta1SelfSubjectRulesReviewSpec
-from kubernetes.client.models.v1beta1_stateful_set import V1beta1StatefulSet
-from kubernetes.client.models.v1beta1_stateful_set_condition import \
-    V1beta1StatefulSetCondition
-from kubernetes.client.models.v1beta1_stateful_set_list import \
-    V1beta1StatefulSetList
-from kubernetes.client.models.v1beta1_stateful_set_spec import \
-    V1beta1StatefulSetSpec
-from kubernetes.client.models.v1beta1_stateful_set_status import \
-    V1beta1StatefulSetStatus
-from kubernetes.client.models.v1beta1_stateful_set_update_strategy import \
-    V1beta1StatefulSetUpdateStrategy
 from kubernetes.client.models.v1beta1_storage_class import V1beta1StorageClass
 from kubernetes.client.models.v1beta1_storage_class_list import \
     V1beta1StorageClassList
@@ -1023,6 +897,8 @@ from kubernetes.client.models.v1beta1_subject_access_review_status import \
     V1beta1SubjectAccessReviewStatus
 from kubernetes.client.models.v1beta1_subject_rules_review_status import \
     V1beta1SubjectRulesReviewStatus
+from kubernetes.client.models.v1beta1_supplemental_groups_strategy_options import \
+    V1beta1SupplementalGroupsStrategyOptions
 from kubernetes.client.models.v1beta1_token_review import V1beta1TokenReview
 from kubernetes.client.models.v1beta1_token_review_spec import \
     V1beta1TokenReviewSpec
@@ -1048,61 +924,6 @@ from kubernetes.client.models.v1beta1_volume_attachment_status import \
 from kubernetes.client.models.v1beta1_volume_error import V1beta1VolumeError
 from kubernetes.client.models.v1beta1_volume_node_resources import \
     V1beta1VolumeNodeResources
-from kubernetes.client.models.v1beta2_controller_revision import \
-    V1beta2ControllerRevision
-from kubernetes.client.models.v1beta2_controller_revision_list import \
-    V1beta2ControllerRevisionList
-from kubernetes.client.models.v1beta2_daemon_set import V1beta2DaemonSet
-from kubernetes.client.models.v1beta2_daemon_set_condition import \
-    V1beta2DaemonSetCondition
-from kubernetes.client.models.v1beta2_daemon_set_list import \
-    V1beta2DaemonSetList
-from kubernetes.client.models.v1beta2_daemon_set_spec import \
-    V1beta2DaemonSetSpec
-from kubernetes.client.models.v1beta2_daemon_set_status import \
-    V1beta2DaemonSetStatus
-from kubernetes.client.models.v1beta2_daemon_set_update_strategy import \
-    V1beta2DaemonSetUpdateStrategy
-from kubernetes.client.models.v1beta2_deployment import V1beta2Deployment
-from kubernetes.client.models.v1beta2_deployment_condition import \
-    V1beta2DeploymentCondition
-from kubernetes.client.models.v1beta2_deployment_list import \
-    V1beta2DeploymentList
-from kubernetes.client.models.v1beta2_deployment_spec import \
-    V1beta2DeploymentSpec
-from kubernetes.client.models.v1beta2_deployment_status import \
-    V1beta2DeploymentStatus
-from kubernetes.client.models.v1beta2_deployment_strategy import \
-    V1beta2DeploymentStrategy
-from kubernetes.client.models.v1beta2_replica_set import V1beta2ReplicaSet
-from kubernetes.client.models.v1beta2_replica_set_condition import \
-    V1beta2ReplicaSetCondition
-from kubernetes.client.models.v1beta2_replica_set_list import \
-    V1beta2ReplicaSetList
-from kubernetes.client.models.v1beta2_replica_set_spec import \
-    V1beta2ReplicaSetSpec
-from kubernetes.client.models.v1beta2_replica_set_status import \
-    V1beta2ReplicaSetStatus
-from kubernetes.client.models.v1beta2_rolling_update_daemon_set import \
-    V1beta2RollingUpdateDaemonSet
-from kubernetes.client.models.v1beta2_rolling_update_deployment import \
-    V1beta2RollingUpdateDeployment
-from kubernetes.client.models.v1beta2_rolling_update_stateful_set_strategy import \
-    V1beta2RollingUpdateStatefulSetStrategy
-from kubernetes.client.models.v1beta2_scale import V1beta2Scale
-from kubernetes.client.models.v1beta2_scale_spec import V1beta2ScaleSpec
-from kubernetes.client.models.v1beta2_scale_status import V1beta2ScaleStatus
-from kubernetes.client.models.v1beta2_stateful_set import V1beta2StatefulSet
-from kubernetes.client.models.v1beta2_stateful_set_condition import \
-    V1beta2StatefulSetCondition
-from kubernetes.client.models.v1beta2_stateful_set_list import \
-    V1beta2StatefulSetList
-from kubernetes.client.models.v1beta2_stateful_set_spec import \
-    V1beta2StatefulSetSpec
-from kubernetes.client.models.v1beta2_stateful_set_status import \
-    V1beta2StatefulSetStatus
-from kubernetes.client.models.v1beta2_stateful_set_update_strategy import \
-    V1beta2StatefulSetUpdateStrategy
 from kubernetes.client.models.v2alpha1_cron_job import V2alpha1CronJob
 from kubernetes.client.models.v2alpha1_cron_job_list import V2alpha1CronJobList
 from kubernetes.client.models.v2alpha1_cron_job_spec import V2alpha1CronJobSpec
@@ -1148,6 +969,8 @@ from kubernetes.client.models.v2beta2_external_metric_status import \
     V2beta2ExternalMetricStatus
 from kubernetes.client.models.v2beta2_horizontal_pod_autoscaler import \
     V2beta2HorizontalPodAutoscaler
+from kubernetes.client.models.v2beta2_horizontal_pod_autoscaler_behavior import \
+    V2beta2HorizontalPodAutoscalerBehavior
 from kubernetes.client.models.v2beta2_horizontal_pod_autoscaler_condition import \
     V2beta2HorizontalPodAutoscalerCondition
 from kubernetes.client.models.v2beta2_horizontal_pod_autoscaler_list import \
@@ -1156,6 +979,10 @@ from kubernetes.client.models.v2beta2_horizontal_pod_autoscaler_spec import \
     V2beta2HorizontalPodAutoscalerSpec
 from kubernetes.client.models.v2beta2_horizontal_pod_autoscaler_status import \
     V2beta2HorizontalPodAutoscalerStatus
+from kubernetes.client.models.v2beta2_hpa_scaling_policy import \
+    V2beta2HPAScalingPolicy
+from kubernetes.client.models.v2beta2_hpa_scaling_rules import \
+    V2beta2HPAScalingRules
 from kubernetes.client.models.v2beta2_metric_identifier import \
     V2beta2MetricIdentifier
 from kubernetes.client.models.v2beta2_metric_spec import V2beta2MetricSpec
