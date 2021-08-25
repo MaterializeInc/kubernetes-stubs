@@ -14,3 +14,9 @@ class V1APIGroupList:
         groups: list[kubernetes.client.V1APIGroup],
         kind: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1APIGroupListDict: ...
+
+class V1APIGroupListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    groups: list[kubernetes.client.V1APIGroupDict]
+    kind: typing.Optional[str]

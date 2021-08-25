@@ -16,3 +16,11 @@ class AdmissionregistrationV1WebhookClientConfig:
         ] = ...,
         url: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> AdmissionregistrationV1WebhookClientConfigDict: ...
+
+class AdmissionregistrationV1WebhookClientConfigDict(typing.TypedDict, total=False):
+    caBundle: typing.Optional[str]
+    service: typing.Optional[
+        kubernetes.client.AdmissionregistrationV1ServiceReferenceDict
+    ]
+    url: typing.Optional[str]

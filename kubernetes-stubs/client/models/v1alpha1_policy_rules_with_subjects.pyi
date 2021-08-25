@@ -20,3 +20,13 @@ class V1alpha1PolicyRulesWithSubjects:
         ] = ...,
         subjects: list[kubernetes.client.FlowcontrolV1alpha1Subject]
     ) -> None: ...
+    def to_dict(self) -> V1alpha1PolicyRulesWithSubjectsDict: ...
+
+class V1alpha1PolicyRulesWithSubjectsDict(typing.TypedDict, total=False):
+    nonResourceRules: typing.Optional[
+        list[kubernetes.client.V1alpha1NonResourcePolicyRuleDict]
+    ]
+    resourceRules: typing.Optional[
+        list[kubernetes.client.V1alpha1ResourcePolicyRuleDict]
+    ]
+    subjects: list[kubernetes.client.FlowcontrolV1alpha1SubjectDict]

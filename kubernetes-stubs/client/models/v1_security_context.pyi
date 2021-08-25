@@ -30,3 +30,18 @@ class V1SecurityContext:
             kubernetes.client.V1WindowsSecurityContextOptions
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1SecurityContextDict: ...
+
+class V1SecurityContextDict(typing.TypedDict, total=False):
+    allowPrivilegeEscalation: typing.Optional[bool]
+    capabilities: typing.Optional[kubernetes.client.V1CapabilitiesDict]
+    privileged: typing.Optional[bool]
+    procMount: typing.Optional[str]
+    readOnlyRootFilesystem: typing.Optional[bool]
+    runAsGroup: typing.Optional[int]
+    runAsNonRoot: typing.Optional[bool]
+    runAsUser: typing.Optional[int]
+    seLinuxOptions: typing.Optional[kubernetes.client.V1SELinuxOptionsDict]
+    windowsOptions: typing.Optional[
+        kubernetes.client.V1WindowsSecurityContextOptionsDict
+    ]

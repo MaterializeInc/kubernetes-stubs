@@ -14,3 +14,9 @@ class V1ScopeSelector:
             list[kubernetes.client.V1ScopedResourceSelectorRequirement]
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ScopeSelectorDict: ...
+
+class V1ScopeSelectorDict(typing.TypedDict, total=False):
+    matchExpressions: typing.Optional[
+        list[kubernetes.client.V1ScopedResourceSelectorRequirementDict]
+    ]

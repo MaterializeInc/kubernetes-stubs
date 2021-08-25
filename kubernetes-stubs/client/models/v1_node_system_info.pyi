@@ -28,3 +28,16 @@ class V1NodeSystemInfo:
         os_image: str,
         system_uuid: str
     ) -> None: ...
+    def to_dict(self) -> V1NodeSystemInfoDict: ...
+
+class V1NodeSystemInfoDict(typing.TypedDict, total=False):
+    architecture: str
+    bootID: str
+    containerRuntimeVersion: str
+    kernelVersion: str
+    kubeProxyVersion: str
+    kubeletVersion: str
+    machineID: str
+    operatingSystem: str
+    osImage: str
+    systemUUID: str

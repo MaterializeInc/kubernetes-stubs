@@ -30,3 +30,16 @@ class V1StatefulSetSpec:
             list[kubernetes.client.V1PersistentVolumeClaim]
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1StatefulSetSpecDict: ...
+
+class V1StatefulSetSpecDict(typing.TypedDict, total=False):
+    podManagementPolicy: typing.Optional[str]
+    replicas: typing.Optional[int]
+    revisionHistoryLimit: typing.Optional[int]
+    selector: kubernetes.client.V1LabelSelectorDict
+    serviceName: str
+    template: kubernetes.client.V1PodTemplateSpecDict
+    updateStrategy: typing.Optional[kubernetes.client.V1StatefulSetUpdateStrategyDict]
+    volumeClaimTemplates: typing.Optional[
+        list[kubernetes.client.V1PersistentVolumeClaimDict]
+    ]

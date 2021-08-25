@@ -16,3 +16,10 @@ class V1beta1RoleList:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1RoleListDict: ...
+
+class V1beta1RoleListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    items: list[kubernetes.client.V1beta1RoleDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ListMetaDict]

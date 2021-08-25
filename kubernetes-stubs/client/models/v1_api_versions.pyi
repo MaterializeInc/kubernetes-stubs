@@ -18,3 +18,10 @@ class V1APIVersions:
         ],
         versions: list[str]
     ) -> None: ...
+    def to_dict(self) -> V1APIVersionsDict: ...
+
+class V1APIVersionsDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    kind: typing.Optional[str]
+    serverAddressByClientCIDRs: list[kubernetes.client.V1ServerAddressByClientCIDRDict]
+    versions: list[str]

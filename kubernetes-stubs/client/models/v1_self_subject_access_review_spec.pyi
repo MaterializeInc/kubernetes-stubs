@@ -16,3 +16,10 @@ class V1SelfSubjectAccessReviewSpec:
             kubernetes.client.V1ResourceAttributes
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1SelfSubjectAccessReviewSpecDict: ...
+
+class V1SelfSubjectAccessReviewSpecDict(typing.TypedDict, total=False):
+    nonResourceAttributes: typing.Optional[
+        kubernetes.client.V1NonResourceAttributesDict
+    ]
+    resourceAttributes: typing.Optional[kubernetes.client.V1ResourceAttributesDict]

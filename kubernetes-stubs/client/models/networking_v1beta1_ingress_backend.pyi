@@ -14,3 +14,9 @@ class NetworkingV1beta1IngressBackend:
         service_name: typing.Optional[str] = ...,
         service_port: typing.Optional[typing.Any] = ...
     ) -> None: ...
+    def to_dict(self) -> NetworkingV1beta1IngressBackendDict: ...
+
+class NetworkingV1beta1IngressBackendDict(typing.TypedDict, total=False):
+    resource: typing.Optional[kubernetes.client.V1TypedLocalObjectReferenceDict]
+    serviceName: typing.Optional[str]
+    servicePort: typing.Optional[typing.Any]

@@ -16,3 +16,10 @@ class V1beta1CSINode:
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
         spec: kubernetes.client.V1beta1CSINodeSpec
     ) -> None: ...
+    def to_dict(self) -> V1beta1CSINodeDict: ...
+
+class V1beta1CSINodeDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    spec: kubernetes.client.V1beta1CSINodeSpecDict

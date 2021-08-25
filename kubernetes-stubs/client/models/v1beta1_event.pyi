@@ -42,3 +42,23 @@ class V1beta1Event:
         series: typing.Optional[kubernetes.client.V1beta1EventSeries] = ...,
         type: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1EventDict: ...
+
+class V1beta1EventDict(typing.TypedDict, total=False):
+    action: typing.Optional[str]
+    apiVersion: typing.Optional[str]
+    deprecatedCount: typing.Optional[int]
+    deprecatedFirstTimestamp: typing.Optional[datetime.datetime]
+    deprecatedLastTimestamp: typing.Optional[datetime.datetime]
+    deprecatedSource: typing.Optional[kubernetes.client.V1EventSourceDict]
+    eventTime: datetime.datetime
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    note: typing.Optional[str]
+    reason: typing.Optional[str]
+    regarding: typing.Optional[kubernetes.client.V1ObjectReferenceDict]
+    related: typing.Optional[kubernetes.client.V1ObjectReferenceDict]
+    reportingController: typing.Optional[str]
+    reportingInstance: typing.Optional[str]
+    series: typing.Optional[kubernetes.client.V1beta1EventSeriesDict]
+    type: typing.Optional[str]

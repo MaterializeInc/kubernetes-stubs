@@ -20,3 +20,12 @@ class V1VolumeProjection:
             kubernetes.client.V1ServiceAccountTokenProjection
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1VolumeProjectionDict: ...
+
+class V1VolumeProjectionDict(typing.TypedDict, total=False):
+    configMap: typing.Optional[kubernetes.client.V1ConfigMapProjectionDict]
+    downwardAPI: typing.Optional[kubernetes.client.V1DownwardAPIProjectionDict]
+    secret: typing.Optional[kubernetes.client.V1SecretProjectionDict]
+    serviceAccountToken: typing.Optional[
+        kubernetes.client.V1ServiceAccountTokenProjectionDict
+    ]

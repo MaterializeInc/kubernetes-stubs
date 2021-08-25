@@ -20,3 +20,12 @@ class V1VolumeMount:
         sub_path: typing.Optional[str] = ...,
         sub_path_expr: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1VolumeMountDict: ...
+
+class V1VolumeMountDict(typing.TypedDict, total=False):
+    mountPath: str
+    mountPropagation: typing.Optional[str]
+    name: str
+    readOnly: typing.Optional[bool]
+    subPath: typing.Optional[str]
+    subPathExpr: typing.Optional[str]

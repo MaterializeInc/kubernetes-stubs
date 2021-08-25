@@ -16,3 +16,10 @@ class V1EndpointPort:
         port: int,
         protocol: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1EndpointPortDict: ...
+
+class V1EndpointPortDict(typing.TypedDict, total=False):
+    appProtocol: typing.Optional[str]
+    name: typing.Optional[str]
+    port: int
+    protocol: typing.Optional[str]

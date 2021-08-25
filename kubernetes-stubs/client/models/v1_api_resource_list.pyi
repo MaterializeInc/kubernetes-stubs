@@ -16,3 +16,10 @@ class V1APIResourceList:
         kind: typing.Optional[str] = ...,
         resources: list[kubernetes.client.V1APIResource]
     ) -> None: ...
+    def to_dict(self) -> V1APIResourceListDict: ...
+
+class V1APIResourceListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    groupVersion: str
+    kind: typing.Optional[str]
+    resources: list[kubernetes.client.V1APIResourceDict]

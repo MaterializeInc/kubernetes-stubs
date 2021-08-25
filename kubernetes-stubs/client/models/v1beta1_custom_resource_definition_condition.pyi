@@ -18,3 +18,11 @@ class V1beta1CustomResourceDefinitionCondition:
         status: str,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1beta1CustomResourceDefinitionConditionDict: ...
+
+class V1beta1CustomResourceDefinitionConditionDict(typing.TypedDict, total=False):
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: str
+    type: str

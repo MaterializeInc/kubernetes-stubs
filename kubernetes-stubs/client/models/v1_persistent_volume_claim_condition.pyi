@@ -20,3 +20,12 @@ class V1PersistentVolumeClaimCondition:
         status: str,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1PersistentVolumeClaimConditionDict: ...
+
+class V1PersistentVolumeClaimConditionDict(typing.TypedDict, total=False):
+    lastProbeTime: typing.Optional[datetime.datetime]
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: str
+    type: str

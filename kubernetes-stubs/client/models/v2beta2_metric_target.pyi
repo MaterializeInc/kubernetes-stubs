@@ -16,3 +16,10 @@ class V2beta2MetricTarget:
         type: str,
         value: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V2beta2MetricTargetDict: ...
+
+class V2beta2MetricTargetDict(typing.TypedDict, total=False):
+    averageUtilization: typing.Optional[int]
+    averageValue: typing.Optional[str]
+    type: str
+    value: typing.Optional[str]

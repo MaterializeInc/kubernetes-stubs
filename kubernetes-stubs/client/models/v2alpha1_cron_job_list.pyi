@@ -16,3 +16,10 @@ class V2alpha1CronJobList:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V2alpha1CronJobListDict: ...
+
+class V2alpha1CronJobListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    items: list[kubernetes.client.V2alpha1CronJobDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ListMetaDict]

@@ -16,3 +16,10 @@ class V1beta1SubjectAccessReviewStatus:
         evaluation_error: typing.Optional[str] = ...,
         reason: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1SubjectAccessReviewStatusDict: ...
+
+class V1beta1SubjectAccessReviewStatusDict(typing.TypedDict, total=False):
+    allowed: bool
+    denied: typing.Optional[bool]
+    evaluationError: typing.Optional[str]
+    reason: typing.Optional[str]

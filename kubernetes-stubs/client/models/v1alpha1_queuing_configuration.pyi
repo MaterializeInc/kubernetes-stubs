@@ -14,3 +14,9 @@ class V1alpha1QueuingConfiguration:
         queue_length_limit: typing.Optional[int] = ...,
         queues: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1alpha1QueuingConfigurationDict: ...
+
+class V1alpha1QueuingConfigurationDict(typing.TypedDict, total=False):
+    handSize: typing.Optional[int]
+    queueLengthLimit: typing.Optional[int]
+    queues: typing.Optional[int]

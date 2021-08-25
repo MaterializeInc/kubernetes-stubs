@@ -18,3 +18,11 @@ class V2beta1HorizontalPodAutoscalerCondition:
         status: str,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V2beta1HorizontalPodAutoscalerConditionDict: ...
+
+class V2beta1HorizontalPodAutoscalerConditionDict(typing.TypedDict, total=False):
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: str
+    type: str

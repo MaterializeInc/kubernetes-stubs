@@ -22,3 +22,13 @@ class V1beta1CronJobSpec:
         successful_jobs_history_limit: typing.Optional[int] = ...,
         suspend: typing.Optional[bool] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1CronJobSpecDict: ...
+
+class V1beta1CronJobSpecDict(typing.TypedDict, total=False):
+    concurrencyPolicy: typing.Optional[str]
+    failedJobsHistoryLimit: typing.Optional[int]
+    jobTemplate: kubernetes.client.V1beta1JobTemplateSpecDict
+    schedule: str
+    startingDeadlineSeconds: typing.Optional[int]
+    successfulJobsHistoryLimit: typing.Optional[int]
+    suspend: typing.Optional[bool]

@@ -18,3 +18,11 @@ class V1beta1CustomResourceConversion:
             kubernetes.client.ApiextensionsV1beta1WebhookClientConfig
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1CustomResourceConversionDict: ...
+
+class V1beta1CustomResourceConversionDict(typing.TypedDict, total=False):
+    conversionReviewVersions: typing.Optional[list[str]]
+    strategy: str
+    webhookClientConfig: typing.Optional[
+        kubernetes.client.ApiextensionsV1beta1WebhookClientConfigDict
+    ]

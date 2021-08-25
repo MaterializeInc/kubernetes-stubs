@@ -16,3 +16,10 @@ class V1beta1IngressClassList:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1IngressClassListDict: ...
+
+class V1beta1IngressClassListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    items: list[kubernetes.client.V1beta1IngressClassDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ListMetaDict]

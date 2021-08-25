@@ -16,3 +16,10 @@ class V1PersistentVolumeClaimList:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PersistentVolumeClaimListDict: ...
+
+class V1PersistentVolumeClaimListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    items: list[kubernetes.client.V1PersistentVolumeClaimDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ListMetaDict]

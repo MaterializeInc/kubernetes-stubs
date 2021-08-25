@@ -42,3 +42,22 @@ class V1beta1CustomResourceDefinitionSpec:
             list[kubernetes.client.V1beta1CustomResourceDefinitionVersion]
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1CustomResourceDefinitionSpecDict: ...
+
+class V1beta1CustomResourceDefinitionSpecDict(typing.TypedDict, total=False):
+    additionalPrinterColumns: typing.Optional[
+        list[kubernetes.client.V1beta1CustomResourceColumnDefinitionDict]
+    ]
+    conversion: typing.Optional[kubernetes.client.V1beta1CustomResourceConversionDict]
+    group: str
+    names: kubernetes.client.V1beta1CustomResourceDefinitionNamesDict
+    preserveUnknownFields: typing.Optional[bool]
+    scope: str
+    subresources: typing.Optional[
+        kubernetes.client.V1beta1CustomResourceSubresourcesDict
+    ]
+    validation: typing.Optional[kubernetes.client.V1beta1CustomResourceValidationDict]
+    version: typing.Optional[str]
+    versions: typing.Optional[
+        list[kubernetes.client.V1beta1CustomResourceDefinitionVersionDict]
+    ]

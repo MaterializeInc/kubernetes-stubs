@@ -20,3 +20,12 @@ class V1ManagedFieldsEntry:
         operation: typing.Optional[str] = ...,
         time: typing.Optional[datetime.datetime] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ManagedFieldsEntryDict: ...
+
+class V1ManagedFieldsEntryDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    fieldsType: typing.Optional[str]
+    fieldsV1: typing.Optional[typing.Any]
+    manager: typing.Optional[str]
+    operation: typing.Optional[str]
+    time: typing.Optional[datetime.datetime]

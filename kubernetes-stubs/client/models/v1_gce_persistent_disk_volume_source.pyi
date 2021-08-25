@@ -16,3 +16,10 @@ class V1GCEPersistentDiskVolumeSource:
         pd_name: str,
         read_only: typing.Optional[bool] = ...
     ) -> None: ...
+    def to_dict(self) -> V1GCEPersistentDiskVolumeSourceDict: ...
+
+class V1GCEPersistentDiskVolumeSourceDict(typing.TypedDict, total=False):
+    fsType: typing.Optional[str]
+    partition: typing.Optional[int]
+    pdName: str
+    readOnly: typing.Optional[bool]

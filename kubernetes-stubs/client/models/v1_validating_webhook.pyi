@@ -28,3 +28,16 @@ class V1ValidatingWebhook:
         side_effects: str,
         timeout_seconds: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ValidatingWebhookDict: ...
+
+class V1ValidatingWebhookDict(typing.TypedDict, total=False):
+    admissionReviewVersions: list[str]
+    clientConfig: kubernetes.client.AdmissionregistrationV1WebhookClientConfigDict
+    failurePolicy: typing.Optional[str]
+    matchPolicy: typing.Optional[str]
+    name: str
+    namespaceSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
+    objectSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
+    rules: typing.Optional[list[kubernetes.client.V1RuleWithOperationsDict]]
+    sideEffects: str
+    timeoutSeconds: typing.Optional[int]

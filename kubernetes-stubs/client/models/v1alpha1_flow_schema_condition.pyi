@@ -18,3 +18,11 @@ class V1alpha1FlowSchemaCondition:
         status: typing.Optional[str] = ...,
         type: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1alpha1FlowSchemaConditionDict: ...
+
+class V1alpha1FlowSchemaConditionDict(typing.TypedDict, total=False):
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: typing.Optional[str]
+    type: typing.Optional[str]

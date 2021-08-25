@@ -26,3 +26,15 @@ class VersionInfo:
         minor: str,
         platform: str
     ) -> None: ...
+    def to_dict(self) -> VersionInfoDict: ...
+
+class VersionInfoDict(typing.TypedDict, total=False):
+    buildDate: str
+    compiler: str
+    gitCommit: str
+    gitTreeState: str
+    gitVersion: str
+    goVersion: str
+    major: str
+    minor: str
+    platform: str

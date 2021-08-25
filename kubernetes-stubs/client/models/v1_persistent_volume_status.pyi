@@ -14,3 +14,9 @@ class V1PersistentVolumeStatus:
         phase: typing.Optional[str] = ...,
         reason: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PersistentVolumeStatusDict: ...
+
+class V1PersistentVolumeStatusDict(typing.TypedDict, total=False):
+    message: typing.Optional[str]
+    phase: typing.Optional[str]
+    reason: typing.Optional[str]

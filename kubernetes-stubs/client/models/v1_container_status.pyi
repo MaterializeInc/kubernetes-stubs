@@ -26,3 +26,15 @@ class V1ContainerStatus:
         started: typing.Optional[bool] = ...,
         state: typing.Optional[kubernetes.client.V1ContainerState] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ContainerStatusDict: ...
+
+class V1ContainerStatusDict(typing.TypedDict, total=False):
+    containerID: typing.Optional[str]
+    image: str
+    imageID: str
+    lastState: typing.Optional[kubernetes.client.V1ContainerStateDict]
+    name: str
+    ready: bool
+    restartCount: int
+    started: typing.Optional[bool]
+    state: typing.Optional[kubernetes.client.V1ContainerStateDict]

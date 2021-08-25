@@ -20,3 +20,12 @@ class V1beta1EndpointSlice:
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
         ports: typing.Optional[list[kubernetes.client.V1beta1EndpointPort]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1EndpointSliceDict: ...
+
+class V1beta1EndpointSliceDict(typing.TypedDict, total=False):
+    addressType: str
+    apiVersion: typing.Optional[str]
+    endpoints: list[kubernetes.client.V1beta1EndpointDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    ports: typing.Optional[list[kubernetes.client.V1beta1EndpointPortDict]]

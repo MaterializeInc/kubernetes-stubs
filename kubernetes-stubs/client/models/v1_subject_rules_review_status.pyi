@@ -16,3 +16,10 @@ class V1SubjectRulesReviewStatus:
         non_resource_rules: list[kubernetes.client.V1NonResourceRule],
         resource_rules: list[kubernetes.client.V1ResourceRule]
     ) -> None: ...
+    def to_dict(self) -> V1SubjectRulesReviewStatusDict: ...
+
+class V1SubjectRulesReviewStatusDict(typing.TypedDict, total=False):
+    evaluationError: typing.Optional[str]
+    incomplete: bool
+    nonResourceRules: list[kubernetes.client.V1NonResourceRuleDict]
+    resourceRules: list[kubernetes.client.V1ResourceRuleDict]

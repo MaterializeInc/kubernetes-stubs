@@ -14,3 +14,9 @@ class V1StatusCause:
         message: typing.Optional[str] = ...,
         reason: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1StatusCauseDict: ...
+
+class V1StatusCauseDict(typing.TypedDict, total=False):
+    field: typing.Optional[str]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]

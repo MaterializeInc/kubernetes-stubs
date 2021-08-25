@@ -20,3 +20,11 @@ class V1DaemonSetSpec:
             kubernetes.client.V1DaemonSetUpdateStrategy
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1DaemonSetSpecDict: ...
+
+class V1DaemonSetSpecDict(typing.TypedDict, total=False):
+    minReadySeconds: typing.Optional[int]
+    revisionHistoryLimit: typing.Optional[int]
+    selector: kubernetes.client.V1LabelSelectorDict
+    template: kubernetes.client.V1PodTemplateSpecDict
+    updateStrategy: typing.Optional[kubernetes.client.V1DaemonSetUpdateStrategyDict]

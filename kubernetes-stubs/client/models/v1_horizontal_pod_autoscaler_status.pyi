@@ -18,3 +18,11 @@ class V1HorizontalPodAutoscalerStatus:
         last_scale_time: typing.Optional[datetime.datetime] = ...,
         observed_generation: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1HorizontalPodAutoscalerStatusDict: ...
+
+class V1HorizontalPodAutoscalerStatusDict(typing.TypedDict, total=False):
+    currentCPUUtilizationPercentage: typing.Optional[int]
+    currentReplicas: int
+    desiredReplicas: int
+    lastScaleTime: typing.Optional[datetime.datetime]
+    observedGeneration: typing.Optional[int]

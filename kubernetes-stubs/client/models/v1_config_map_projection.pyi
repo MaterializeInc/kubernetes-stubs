@@ -14,3 +14,9 @@ class V1ConfigMapProjection:
         name: typing.Optional[str] = ...,
         optional: typing.Optional[bool] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ConfigMapProjectionDict: ...
+
+class V1ConfigMapProjectionDict(typing.TypedDict, total=False):
+    items: typing.Optional[list[kubernetes.client.V1KeyToPathDict]]
+    name: typing.Optional[str]
+    optional: typing.Optional[bool]

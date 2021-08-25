@@ -9,3 +9,8 @@ class V1PreferredSchedulingTerm:
     def __init__(
         self, *, preference: kubernetes.client.V1NodeSelectorTerm, weight: int
     ) -> None: ...
+    def to_dict(self) -> V1PreferredSchedulingTermDict: ...
+
+class V1PreferredSchedulingTermDict(typing.TypedDict, total=False):
+    preference: kubernetes.client.V1NodeSelectorTermDict
+    weight: int

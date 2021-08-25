@@ -16,3 +16,10 @@ class V1TopologySpreadConstraint:
         topology_key: str,
         when_unsatisfiable: str
     ) -> None: ...
+    def to_dict(self) -> V1TopologySpreadConstraintDict: ...
+
+class V1TopologySpreadConstraintDict(typing.TypedDict, total=False):
+    labelSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
+    maxSkew: int
+    topologyKey: str
+    whenUnsatisfiable: str

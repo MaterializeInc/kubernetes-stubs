@@ -48,7 +48,9 @@ def make_file_name(s: str):
     return "_".join(inflection.underscore(s) for s in s.split("."))
 
 
-def make_type_name(config: dict[str, Any], is_optional: bool) -> str:
+def make_type_name(
+    config: dict[str, Any], is_optional: bool, use_dict: bool = False
+) -> str:
     def inner():
         ty = config.get("type")
         if not ty and "schema" in config:
@@ -66,12 +68,16 @@ def make_type_name(config: dict[str, Any], is_optional: bool) -> str:
             elif ty == "number":
                 return "float"
             elif ty == "array":
-                item_ty = make_type_name(config["items"], is_optional=False)
+                item_ty = make_type_name(
+                    config["items"], is_optional=False, use_dict=use_dict
+                )
                 return f"list[{item_ty}]"
             elif ty == "object":
                 if "additionalProperties" in config:
                     val_ty = make_type_name(
-                        config["additionalProperties"], is_optional=False
+                        config["additionalProperties"],
+                        is_optional=False,
+                        use_dict=use_dict,
                     )
                     return f"dict[str, {val_ty}]"
                 else:
@@ -82,15 +88,22 @@ def make_type_name(config: dict[str, Any], is_optional: bool) -> str:
         ref = config.get("$ref") or config["schema"]["$ref"]
         assert ref.startswith("#/definitions/")
         ref = ref.removeprefix("#/definitions/")
-        return "kubernetes.client." + make_class_name(ref)
+        out = "kubernetes.client." + make_class_name(ref)
+        if use_dict:
+            out += "Dict"
+        return out
 
     if is_optional:
         return f"typing.Optional[{inner()}]"
     return inner()
 
 
-def make_property_name(s: str):
-    s = inflection.underscore(s.replace("$", ""))
+def make_property_name(s: str, underscored: bool = True):
+    if underscored:
+        s = inflection.underscore(s)
+    else:
+        s = s.replace("-", "_")
+    s = s.replace("$", "")
     if keyword.iskeyword(s):
         return "_" + s
     return s
@@ -139,12 +152,20 @@ for name, config in schema["definitions"].items():
     file_name = make_file_name(name)
     required = config.get("required", [])
     props: list[Property] = []
+    dict_props: list[Property] = []
     for name, config in config["properties"].items():
         is_optional = name not in required
         props.append(
             Property(
                 name=make_property_name(name),
                 ty=make_type_name(config, is_optional=is_optional),
+                is_optional=is_optional,
+            )
+        )
+        dict_props.append(
+            Property(
+                name=make_property_name(name, underscored=False),
+                ty=make_type_name(config, is_optional=is_optional, use_dict=True),
                 is_optional=is_optional,
             )
         )
@@ -161,12 +182,23 @@ for name, config in schema["definitions"].items():
     buf.start_block(f"def __init__(self, *, {params}) -> None")
     buf.writeln("...")
     buf.end_block()
+    buf.start_block(f"def to_dict(self) -> {class_name}Dict")
+    buf.writeln("...")
+    buf.end_block()
+    buf.end_block()
+    buf.start_block(f"class {class_name}Dict(typing.TypedDict, total=False)")
+    for dict_prop in dict_props:
+        buf.writeln(str(dict_prop))
+    buf.end_block()
 
 # `kubernetes.client.models` root.
 buf = CodegenBuf(MODELS_STUBS_DIR / "__init__.pyi")
 for name in schema["definitions"]:
     buf.writeln(
         f"from kubernetes.client.models.{make_file_name(name)} import {make_class_name(name)}"
+    )
+    buf.writeln(
+        f"from kubernetes.client.models.{make_file_name(name)} import {make_class_name(name)}Dict"
     )
 
 # `kubernetes.client.api` modules.
@@ -269,6 +301,9 @@ buf = CodegenBuf(CLIENT_STUBS_DIR / "__init__.pyi")
 for name in schema["definitions"]:
     buf.writeln(
         f"from kubernetes.client.models.{make_file_name(name)} import {make_class_name(name)}"
+    )
+    buf.writeln(
+        f"from kubernetes.client.models.{make_file_name(name)} import {make_class_name(name)}Dict"
     )
 for name in apis:
     buf.writeln(

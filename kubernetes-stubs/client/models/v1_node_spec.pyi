@@ -22,3 +22,13 @@ class V1NodeSpec:
         taints: typing.Optional[list[kubernetes.client.V1Taint]] = ...,
         unschedulable: typing.Optional[bool] = ...
     ) -> None: ...
+    def to_dict(self) -> V1NodeSpecDict: ...
+
+class V1NodeSpecDict(typing.TypedDict, total=False):
+    configSource: typing.Optional[kubernetes.client.V1NodeConfigSourceDict]
+    externalID: typing.Optional[str]
+    podCIDR: typing.Optional[str]
+    podCIDRs: typing.Optional[list[str]]
+    providerID: typing.Optional[str]
+    taints: typing.Optional[list[kubernetes.client.V1TaintDict]]
+    unschedulable: typing.Optional[bool]

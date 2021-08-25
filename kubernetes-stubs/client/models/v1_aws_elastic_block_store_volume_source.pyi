@@ -16,3 +16,10 @@ class V1AWSElasticBlockStoreVolumeSource:
         read_only: typing.Optional[bool] = ...,
         volume_id: str
     ) -> None: ...
+    def to_dict(self) -> V1AWSElasticBlockStoreVolumeSourceDict: ...
+
+class V1AWSElasticBlockStoreVolumeSourceDict(typing.TypedDict, total=False):
+    fsType: typing.Optional[str]
+    partition: typing.Optional[int]
+    readOnly: typing.Optional[bool]
+    volumeID: str

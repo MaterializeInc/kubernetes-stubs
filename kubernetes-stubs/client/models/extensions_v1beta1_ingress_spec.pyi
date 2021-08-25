@@ -20,3 +20,10 @@ class ExtensionsV1beta1IngressSpec:
         ] = ...,
         tls: typing.Optional[list[kubernetes.client.ExtensionsV1beta1IngressTLS]] = ...
     ) -> None: ...
+    def to_dict(self) -> ExtensionsV1beta1IngressSpecDict: ...
+
+class ExtensionsV1beta1IngressSpecDict(typing.TypedDict, total=False):
+    backend: typing.Optional[kubernetes.client.ExtensionsV1beta1IngressBackendDict]
+    ingressClassName: typing.Optional[str]
+    rules: typing.Optional[list[kubernetes.client.ExtensionsV1beta1IngressRuleDict]]
+    tls: typing.Optional[list[kubernetes.client.ExtensionsV1beta1IngressTLSDict]]

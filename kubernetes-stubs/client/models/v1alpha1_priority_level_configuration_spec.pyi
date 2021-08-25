@@ -16,3 +16,10 @@ class V1alpha1PriorityLevelConfigurationSpec:
         ] = ...,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1alpha1PriorityLevelConfigurationSpecDict: ...
+
+class V1alpha1PriorityLevelConfigurationSpecDict(typing.TypedDict, total=False):
+    limited: typing.Optional[
+        kubernetes.client.V1alpha1LimitedPriorityLevelConfigurationDict
+    ]
+    type: str

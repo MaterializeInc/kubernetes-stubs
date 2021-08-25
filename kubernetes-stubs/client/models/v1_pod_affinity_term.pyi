@@ -14,3 +14,9 @@ class V1PodAffinityTerm:
         namespaces: typing.Optional[list[str]] = ...,
         topology_key: str
     ) -> None: ...
+    def to_dict(self) -> V1PodAffinityTermDict: ...
+
+class V1PodAffinityTermDict(typing.TypedDict, total=False):
+    labelSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
+    namespaces: typing.Optional[list[str]]
+    topologyKey: str

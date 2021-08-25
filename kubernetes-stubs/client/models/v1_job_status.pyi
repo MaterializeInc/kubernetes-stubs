@@ -20,3 +20,12 @@ class V1JobStatus:
         start_time: typing.Optional[datetime.datetime] = ...,
         succeeded: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1JobStatusDict: ...
+
+class V1JobStatusDict(typing.TypedDict, total=False):
+    active: typing.Optional[int]
+    completionTime: typing.Optional[datetime.datetime]
+    conditions: typing.Optional[list[kubernetes.client.V1JobConditionDict]]
+    failed: typing.Optional[int]
+    startTime: typing.Optional[datetime.datetime]
+    succeeded: typing.Optional[int]

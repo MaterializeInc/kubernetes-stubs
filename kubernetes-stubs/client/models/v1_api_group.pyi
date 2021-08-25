@@ -26,3 +26,14 @@ class V1APIGroup:
         ] = ...,
         versions: list[kubernetes.client.V1GroupVersionForDiscovery]
     ) -> None: ...
+    def to_dict(self) -> V1APIGroupDict: ...
+
+class V1APIGroupDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    kind: typing.Optional[str]
+    name: str
+    preferredVersion: typing.Optional[kubernetes.client.V1GroupVersionForDiscoveryDict]
+    serverAddressByClientCIDRs: typing.Optional[
+        list[kubernetes.client.V1ServerAddressByClientCIDRDict]
+    ]
+    versions: list[kubernetes.client.V1GroupVersionForDiscoveryDict]

@@ -22,3 +22,12 @@ class V1ReplicaSetStatus:
         ready_replicas: typing.Optional[int] = ...,
         replicas: int
     ) -> None: ...
+    def to_dict(self) -> V1ReplicaSetStatusDict: ...
+
+class V1ReplicaSetStatusDict(typing.TypedDict, total=False):
+    availableReplicas: typing.Optional[int]
+    conditions: typing.Optional[list[kubernetes.client.V1ReplicaSetConditionDict]]
+    fullyLabeledReplicas: typing.Optional[int]
+    observedGeneration: typing.Optional[int]
+    readyReplicas: typing.Optional[int]
+    replicas: int

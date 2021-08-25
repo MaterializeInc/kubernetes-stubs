@@ -8,3 +8,7 @@ class ExtensionsV1beta1HTTPIngressRuleValue:
     def __init__(
         self, *, paths: list[kubernetes.client.ExtensionsV1beta1HTTPIngressPath]
     ) -> None: ...
+    def to_dict(self) -> ExtensionsV1beta1HTTPIngressRuleValueDict: ...
+
+class ExtensionsV1beta1HTTPIngressRuleValueDict(typing.TypedDict, total=False):
+    paths: list[kubernetes.client.ExtensionsV1beta1HTTPIngressPathDict]

@@ -24,3 +24,15 @@ class V1beta1APIServiceSpec:
         version: typing.Optional[str] = ...,
         version_priority: int
     ) -> None: ...
+    def to_dict(self) -> V1beta1APIServiceSpecDict: ...
+
+class V1beta1APIServiceSpecDict(typing.TypedDict, total=False):
+    caBundle: typing.Optional[str]
+    group: typing.Optional[str]
+    groupPriorityMinimum: int
+    insecureSkipTLSVerify: typing.Optional[bool]
+    service: typing.Optional[
+        kubernetes.client.ApiregistrationV1beta1ServiceReferenceDict
+    ]
+    version: typing.Optional[str]
+    versionPriority: int

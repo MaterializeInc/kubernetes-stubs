@@ -20,3 +20,12 @@ class V1OwnerReference:
         name: str,
         uid: str
     ) -> None: ...
+    def to_dict(self) -> V1OwnerReferenceDict: ...
+
+class V1OwnerReferenceDict(typing.TypedDict, total=False):
+    apiVersion: str
+    blockOwnerDeletion: typing.Optional[bool]
+    controller: typing.Optional[bool]
+    kind: str
+    name: str
+    uid: str

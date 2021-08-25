@@ -16,3 +16,9 @@ class V1TokenRequestSpec:
         ] = ...,
         expiration_seconds: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1TokenRequestSpecDict: ...
+
+class V1TokenRequestSpecDict(typing.TypedDict, total=False):
+    audiences: list[str]
+    boundObjectRef: typing.Optional[kubernetes.client.V1BoundObjectReferenceDict]
+    expirationSeconds: typing.Optional[int]

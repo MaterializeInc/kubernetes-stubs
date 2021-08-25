@@ -16,3 +16,10 @@ class AdmissionregistrationV1ServiceReference:
         path: typing.Optional[str] = ...,
         port: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> AdmissionregistrationV1ServiceReferenceDict: ...
+
+class AdmissionregistrationV1ServiceReferenceDict(typing.TypedDict, total=False):
+    name: str
+    namespace: str
+    path: typing.Optional[str]
+    port: typing.Optional[int]

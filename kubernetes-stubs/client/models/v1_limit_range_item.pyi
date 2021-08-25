@@ -20,3 +20,12 @@ class V1LimitRangeItem:
         min: typing.Optional[dict[str, str]] = ...,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1LimitRangeItemDict: ...
+
+class V1LimitRangeItemDict(typing.TypedDict, total=False):
+    default: typing.Optional[dict[str, str]]
+    defaultRequest: typing.Optional[dict[str, str]]
+    max: typing.Optional[dict[str, str]]
+    maxLimitRequestRatio: typing.Optional[dict[str, str]]
+    min: typing.Optional[dict[str, str]]
+    type: str

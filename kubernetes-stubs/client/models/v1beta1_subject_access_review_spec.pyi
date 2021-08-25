@@ -26,3 +26,14 @@ class V1beta1SubjectAccessReviewSpec:
         uid: typing.Optional[str] = ...,
         user: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1SubjectAccessReviewSpecDict: ...
+
+class V1beta1SubjectAccessReviewSpecDict(typing.TypedDict, total=False):
+    extra: typing.Optional[dict[str, list[str]]]
+    group: typing.Optional[list[str]]
+    nonResourceAttributes: typing.Optional[
+        kubernetes.client.V1beta1NonResourceAttributesDict
+    ]
+    resourceAttributes: typing.Optional[kubernetes.client.V1beta1ResourceAttributesDict]
+    uid: typing.Optional[str]
+    user: typing.Optional[str]

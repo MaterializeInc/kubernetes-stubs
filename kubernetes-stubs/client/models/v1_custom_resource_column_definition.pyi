@@ -20,3 +20,12 @@ class V1CustomResourceColumnDefinition:
         priority: typing.Optional[int] = ...,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1CustomResourceColumnDefinitionDict: ...
+
+class V1CustomResourceColumnDefinitionDict(typing.TypedDict, total=False):
+    description: typing.Optional[str]
+    format: typing.Optional[str]
+    jsonPath: str
+    name: str
+    priority: typing.Optional[int]
+    type: str

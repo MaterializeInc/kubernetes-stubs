@@ -22,3 +22,13 @@ class V1alpha1PriorityClass:
         preemption_policy: typing.Optional[str] = ...,
         value: int
     ) -> None: ...
+    def to_dict(self) -> V1alpha1PriorityClassDict: ...
+
+class V1alpha1PriorityClassDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    description: typing.Optional[str]
+    globalDefault: typing.Optional[bool]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    preemptionPolicy: typing.Optional[str]
+    value: int

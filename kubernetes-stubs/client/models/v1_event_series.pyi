@@ -14,3 +14,9 @@ class V1EventSeries:
         last_observed_time: typing.Optional[datetime.datetime] = ...,
         state: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1EventSeriesDict: ...
+
+class V1EventSeriesDict(typing.TypedDict, total=False):
+    count: typing.Optional[int]
+    lastObservedTime: typing.Optional[datetime.datetime]
+    state: typing.Optional[str]

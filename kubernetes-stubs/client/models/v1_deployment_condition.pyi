@@ -20,3 +20,12 @@ class V1DeploymentCondition:
         status: str,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1DeploymentConditionDict: ...
+
+class V1DeploymentConditionDict(typing.TypedDict, total=False):
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    lastUpdateTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: str
+    type: str

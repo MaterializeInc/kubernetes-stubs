@@ -14,3 +14,10 @@ class V1WebhookConversion:
         ] = ...,
         conversion_review_versions: list[str]
     ) -> None: ...
+    def to_dict(self) -> V1WebhookConversionDict: ...
+
+class V1WebhookConversionDict(typing.TypedDict, total=False):
+    clientConfig: typing.Optional[
+        kubernetes.client.ApiextensionsV1WebhookClientConfigDict
+    ]
+    conversionReviewVersions: list[str]

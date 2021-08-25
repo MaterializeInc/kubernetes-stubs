@@ -86,3 +86,46 @@ class V1PodSpec:
         ] = ...,
         volumes: typing.Optional[list[kubernetes.client.V1Volume]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PodSpecDict: ...
+
+class V1PodSpecDict(typing.TypedDict, total=False):
+    activeDeadlineSeconds: typing.Optional[int]
+    affinity: typing.Optional[kubernetes.client.V1AffinityDict]
+    automountServiceAccountToken: typing.Optional[bool]
+    containers: list[kubernetes.client.V1ContainerDict]
+    dnsConfig: typing.Optional[kubernetes.client.V1PodDNSConfigDict]
+    dnsPolicy: typing.Optional[str]
+    enableServiceLinks: typing.Optional[bool]
+    ephemeralContainers: typing.Optional[
+        list[kubernetes.client.V1EphemeralContainerDict]
+    ]
+    hostAliases: typing.Optional[list[kubernetes.client.V1HostAliasDict]]
+    hostIPC: typing.Optional[bool]
+    hostNetwork: typing.Optional[bool]
+    hostPID: typing.Optional[bool]
+    hostname: typing.Optional[str]
+    imagePullSecrets: typing.Optional[
+        list[kubernetes.client.V1LocalObjectReferenceDict]
+    ]
+    initContainers: typing.Optional[list[kubernetes.client.V1ContainerDict]]
+    nodeName: typing.Optional[str]
+    nodeSelector: typing.Optional[dict[str, str]]
+    overhead: typing.Optional[dict[str, str]]
+    preemptionPolicy: typing.Optional[str]
+    priority: typing.Optional[int]
+    priorityClassName: typing.Optional[str]
+    readinessGates: typing.Optional[list[kubernetes.client.V1PodReadinessGateDict]]
+    restartPolicy: typing.Optional[str]
+    runtimeClassName: typing.Optional[str]
+    schedulerName: typing.Optional[str]
+    securityContext: typing.Optional[kubernetes.client.V1PodSecurityContextDict]
+    serviceAccount: typing.Optional[str]
+    serviceAccountName: typing.Optional[str]
+    shareProcessNamespace: typing.Optional[bool]
+    subdomain: typing.Optional[str]
+    terminationGracePeriodSeconds: typing.Optional[int]
+    tolerations: typing.Optional[list[kubernetes.client.V1TolerationDict]]
+    topologySpreadConstraints: typing.Optional[
+        list[kubernetes.client.V1TopologySpreadConstraintDict]
+    ]
+    volumes: typing.Optional[list[kubernetes.client.V1VolumeDict]]

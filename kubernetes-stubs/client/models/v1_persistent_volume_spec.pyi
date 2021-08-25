@@ -94,3 +94,44 @@ class V1PersistentVolumeSpec:
             kubernetes.client.V1VsphereVirtualDiskVolumeSource
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PersistentVolumeSpecDict: ...
+
+class V1PersistentVolumeSpecDict(typing.TypedDict, total=False):
+    accessModes: typing.Optional[list[str]]
+    awsElasticBlockStore: typing.Optional[
+        kubernetes.client.V1AWSElasticBlockStoreVolumeSourceDict
+    ]
+    azureDisk: typing.Optional[kubernetes.client.V1AzureDiskVolumeSourceDict]
+    azureFile: typing.Optional[kubernetes.client.V1AzureFilePersistentVolumeSourceDict]
+    capacity: typing.Optional[dict[str, str]]
+    cephfs: typing.Optional[kubernetes.client.V1CephFSPersistentVolumeSourceDict]
+    cinder: typing.Optional[kubernetes.client.V1CinderPersistentVolumeSourceDict]
+    claimRef: typing.Optional[kubernetes.client.V1ObjectReferenceDict]
+    csi: typing.Optional[kubernetes.client.V1CSIPersistentVolumeSourceDict]
+    fc: typing.Optional[kubernetes.client.V1FCVolumeSourceDict]
+    flexVolume: typing.Optional[kubernetes.client.V1FlexPersistentVolumeSourceDict]
+    flocker: typing.Optional[kubernetes.client.V1FlockerVolumeSourceDict]
+    gcePersistentDisk: typing.Optional[
+        kubernetes.client.V1GCEPersistentDiskVolumeSourceDict
+    ]
+    glusterfs: typing.Optional[kubernetes.client.V1GlusterfsPersistentVolumeSourceDict]
+    hostPath: typing.Optional[kubernetes.client.V1HostPathVolumeSourceDict]
+    iscsi: typing.Optional[kubernetes.client.V1ISCSIPersistentVolumeSourceDict]
+    local: typing.Optional[kubernetes.client.V1LocalVolumeSourceDict]
+    mountOptions: typing.Optional[list[str]]
+    nfs: typing.Optional[kubernetes.client.V1NFSVolumeSourceDict]
+    nodeAffinity: typing.Optional[kubernetes.client.V1VolumeNodeAffinityDict]
+    persistentVolumeReclaimPolicy: typing.Optional[str]
+    photonPersistentDisk: typing.Optional[
+        kubernetes.client.V1PhotonPersistentDiskVolumeSourceDict
+    ]
+    portworxVolume: typing.Optional[kubernetes.client.V1PortworxVolumeSourceDict]
+    quobyte: typing.Optional[kubernetes.client.V1QuobyteVolumeSourceDict]
+    rbd: typing.Optional[kubernetes.client.V1RBDPersistentVolumeSourceDict]
+    scaleIO: typing.Optional[kubernetes.client.V1ScaleIOPersistentVolumeSourceDict]
+    storageClassName: typing.Optional[str]
+    storageos: typing.Optional[kubernetes.client.V1StorageOSPersistentVolumeSourceDict]
+    volumeMode: typing.Optional[str]
+    vsphereVolume: typing.Optional[
+        kubernetes.client.V1VsphereVirtualDiskVolumeSourceDict
+    ]

@@ -28,3 +28,17 @@ class V1PodSecurityContext:
             kubernetes.client.V1WindowsSecurityContextOptions
         ] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PodSecurityContextDict: ...
+
+class V1PodSecurityContextDict(typing.TypedDict, total=False):
+    fsGroup: typing.Optional[int]
+    fsGroupChangePolicy: typing.Optional[str]
+    runAsGroup: typing.Optional[int]
+    runAsNonRoot: typing.Optional[bool]
+    runAsUser: typing.Optional[int]
+    seLinuxOptions: typing.Optional[kubernetes.client.V1SELinuxOptionsDict]
+    supplementalGroups: typing.Optional[list[int]]
+    sysctls: typing.Optional[list[kubernetes.client.V1SysctlDict]]
+    windowsOptions: typing.Optional[
+        kubernetes.client.V1WindowsSecurityContextOptionsDict
+    ]

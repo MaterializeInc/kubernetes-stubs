@@ -16,3 +16,10 @@ class V1alpha1PriorityLevelConfigurationList:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V1alpha1PriorityLevelConfigurationListDict: ...
+
+class V1alpha1PriorityLevelConfigurationListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    items: list[kubernetes.client.V1alpha1PriorityLevelConfigurationDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ListMetaDict]

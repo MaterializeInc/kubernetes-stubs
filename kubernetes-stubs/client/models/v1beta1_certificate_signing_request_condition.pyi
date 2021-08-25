@@ -16,3 +16,10 @@ class V1beta1CertificateSigningRequestCondition:
         reason: typing.Optional[str] = ...,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1beta1CertificateSigningRequestConditionDict: ...
+
+class V1beta1CertificateSigningRequestConditionDict(typing.TypedDict, total=False):
+    lastUpdateTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    type: str

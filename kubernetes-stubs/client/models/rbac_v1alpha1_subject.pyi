@@ -16,3 +16,10 @@ class RbacV1alpha1Subject:
         name: str,
         namespace: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> RbacV1alpha1SubjectDict: ...
+
+class RbacV1alpha1SubjectDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    kind: str
+    name: str
+    namespace: typing.Optional[str]

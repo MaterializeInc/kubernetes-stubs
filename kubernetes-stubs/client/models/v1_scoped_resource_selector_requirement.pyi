@@ -14,3 +14,9 @@ class V1ScopedResourceSelectorRequirement:
         scope_name: str,
         values: typing.Optional[list[str]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ScopedResourceSelectorRequirementDict: ...
+
+class V1ScopedResourceSelectorRequirementDict(typing.TypedDict, total=False):
+    operator: str
+    scopeName: str
+    values: typing.Optional[list[str]]

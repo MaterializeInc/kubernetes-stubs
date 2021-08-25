@@ -18,3 +18,11 @@ class V1ReplicaSetCondition:
         status: str,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1ReplicaSetConditionDict: ...
+
+class V1ReplicaSetConditionDict(typing.TypedDict, total=False):
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: str
+    type: str

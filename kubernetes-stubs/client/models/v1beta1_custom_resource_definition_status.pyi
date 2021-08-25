@@ -22,3 +22,13 @@ class V1beta1CustomResourceDefinitionStatus:
         ] = ...,
         stored_versions: typing.Optional[list[str]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1CustomResourceDefinitionStatusDict: ...
+
+class V1beta1CustomResourceDefinitionStatusDict(typing.TypedDict, total=False):
+    acceptedNames: typing.Optional[
+        kubernetes.client.V1beta1CustomResourceDefinitionNamesDict
+    ]
+    conditions: typing.Optional[
+        list[kubernetes.client.V1beta1CustomResourceDefinitionConditionDict]
+    ]
+    storedVersions: typing.Optional[list[str]]

@@ -14,8 +14,9 @@
    bin/fmt
    ```
 
-4. Update the version in pyproject.toml and then add and push a corresponding
-   tag, if a new release is desired.
+4. Update the version in pyproject.toml.
+
+5. Add and push a corresponding tag:
 
    ```
    git commit -a && git tag -a $VERSION -m $VERSION && git push --tags

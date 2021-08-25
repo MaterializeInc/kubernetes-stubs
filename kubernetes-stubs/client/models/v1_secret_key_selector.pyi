@@ -14,3 +14,9 @@ class V1SecretKeySelector:
         name: typing.Optional[str] = ...,
         optional: typing.Optional[bool] = ...
     ) -> None: ...
+    def to_dict(self) -> V1SecretKeySelectorDict: ...
+
+class V1SecretKeySelectorDict(typing.TypedDict, total=False):
+    key: str
+    name: typing.Optional[str]
+    optional: typing.Optional[bool]

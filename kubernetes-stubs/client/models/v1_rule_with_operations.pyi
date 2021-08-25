@@ -18,3 +18,11 @@ class V1RuleWithOperations:
         resources: typing.Optional[list[str]] = ...,
         scope: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1RuleWithOperationsDict: ...
+
+class V1RuleWithOperationsDict(typing.TypedDict, total=False):
+    apiGroups: typing.Optional[list[str]]
+    apiVersions: typing.Optional[list[str]]
+    operations: typing.Optional[list[str]]
+    resources: typing.Optional[list[str]]
+    scope: typing.Optional[str]

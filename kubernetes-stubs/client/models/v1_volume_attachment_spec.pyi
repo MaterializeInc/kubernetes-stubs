@@ -14,3 +14,9 @@ class V1VolumeAttachmentSpec:
         node_name: str,
         source: kubernetes.client.V1VolumeAttachmentSource
     ) -> None: ...
+    def to_dict(self) -> V1VolumeAttachmentSpecDict: ...
+
+class V1VolumeAttachmentSpecDict(typing.TypedDict, total=False):
+    attacher: str
+    nodeName: str
+    source: kubernetes.client.V1VolumeAttachmentSourceDict

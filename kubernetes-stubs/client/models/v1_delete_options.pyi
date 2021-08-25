@@ -22,3 +22,13 @@ class V1DeleteOptions:
         preconditions: typing.Optional[kubernetes.client.V1Preconditions] = ...,
         propagation_policy: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1DeleteOptionsDict: ...
+
+class V1DeleteOptionsDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    dryRun: typing.Optional[list[str]]
+    gracePeriodSeconds: typing.Optional[int]
+    kind: typing.Optional[str]
+    orphanDependents: typing.Optional[bool]
+    preconditions: typing.Optional[kubernetes.client.V1PreconditionsDict]
+    propagationPolicy: typing.Optional[str]

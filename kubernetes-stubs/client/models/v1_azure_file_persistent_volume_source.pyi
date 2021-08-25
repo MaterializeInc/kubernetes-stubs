@@ -16,3 +16,10 @@ class V1AzureFilePersistentVolumeSource:
         secret_namespace: typing.Optional[str] = ...,
         share_name: str
     ) -> None: ...
+    def to_dict(self) -> V1AzureFilePersistentVolumeSourceDict: ...
+
+class V1AzureFilePersistentVolumeSourceDict(typing.TypedDict, total=False):
+    readOnly: typing.Optional[bool]
+    secretName: str
+    secretNamespace: typing.Optional[str]
+    shareName: str

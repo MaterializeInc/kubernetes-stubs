@@ -18,3 +18,11 @@ class V1beta1LeaseSpec:
         lease_transitions: typing.Optional[int] = ...,
         renew_time: typing.Optional[datetime.datetime] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1LeaseSpecDict: ...
+
+class V1beta1LeaseSpecDict(typing.TypedDict, total=False):
+    acquireTime: typing.Optional[datetime.datetime]
+    holderIdentity: typing.Optional[str]
+    leaseDurationSeconds: typing.Optional[int]
+    leaseTransitions: typing.Optional[int]
+    renewTime: typing.Optional[datetime.datetime]

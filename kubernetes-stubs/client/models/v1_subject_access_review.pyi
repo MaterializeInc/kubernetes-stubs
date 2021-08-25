@@ -18,3 +18,11 @@ class V1SubjectAccessReview:
         spec: kubernetes.client.V1SubjectAccessReviewSpec,
         status: typing.Optional[kubernetes.client.V1SubjectAccessReviewStatus] = ...
     ) -> None: ...
+    def to_dict(self) -> V1SubjectAccessReviewDict: ...
+
+class V1SubjectAccessReviewDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    spec: kubernetes.client.V1SubjectAccessReviewSpecDict
+    status: typing.Optional[kubernetes.client.V1SubjectAccessReviewStatusDict]

@@ -28,3 +28,16 @@ class V1ScaleIOVolumeSource:
         system: str,
         volume_name: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ScaleIOVolumeSourceDict: ...
+
+class V1ScaleIOVolumeSourceDict(typing.TypedDict, total=False):
+    fsType: typing.Optional[str]
+    gateway: str
+    protectionDomain: typing.Optional[str]
+    readOnly: typing.Optional[bool]
+    secretRef: kubernetes.client.V1LocalObjectReferenceDict
+    sslEnabled: typing.Optional[bool]
+    storageMode: typing.Optional[str]
+    storagePool: typing.Optional[str]
+    system: str
+    volumeName: typing.Optional[str]

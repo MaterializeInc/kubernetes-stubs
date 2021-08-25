@@ -20,3 +20,12 @@ class V1CustomResourceDefinitionSpec:
         scope: str,
         versions: list[kubernetes.client.V1CustomResourceDefinitionVersion]
     ) -> None: ...
+    def to_dict(self) -> V1CustomResourceDefinitionSpecDict: ...
+
+class V1CustomResourceDefinitionSpecDict(typing.TypedDict, total=False):
+    conversion: typing.Optional[kubernetes.client.V1CustomResourceConversionDict]
+    group: str
+    names: kubernetes.client.V1CustomResourceDefinitionNamesDict
+    preserveUnknownFields: typing.Optional[bool]
+    scope: str
+    versions: list[kubernetes.client.V1CustomResourceDefinitionVersionDict]

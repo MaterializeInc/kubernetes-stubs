@@ -18,3 +18,11 @@ class V1ContainerPort:
         name: typing.Optional[str] = ...,
         protocol: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ContainerPortDict: ...
+
+class V1ContainerPortDict(typing.TypedDict, total=False):
+    containerPort: int
+    hostIP: typing.Optional[str]
+    hostPort: typing.Optional[int]
+    name: typing.Optional[str]
+    protocol: typing.Optional[str]

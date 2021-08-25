@@ -22,3 +22,13 @@ class V1ContainerStateTerminated:
         signal: typing.Optional[int] = ...,
         started_at: typing.Optional[datetime.datetime] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ContainerStateTerminatedDict: ...
+
+class V1ContainerStateTerminatedDict(typing.TypedDict, total=False):
+    containerID: typing.Optional[str]
+    exitCode: int
+    finishedAt: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    signal: typing.Optional[int]
+    startedAt: typing.Optional[datetime.datetime]

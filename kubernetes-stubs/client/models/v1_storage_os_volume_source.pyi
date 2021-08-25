@@ -18,3 +18,11 @@ class V1StorageOSVolumeSource:
         volume_name: typing.Optional[str] = ...,
         volume_namespace: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1StorageOSVolumeSourceDict: ...
+
+class V1StorageOSVolumeSourceDict(typing.TypedDict, total=False):
+    fsType: typing.Optional[str]
+    readOnly: typing.Optional[bool]
+    secretRef: typing.Optional[kubernetes.client.V1LocalObjectReferenceDict]
+    volumeName: typing.Optional[str]
+    volumeNamespace: typing.Optional[str]

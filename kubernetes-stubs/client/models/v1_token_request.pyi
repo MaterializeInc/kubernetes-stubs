@@ -18,3 +18,11 @@ class V1TokenRequest:
         spec: kubernetes.client.V1TokenRequestSpec,
         status: typing.Optional[kubernetes.client.V1TokenRequestStatus] = ...
     ) -> None: ...
+    def to_dict(self) -> V1TokenRequestDict: ...
+
+class V1TokenRequestDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    spec: kubernetes.client.V1TokenRequestSpecDict
+    status: typing.Optional[kubernetes.client.V1TokenRequestStatusDict]

@@ -42,3 +42,23 @@ class V1PodStatus:
         reason: typing.Optional[str] = ...,
         start_time: typing.Optional[datetime.datetime] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PodStatusDict: ...
+
+class V1PodStatusDict(typing.TypedDict, total=False):
+    conditions: typing.Optional[list[kubernetes.client.V1PodConditionDict]]
+    containerStatuses: typing.Optional[list[kubernetes.client.V1ContainerStatusDict]]
+    ephemeralContainerStatuses: typing.Optional[
+        list[kubernetes.client.V1ContainerStatusDict]
+    ]
+    hostIP: typing.Optional[str]
+    initContainerStatuses: typing.Optional[
+        list[kubernetes.client.V1ContainerStatusDict]
+    ]
+    message: typing.Optional[str]
+    nominatedNodeName: typing.Optional[str]
+    phase: typing.Optional[str]
+    podIP: typing.Optional[str]
+    podIPs: typing.Optional[list[kubernetes.client.V1PodIPDict]]
+    qosClass: typing.Optional[str]
+    reason: typing.Optional[str]
+    startTime: typing.Optional[datetime.datetime]

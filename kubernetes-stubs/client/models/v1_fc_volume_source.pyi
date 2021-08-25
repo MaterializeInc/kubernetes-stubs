@@ -18,3 +18,11 @@ class V1FCVolumeSource:
         target_ww_ns: typing.Optional[list[str]] = ...,
         wwids: typing.Optional[list[str]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1FCVolumeSourceDict: ...
+
+class V1FCVolumeSourceDict(typing.TypedDict, total=False):
+    fsType: typing.Optional[str]
+    lun: typing.Optional[int]
+    readOnly: typing.Optional[bool]
+    targetWWNs: typing.Optional[list[str]]
+    wwids: typing.Optional[list[str]]

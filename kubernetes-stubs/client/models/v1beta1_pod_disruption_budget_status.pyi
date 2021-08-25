@@ -20,3 +20,12 @@ class V1beta1PodDisruptionBudgetStatus:
         expected_pods: int,
         observed_generation: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1PodDisruptionBudgetStatusDict: ...
+
+class V1beta1PodDisruptionBudgetStatusDict(typing.TypedDict, total=False):
+    currentHealthy: int
+    desiredHealthy: int
+    disruptedPods: typing.Optional[dict[str, datetime.datetime]]
+    disruptionsAllowed: int
+    expectedPods: int
+    observedGeneration: typing.Optional[int]

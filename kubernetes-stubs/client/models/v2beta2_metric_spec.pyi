@@ -18,3 +18,11 @@ class V2beta2MetricSpec:
         resource: typing.Optional[kubernetes.client.V2beta2ResourceMetricSource] = ...,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V2beta2MetricSpecDict: ...
+
+class V2beta2MetricSpecDict(typing.TypedDict, total=False):
+    external: typing.Optional[kubernetes.client.V2beta2ExternalMetricSourceDict]
+    object: typing.Optional[kubernetes.client.V2beta2ObjectMetricSourceDict]
+    pods: typing.Optional[kubernetes.client.V2beta2PodsMetricSourceDict]
+    resource: typing.Optional[kubernetes.client.V2beta2ResourceMetricSourceDict]
+    type: str

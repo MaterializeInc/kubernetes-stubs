@@ -20,3 +20,12 @@ class V1AzureDiskVolumeSource:
         kind: typing.Optional[str] = ...,
         read_only: typing.Optional[bool] = ...
     ) -> None: ...
+    def to_dict(self) -> V1AzureDiskVolumeSourceDict: ...
+
+class V1AzureDiskVolumeSourceDict(typing.TypedDict, total=False):
+    cachingMode: typing.Optional[str]
+    diskName: str
+    diskURI: str
+    fsType: typing.Optional[str]
+    kind: typing.Optional[str]
+    readOnly: typing.Optional[bool]

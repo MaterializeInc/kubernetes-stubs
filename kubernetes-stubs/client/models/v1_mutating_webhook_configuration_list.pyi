@@ -16,3 +16,10 @@ class V1MutatingWebhookConfigurationList:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V1MutatingWebhookConfigurationListDict: ...
+
+class V1MutatingWebhookConfigurationListDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    items: list[kubernetes.client.V1MutatingWebhookConfigurationDict]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ListMetaDict]

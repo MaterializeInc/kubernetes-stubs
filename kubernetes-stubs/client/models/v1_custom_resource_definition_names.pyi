@@ -20,3 +20,12 @@ class V1CustomResourceDefinitionNames:
         short_names: typing.Optional[list[str]] = ...,
         singular: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1CustomResourceDefinitionNamesDict: ...
+
+class V1CustomResourceDefinitionNamesDict(typing.TypedDict, total=False):
+    categories: typing.Optional[list[str]]
+    kind: str
+    listKind: typing.Optional[str]
+    plural: str
+    shortNames: typing.Optional[list[str]]
+    singular: typing.Optional[str]

@@ -16,3 +16,10 @@ class V1StatefulSetUpdateStrategy:
         ] = ...,
         type: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1StatefulSetUpdateStrategyDict: ...
+
+class V1StatefulSetUpdateStrategyDict(typing.TypedDict, total=False):
+    rollingUpdate: typing.Optional[
+        kubernetes.client.V1RollingUpdateStatefulSetStrategyDict
+    ]
+    type: typing.Optional[str]

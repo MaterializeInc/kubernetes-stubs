@@ -18,3 +18,11 @@ class V1ClusterRole:
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
         rules: typing.Optional[list[kubernetes.client.V1PolicyRule]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ClusterRoleDict: ...
+
+class V1ClusterRoleDict(typing.TypedDict, total=False):
+    aggregationRule: typing.Optional[kubernetes.client.V1AggregationRuleDict]
+    apiVersion: typing.Optional[str]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    rules: typing.Optional[list[kubernetes.client.V1PolicyRuleDict]]

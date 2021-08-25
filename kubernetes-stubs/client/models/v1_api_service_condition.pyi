@@ -18,3 +18,11 @@ class V1APIServiceCondition:
         status: str,
         type: str
     ) -> None: ...
+    def to_dict(self) -> V1APIServiceConditionDict: ...
+
+class V1APIServiceConditionDict(typing.TypedDict, total=False):
+    lastTransitionTime: typing.Optional[datetime.datetime]
+    message: typing.Optional[str]
+    reason: typing.Optional[str]
+    status: str
+    type: str

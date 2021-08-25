@@ -16,3 +16,10 @@ class V2beta1ExternalMetricStatus:
         metric_name: str,
         metric_selector: typing.Optional[kubernetes.client.V1LabelSelector] = ...
     ) -> None: ...
+    def to_dict(self) -> V2beta1ExternalMetricStatusDict: ...
+
+class V2beta1ExternalMetricStatusDict(typing.TypedDict, total=False):
+    currentAverageValue: typing.Optional[str]
+    currentValue: str
+    metricName: str
+    metricSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]

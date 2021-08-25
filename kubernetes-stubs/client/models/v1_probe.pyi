@@ -24,3 +24,14 @@ class V1Probe:
         tcp_socket: typing.Optional[kubernetes.client.V1TCPSocketAction] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ProbeDict: ...
+
+class V1ProbeDict(typing.TypedDict, total=False):
+    exec: typing.Optional[kubernetes.client.V1ExecActionDict]
+    failureThreshold: typing.Optional[int]
+    httpGet: typing.Optional[kubernetes.client.V1HTTPGetActionDict]
+    initialDelaySeconds: typing.Optional[int]
+    periodSeconds: typing.Optional[int]
+    successThreshold: typing.Optional[int]
+    tcpSocket: typing.Optional[kubernetes.client.V1TCPSocketActionDict]
+    timeoutSeconds: typing.Optional[int]

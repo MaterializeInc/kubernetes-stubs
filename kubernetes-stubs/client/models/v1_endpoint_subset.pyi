@@ -16,3 +16,9 @@ class V1EndpointSubset:
         ] = ...,
         ports: typing.Optional[list[kubernetes.client.V1EndpointPort]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1EndpointSubsetDict: ...
+
+class V1EndpointSubsetDict(typing.TypedDict, total=False):
+    addresses: typing.Optional[list[kubernetes.client.V1EndpointAddressDict]]
+    notReadyAddresses: typing.Optional[list[kubernetes.client.V1EndpointAddressDict]]
+    ports: typing.Optional[list[kubernetes.client.V1EndpointPortDict]]

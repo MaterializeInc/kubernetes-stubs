@@ -70,3 +70,38 @@ class V1beta1PodSecurityPolicySpec:
         supplemental_groups: kubernetes.client.V1beta1SupplementalGroupsStrategyOptions,
         volumes: typing.Optional[list[str]] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1PodSecurityPolicySpecDict: ...
+
+class V1beta1PodSecurityPolicySpecDict(typing.TypedDict, total=False):
+    allowPrivilegeEscalation: typing.Optional[bool]
+    allowedCSIDrivers: typing.Optional[
+        list[kubernetes.client.V1beta1AllowedCSIDriverDict]
+    ]
+    allowedCapabilities: typing.Optional[list[str]]
+    allowedFlexVolumes: typing.Optional[
+        list[kubernetes.client.V1beta1AllowedFlexVolumeDict]
+    ]
+    allowedHostPaths: typing.Optional[
+        list[kubernetes.client.V1beta1AllowedHostPathDict]
+    ]
+    allowedProcMountTypes: typing.Optional[list[str]]
+    allowedUnsafeSysctls: typing.Optional[list[str]]
+    defaultAddCapabilities: typing.Optional[list[str]]
+    defaultAllowPrivilegeEscalation: typing.Optional[bool]
+    forbiddenSysctls: typing.Optional[list[str]]
+    fsGroup: kubernetes.client.V1beta1FSGroupStrategyOptionsDict
+    hostIPC: typing.Optional[bool]
+    hostNetwork: typing.Optional[bool]
+    hostPID: typing.Optional[bool]
+    hostPorts: typing.Optional[list[kubernetes.client.V1beta1HostPortRangeDict]]
+    privileged: typing.Optional[bool]
+    readOnlyRootFilesystem: typing.Optional[bool]
+    requiredDropCapabilities: typing.Optional[list[str]]
+    runAsGroup: typing.Optional[kubernetes.client.V1beta1RunAsGroupStrategyOptionsDict]
+    runAsUser: kubernetes.client.V1beta1RunAsUserStrategyOptionsDict
+    runtimeClass: typing.Optional[
+        kubernetes.client.V1beta1RuntimeClassStrategyOptionsDict
+    ]
+    seLinux: kubernetes.client.V1beta1SELinuxStrategyOptionsDict
+    supplementalGroups: kubernetes.client.V1beta1SupplementalGroupsStrategyOptionsDict
+    volumes: typing.Optional[list[str]]

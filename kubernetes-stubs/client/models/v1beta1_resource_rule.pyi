@@ -16,3 +16,10 @@ class V1beta1ResourceRule:
         resources: typing.Optional[list[str]] = ...,
         verbs: list[str]
     ) -> None: ...
+    def to_dict(self) -> V1beta1ResourceRuleDict: ...
+
+class V1beta1ResourceRuleDict(typing.TypedDict, total=False):
+    apiGroups: typing.Optional[list[str]]
+    resourceNames: typing.Optional[list[str]]
+    resources: typing.Optional[list[str]]
+    verbs: list[str]

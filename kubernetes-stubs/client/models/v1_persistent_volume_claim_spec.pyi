@@ -24,3 +24,13 @@ class V1PersistentVolumeClaimSpec:
         volume_mode: typing.Optional[str] = ...,
         volume_name: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1PersistentVolumeClaimSpecDict: ...
+
+class V1PersistentVolumeClaimSpecDict(typing.TypedDict, total=False):
+    accessModes: typing.Optional[list[str]]
+    dataSource: typing.Optional[kubernetes.client.V1TypedLocalObjectReferenceDict]
+    resources: typing.Optional[kubernetes.client.V1ResourceRequirementsDict]
+    selector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
+    storageClassName: typing.Optional[str]
+    volumeMode: typing.Optional[str]
+    volumeName: typing.Optional[str]

@@ -14,3 +14,9 @@ class V1GitRepoVolumeSource:
         repository: str,
         revision: typing.Optional[str] = ...
     ) -> None: ...
+    def to_dict(self) -> V1GitRepoVolumeSourceDict: ...
+
+class V1GitRepoVolumeSourceDict(typing.TypedDict, total=False):
+    directory: typing.Optional[str]
+    repository: str
+    revision: typing.Optional[str]

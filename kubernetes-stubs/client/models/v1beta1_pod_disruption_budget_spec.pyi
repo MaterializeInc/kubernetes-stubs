@@ -14,3 +14,9 @@ class V1beta1PodDisruptionBudgetSpec:
         min_available: typing.Optional[typing.Any] = ...,
         selector: typing.Optional[kubernetes.client.V1LabelSelector] = ...
     ) -> None: ...
+    def to_dict(self) -> V1beta1PodDisruptionBudgetSpecDict: ...
+
+class V1beta1PodDisruptionBudgetSpecDict(typing.TypedDict, total=False):
+    maxUnavailable: typing.Optional[typing.Any]
+    minAvailable: typing.Optional[typing.Any]
+    selector: typing.Optional[kubernetes.client.V1LabelSelectorDict]

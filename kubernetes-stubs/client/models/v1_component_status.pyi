@@ -16,3 +16,10 @@ class V1ComponentStatus:
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...
     ) -> None: ...
+    def to_dict(self) -> V1ComponentStatusDict: ...
+
+class V1ComponentStatusDict(typing.TypedDict, total=False):
+    apiVersion: typing.Optional[str]
+    conditions: typing.Optional[list[kubernetes.client.V1ComponentConditionDict]]
+    kind: typing.Optional[str]
+    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
