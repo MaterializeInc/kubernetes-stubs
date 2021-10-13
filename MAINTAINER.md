@@ -19,5 +19,5 @@
 5. Add and push a corresponding tag:
 
    ```
-   git commit -a && git tag -a $VERSION -m $VERSION && git push --tags
+   git commit -a && git tag -a $VERSION -m $VERSION && git push --follow-tags
    ```
