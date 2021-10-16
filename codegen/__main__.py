@@ -295,7 +295,7 @@ for name, api in apis.items():
 buf = CodegenBuf(API_STUBS_DIR / "__init__.pyi")
 for name in apis:
     buf.writeln(
-        f"from kubernetes.client.api.{name} import {make_class_name(name)}Api as {make_class_name(name)}Api"
+        f"from kubernetes.client.api.{name}_api import {make_class_name(name)}Api as {make_class_name(name)}Api"
     )
 
 # `kubernetes.client` root.
