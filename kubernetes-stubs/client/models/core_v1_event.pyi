@@ -3,7 +3,7 @@ import typing
 
 import kubernetes.client
 
-class V1Event:
+class CoreV1Event:
     action: typing.Optional[str]
     api_version: typing.Optional[str]
     count: typing.Optional[int]
@@ -18,7 +18,7 @@ class V1Event:
     related: typing.Optional[kubernetes.client.V1ObjectReference]
     reporting_component: typing.Optional[str]
     reporting_instance: typing.Optional[str]
-    series: typing.Optional[kubernetes.client.V1EventSeries]
+    series: typing.Optional[kubernetes.client.CoreV1EventSeries]
     source: typing.Optional[kubernetes.client.V1EventSource]
     type: typing.Optional[str]
     def __init__(
@@ -38,13 +38,13 @@ class V1Event:
         related: typing.Optional[kubernetes.client.V1ObjectReference] = ...,
         reporting_component: typing.Optional[str] = ...,
         reporting_instance: typing.Optional[str] = ...,
-        series: typing.Optional[kubernetes.client.V1EventSeries] = ...,
+        series: typing.Optional[kubernetes.client.CoreV1EventSeries] = ...,
         source: typing.Optional[kubernetes.client.V1EventSource] = ...,
         type: typing.Optional[str] = ...
     ) -> None: ...
-    def to_dict(self) -> V1EventDict: ...
+    def to_dict(self) -> CoreV1EventDict: ...
 
-class V1EventDict(typing.TypedDict, total=False):
+class CoreV1EventDict(typing.TypedDict, total=False):
     action: typing.Optional[str]
     apiVersion: typing.Optional[str]
     count: typing.Optional[int]
@@ -59,6 +59,6 @@ class V1EventDict(typing.TypedDict, total=False):
     related: typing.Optional[kubernetes.client.V1ObjectReferenceDict]
     reportingComponent: typing.Optional[str]
     reportingInstance: typing.Optional[str]
-    series: typing.Optional[kubernetes.client.V1EventSeriesDict]
+    series: typing.Optional[kubernetes.client.CoreV1EventSeriesDict]
     source: typing.Optional[kubernetes.client.V1EventSourceDict]
     type: typing.Optional[str]

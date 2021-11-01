@@ -17,6 +17,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ComponentStatusList: ...
@@ -33,6 +34,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ConfigMapList: ...
@@ -46,6 +48,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1EndpointsList: ...
@@ -59,9 +62,10 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V1EventList: ...
+    ) -> kubernetes.client.CoreV1EventList: ...
     def list_limit_range_for_all_namespaces(
         self,
         *,
@@ -72,6 +76,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1LimitRangeList: ...
@@ -85,6 +90,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1NamespaceList: ...
@@ -116,6 +122,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ConfigMapList: ...
@@ -143,6 +150,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_config_map(
@@ -198,6 +206,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1EndpointsList: ...
@@ -225,6 +234,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_endpoints(
@@ -280,18 +290,19 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V1EventList: ...
+    ) -> kubernetes.client.CoreV1EventList: ...
     def create_namespaced_event(
         self,
         namespace: str,
-        body: kubernetes.client.V1Event,
+        body: kubernetes.client.CoreV1Event,
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...
-    ) -> kubernetes.client.V1Event: ...
+    ) -> kubernetes.client.CoreV1Event: ...
     def delete_collection_namespaced_event(
         self,
         namespace: str,
@@ -307,6 +318,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_event(
@@ -317,17 +329,17 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         exact: typing.Optional[bool] = ...,
         export: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V1Event: ...
+    ) -> kubernetes.client.CoreV1Event: ...
     def replace_namespaced_event(
         self,
         name: str,
         namespace: str,
-        body: kubernetes.client.V1Event,
+        body: kubernetes.client.CoreV1Event,
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...
-    ) -> kubernetes.client.V1Event: ...
+    ) -> kubernetes.client.CoreV1Event: ...
     def delete_namespaced_event(
         self,
         name: str,
@@ -350,7 +362,7 @@ class CoreV1Api:
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V1Event: ...
+    ) -> kubernetes.client.CoreV1Event: ...
     def list_namespaced_limit_range(
         self,
         namespace: str,
@@ -362,6 +374,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1LimitRangeList: ...
@@ -389,6 +402,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_limit_range(
@@ -444,6 +458,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaimList: ...
@@ -471,6 +486,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_persistent_volume_claim(
@@ -550,6 +566,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodList: ...
@@ -577,6 +594,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_pod(
@@ -785,6 +803,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodTemplateList: ...
@@ -812,6 +831,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_pod_template(
@@ -867,6 +887,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ReplicationControllerList: ...
@@ -894,6 +915,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_replication_controller(
@@ -997,6 +1019,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ResourceQuotaList: ...
@@ -1024,6 +1047,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_resource_quota(
@@ -1103,6 +1127,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1SecretList: ...
@@ -1130,6 +1155,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_secret(
@@ -1185,6 +1211,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ServiceAccountList: ...
@@ -1212,6 +1239,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_service_account(
@@ -1277,6 +1305,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ServiceList: ...
@@ -1476,6 +1505,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1NodeList: ...
@@ -1501,6 +1531,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_node(
@@ -1615,6 +1646,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaimList: ...
@@ -1628,6 +1660,7 @@ class CoreV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolumeList: ...
@@ -1653,6 +1686,7 @@ class CoreV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_persistent_volume(
@@ -1725,6 +1759,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodList: ...
@@ -1738,6 +1773,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodTemplateList: ...
@@ -1751,6 +1787,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ReplicationControllerList: ...
@@ -1764,6 +1801,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ResourceQuotaList: ...
@@ -1777,6 +1815,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1SecretList: ...
@@ -1790,6 +1829,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ServiceAccountList: ...
@@ -1803,6 +1843,7 @@ class CoreV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ServiceList: ...

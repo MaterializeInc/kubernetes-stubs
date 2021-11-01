@@ -17,6 +17,7 @@ class AppsV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ControllerRevisionList: ...
@@ -30,6 +31,7 @@ class AppsV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1DaemonSetList: ...
@@ -43,6 +45,7 @@ class AppsV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1DeploymentList: ...
@@ -57,6 +60,7 @@ class AppsV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ControllerRevisionList: ...
@@ -84,6 +88,7 @@ class AppsV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_controller_revision(
@@ -139,6 +144,7 @@ class AppsV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1DaemonSetList: ...
@@ -166,6 +172,7 @@ class AppsV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_daemon_set(
@@ -245,6 +252,7 @@ class AppsV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1DeploymentList: ...
@@ -272,6 +280,7 @@ class AppsV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_deployment(
@@ -375,6 +384,7 @@ class AppsV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ReplicaSetList: ...
@@ -402,6 +412,7 @@ class AppsV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_replica_set(
@@ -505,6 +516,7 @@ class AppsV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1StatefulSetList: ...
@@ -532,6 +544,7 @@ class AppsV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_stateful_set(
@@ -634,6 +647,7 @@ class AppsV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ReplicaSetList: ...
@@ -647,6 +661,7 @@ class AppsV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1StatefulSetList: ...

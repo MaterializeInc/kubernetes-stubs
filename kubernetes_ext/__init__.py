@@ -17,6 +17,7 @@ class CoreV1ComponentStatusManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ComponentStatusList:
@@ -28,6 +29,7 @@ class CoreV1ComponentStatusManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -52,6 +54,7 @@ class CoreV1ConfigMapForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ConfigMapList:
@@ -63,6 +66,7 @@ class CoreV1ConfigMapForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -82,6 +86,7 @@ class CoreV1EndpointsForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1EndpointsList:
@@ -93,6 +98,7 @@ class CoreV1EndpointsForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -112,9 +118,10 @@ class CoreV1EventForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1EventList:
+    ) -> kubernetes.client.CoreV1EventList:
         return self.client.list_event_for_all_namespaces(
             allow_watch_bookmarks=allow_watch_bookmarks,
             _continue=_continue,
@@ -123,6 +130,7 @@ class CoreV1EventForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -142,6 +150,7 @@ class CoreV1LimitRangeForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1LimitRangeList:
@@ -153,6 +162,7 @@ class CoreV1LimitRangeForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -172,6 +182,7 @@ class CoreV1NamespaceManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1NamespaceList:
@@ -183,6 +194,7 @@ class CoreV1NamespaceManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -306,6 +318,7 @@ class CoreV1NamespacedConfigMapManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ConfigMapList:
@@ -318,6 +331,7 @@ class CoreV1NamespacedConfigMapManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -435,6 +449,7 @@ class CoreV1CollectionNamespacedConfigMapManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_config_map(
@@ -450,6 +465,7 @@ class CoreV1CollectionNamespacedConfigMapManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -469,6 +485,7 @@ class CoreV1NamespacedEndpointsManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1EndpointsList:
@@ -481,6 +498,7 @@ class CoreV1NamespacedEndpointsManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -598,6 +616,7 @@ class CoreV1CollectionNamespacedEndpointsManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_endpoints(
@@ -613,6 +632,7 @@ class CoreV1CollectionNamespacedEndpointsManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -632,9 +652,10 @@ class CoreV1NamespacedEventManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1EventList:
+    ) -> kubernetes.client.CoreV1EventList:
         return self.client.list_namespaced_event(
             namespace=namespace,
             pretty=pretty,
@@ -644,6 +665,7 @@ class CoreV1NamespacedEventManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -651,12 +673,12 @@ class CoreV1NamespacedEventManager:
     def create(
         self,
         namespace: str,
-        body: kubernetes.client.V1Event,
+        body: kubernetes.client.CoreV1Event,
         *,
         pretty: typing.Optional[str] = None,
         dry_run: typing.Optional[str] = None,
         field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Event:
+    ) -> kubernetes.client.CoreV1Event:
         return self.client.create_namespaced_event(
             namespace=namespace,
             body=body,
@@ -673,7 +695,7 @@ class CoreV1NamespacedEventManager:
         pretty: typing.Optional[str] = None,
         exact: typing.Optional[bool] = None,
         export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1Event:
+    ) -> kubernetes.client.CoreV1Event:
         return self.client.read_namespaced_event(
             name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
         )
@@ -682,12 +704,12 @@ class CoreV1NamespacedEventManager:
         self,
         name: str,
         namespace: str,
-        body: kubernetes.client.V1Event,
+        body: kubernetes.client.CoreV1Event,
         *,
         pretty: typing.Optional[str] = None,
         dry_run: typing.Optional[str] = None,
         field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Event:
+    ) -> kubernetes.client.CoreV1Event:
         return self.client.replace_namespaced_event(
             name=name,
             namespace=namespace,
@@ -730,7 +752,7 @@ class CoreV1NamespacedEventManager:
         dry_run: typing.Optional[str] = None,
         field_manager: typing.Optional[str] = None,
         force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1Event:
+    ) -> kubernetes.client.CoreV1Event:
         return self.client.patch_namespaced_event(
             name=name,
             namespace=namespace,
@@ -761,6 +783,7 @@ class CoreV1CollectionNamespacedEventManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_event(
@@ -776,6 +799,7 @@ class CoreV1CollectionNamespacedEventManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -795,6 +819,7 @@ class CoreV1NamespacedLimitRangeManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1LimitRangeList:
@@ -807,6 +832,7 @@ class CoreV1NamespacedLimitRangeManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -924,6 +950,7 @@ class CoreV1CollectionNamespacedLimitRangeManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_limit_range(
@@ -939,6 +966,7 @@ class CoreV1CollectionNamespacedLimitRangeManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -958,6 +986,7 @@ class CoreV1NamespacedPersistentVolumeClaimManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PersistentVolumeClaimList:
@@ -970,6 +999,7 @@ class CoreV1NamespacedPersistentVolumeClaimManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -1087,6 +1117,7 @@ class CoreV1CollectionNamespacedPersistentVolumeClaimManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_persistent_volume_claim(
@@ -1102,6 +1133,7 @@ class CoreV1CollectionNamespacedPersistentVolumeClaimManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -1173,6 +1205,7 @@ class CoreV1NamespacedPodManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PodList:
@@ -1185,6 +1218,7 @@ class CoreV1NamespacedPodManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -1302,6 +1336,7 @@ class CoreV1CollectionNamespacedPodManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_pod(
@@ -1317,6 +1352,7 @@ class CoreV1CollectionNamespacedPodManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -1805,6 +1841,7 @@ class CoreV1NamespacedPodTemplateManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PodTemplateList:
@@ -1817,6 +1854,7 @@ class CoreV1NamespacedPodTemplateManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -1934,6 +1972,7 @@ class CoreV1CollectionNamespacedPodTemplateManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_pod_template(
@@ -1949,6 +1988,7 @@ class CoreV1CollectionNamespacedPodTemplateManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -1968,6 +2008,7 @@ class CoreV1NamespacedReplicationControllerManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ReplicationControllerList:
@@ -1980,6 +2021,7 @@ class CoreV1NamespacedReplicationControllerManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -2097,6 +2139,7 @@ class CoreV1CollectionNamespacedReplicationControllerManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_replication_controller(
@@ -2112,6 +2155,7 @@ class CoreV1CollectionNamespacedReplicationControllerManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -2235,6 +2279,7 @@ class CoreV1NamespacedResourceQuotaManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ResourceQuotaList:
@@ -2247,6 +2292,7 @@ class CoreV1NamespacedResourceQuotaManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -2364,6 +2410,7 @@ class CoreV1CollectionNamespacedResourceQuotaManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_resource_quota(
@@ -2379,6 +2426,7 @@ class CoreV1CollectionNamespacedResourceQuotaManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -2450,6 +2498,7 @@ class CoreV1NamespacedSecretManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1SecretList:
@@ -2462,6 +2511,7 @@ class CoreV1NamespacedSecretManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -2579,6 +2629,7 @@ class CoreV1CollectionNamespacedSecretManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_secret(
@@ -2594,6 +2645,7 @@ class CoreV1CollectionNamespacedSecretManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -2613,6 +2665,7 @@ class CoreV1NamespacedServiceAccountManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ServiceAccountList:
@@ -2625,6 +2678,7 @@ class CoreV1NamespacedServiceAccountManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -2742,6 +2796,7 @@ class CoreV1CollectionNamespacedServiceAccountManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_service_account(
@@ -2757,6 +2812,7 @@ class CoreV1CollectionNamespacedServiceAccountManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -2800,6 +2856,7 @@ class CoreV1NamespacedServiceManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ServiceList:
@@ -2812,6 +2869,7 @@ class CoreV1NamespacedServiceManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3247,6 +3305,7 @@ class CoreV1NodeManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1NodeList:
@@ -3258,6 +3317,7 @@ class CoreV1NodeManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3362,6 +3422,7 @@ class CoreV1CollectionNodeManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_node(
@@ -3376,6 +3437,7 @@ class CoreV1CollectionNodeManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -3580,6 +3642,7 @@ class CoreV1PersistentVolumeClaimForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PersistentVolumeClaimList:
@@ -3591,6 +3654,7 @@ class CoreV1PersistentVolumeClaimForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3610,6 +3674,7 @@ class CoreV1PersistentVolumeManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PersistentVolumeList:
@@ -3621,6 +3686,7 @@ class CoreV1PersistentVolumeManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3725,6 +3791,7 @@ class CoreV1CollectionPersistentVolumeManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_persistent_volume(
@@ -3739,6 +3806,7 @@ class CoreV1CollectionPersistentVolumeManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -3803,6 +3871,7 @@ class CoreV1PodForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PodList:
@@ -3814,6 +3883,7 @@ class CoreV1PodForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3833,6 +3903,7 @@ class CoreV1PodTemplateForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PodTemplateList:
@@ -3844,6 +3915,7 @@ class CoreV1PodTemplateForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3863,6 +3935,7 @@ class CoreV1ReplicationControllerForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ReplicationControllerList:
@@ -3874,6 +3947,7 @@ class CoreV1ReplicationControllerForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3893,6 +3967,7 @@ class CoreV1ResourceQuotaForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ResourceQuotaList:
@@ -3904,6 +3979,7 @@ class CoreV1ResourceQuotaForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3923,6 +3999,7 @@ class CoreV1SecretForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1SecretList:
@@ -3934,6 +4011,7 @@ class CoreV1SecretForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3953,6 +4031,7 @@ class CoreV1ServiceAccountForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ServiceAccountList:
@@ -3964,6 +4043,7 @@ class CoreV1ServiceAccountForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -3983,6 +4063,7 @@ class CoreV1ServiceForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ServiceList:
@@ -3994,6 +4075,7 @@ class CoreV1ServiceForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4013,6 +4095,7 @@ class AdmissionregistrationV1MutatingWebhookConfigurationManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1MutatingWebhookConfigurationList:
@@ -4024,6 +4107,7 @@ class AdmissionregistrationV1MutatingWebhookConfigurationManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4128,6 +4212,7 @@ class AdmissionregistrationV1CollectionMutatingWebhookConfigurationManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_mutating_webhook_configuration(
@@ -4142,6 +4227,7 @@ class AdmissionregistrationV1CollectionMutatingWebhookConfigurationManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -4160,6 +4246,7 @@ class AdmissionregistrationV1ValidatingWebhookConfigurationManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ValidatingWebhookConfigurationList:
@@ -4171,6 +4258,7 @@ class AdmissionregistrationV1ValidatingWebhookConfigurationManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4275,6 +4363,7 @@ class AdmissionregistrationV1CollectionValidatingWebhookConfigurationManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_validating_webhook_configuration(
@@ -4289,6 +4378,7 @@ class AdmissionregistrationV1CollectionValidatingWebhookConfigurationManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -4309,6 +4399,7 @@ class AdmissionregistrationV1beta1MutatingWebhookConfigurationManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1MutatingWebhookConfigurationList:
@@ -4320,6 +4411,7 @@ class AdmissionregistrationV1beta1MutatingWebhookConfigurationManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4426,6 +4518,7 @@ class AdmissionregistrationV1beta1CollectionMutatingWebhookConfigurationManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_mutating_webhook_configuration(
@@ -4440,6 +4533,7 @@ class AdmissionregistrationV1beta1CollectionMutatingWebhookConfigurationManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -4460,6 +4554,7 @@ class AdmissionregistrationV1beta1ValidatingWebhookConfigurationManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1ValidatingWebhookConfigurationList:
@@ -4471,6 +4566,7 @@ class AdmissionregistrationV1beta1ValidatingWebhookConfigurationManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4577,6 +4673,7 @@ class AdmissionregistrationV1beta1CollectionValidatingWebhookConfigurationManage
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_validating_webhook_configuration(
@@ -4591,6 +4688,7 @@ class AdmissionregistrationV1beta1CollectionValidatingWebhookConfigurationManage
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -4609,6 +4707,7 @@ class ApiextensionsV1CustomResourceDefinitionManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1CustomResourceDefinitionList:
@@ -4620,6 +4719,7 @@ class ApiextensionsV1CustomResourceDefinitionManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4724,6 +4824,7 @@ class ApiextensionsV1CollectionCustomResourceDefinitionManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_custom_resource_definition(
@@ -4738,6 +4839,7 @@ class ApiextensionsV1CollectionCustomResourceDefinitionManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -4804,6 +4906,7 @@ class ApiextensionsV1beta1CustomResourceDefinitionManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1CustomResourceDefinitionList:
@@ -4815,6 +4918,7 @@ class ApiextensionsV1beta1CustomResourceDefinitionManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -4919,6 +5023,7 @@ class ApiextensionsV1beta1CollectionCustomResourceDefinitionManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_custom_resource_definition(
@@ -4933,6 +5038,7 @@ class ApiextensionsV1beta1CollectionCustomResourceDefinitionManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -4999,6 +5105,7 @@ class ApiregistrationV1ApiServiceManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1APIServiceList:
@@ -5010,6 +5117,7 @@ class ApiregistrationV1ApiServiceManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5114,6 +5222,7 @@ class ApiregistrationV1CollectionApiServiceManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_api_service(
@@ -5128,6 +5237,7 @@ class ApiregistrationV1CollectionApiServiceManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -5192,6 +5302,7 @@ class ApiregistrationV1beta1ApiServiceManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1APIServiceList:
@@ -5203,6 +5314,7 @@ class ApiregistrationV1beta1ApiServiceManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5307,6 +5419,7 @@ class ApiregistrationV1beta1CollectionApiServiceManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_api_service(
@@ -5321,6 +5434,7 @@ class ApiregistrationV1beta1CollectionApiServiceManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -5385,6 +5499,7 @@ class AppsV1ControllerRevisionForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ControllerRevisionList:
@@ -5396,6 +5511,7 @@ class AppsV1ControllerRevisionForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5415,6 +5531,7 @@ class AppsV1DaemonSetForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1DaemonSetList:
@@ -5426,6 +5543,7 @@ class AppsV1DaemonSetForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5445,6 +5563,7 @@ class AppsV1DeploymentForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1DeploymentList:
@@ -5456,6 +5575,7 @@ class AppsV1DeploymentForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5476,6 +5596,7 @@ class AppsV1NamespacedControllerRevisionManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ControllerRevisionList:
@@ -5488,6 +5609,7 @@ class AppsV1NamespacedControllerRevisionManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5605,6 +5727,7 @@ class AppsV1CollectionNamespacedControllerRevisionManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_controller_revision(
@@ -5620,6 +5743,7 @@ class AppsV1CollectionNamespacedControllerRevisionManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -5639,6 +5763,7 @@ class AppsV1NamespacedDaemonSetManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1DaemonSetList:
@@ -5651,6 +5776,7 @@ class AppsV1NamespacedDaemonSetManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5768,6 +5894,7 @@ class AppsV1CollectionNamespacedDaemonSetManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_daemon_set(
@@ -5783,6 +5910,7 @@ class AppsV1CollectionNamespacedDaemonSetManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -5854,6 +5982,7 @@ class AppsV1NamespacedDeploymentManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1DeploymentList:
@@ -5866,6 +5995,7 @@ class AppsV1NamespacedDeploymentManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -5983,6 +6113,7 @@ class AppsV1CollectionNamespacedDeploymentManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_deployment(
@@ -5998,6 +6129,7 @@ class AppsV1CollectionNamespacedDeploymentManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -6121,6 +6253,7 @@ class AppsV1NamespacedReplicaSetManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ReplicaSetList:
@@ -6133,6 +6266,7 @@ class AppsV1NamespacedReplicaSetManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -6250,6 +6384,7 @@ class AppsV1CollectionNamespacedReplicaSetManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_replica_set(
@@ -6265,6 +6400,7 @@ class AppsV1CollectionNamespacedReplicaSetManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -6388,6 +6524,7 @@ class AppsV1NamespacedStatefulSetManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1StatefulSetList:
@@ -6400,6 +6537,7 @@ class AppsV1NamespacedStatefulSetManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -6517,6 +6655,7 @@ class AppsV1CollectionNamespacedStatefulSetManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_stateful_set(
@@ -6532,6 +6671,7 @@ class AppsV1CollectionNamespacedStatefulSetManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -6654,6 +6794,7 @@ class AppsV1ReplicaSetForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ReplicaSetList:
@@ -6665,6 +6806,7 @@ class AppsV1ReplicaSetForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -6684,6 +6826,7 @@ class AppsV1StatefulSetForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1StatefulSetList:
@@ -6695,155 +6838,9 @@ class AppsV1StatefulSetForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
-        )
-
-
-class AuditregistrationV1alpha1AuditSinkManager:
-    def __init__(self, client: kubernetes.client.AuditregistrationV1alpha1Api) -> None:
-        self.client = client
-
-    def list(
-        self,
-        *,
-        pretty: typing.Optional[str] = None,
-        allow_watch_bookmarks: typing.Optional[bool] = None,
-        _continue: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None,
-        watch: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1alpha1AuditSinkList:
-        return self.client.list_audit_sink(
-            pretty=pretty,
-            allow_watch_bookmarks=allow_watch_bookmarks,
-            _continue=_continue,
-            field_selector=field_selector,
-            label_selector=label_selector,
-            limit=limit,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
-            watch=watch,
-        )
-
-    def create(
-        self,
-        body: kubernetes.client.V1alpha1AuditSink,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1alpha1AuditSink:
-        return self.client.create_audit_sink(
-            body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
-        )
-
-    def read(
-        self,
-        name: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        exact: typing.Optional[bool] = None,
-        export: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1alpha1AuditSink:
-        return self.client.read_audit_sink(
-            name=name, pretty=pretty, exact=exact, export=export
-        )
-
-    def replace(
-        self,
-        name: str,
-        body: kubernetes.client.V1alpha1AuditSink,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None
-    ) -> kubernetes.client.V1alpha1AuditSink:
-        return self.client.replace_audit_sink(
-            name=name,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-        )
-
-    def delete(
-        self,
-        name: str,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        dry_run: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_audit_sink(
-            name=name,
-            pretty=pretty,
-            body=body,
-            dry_run=dry_run,
-            grace_period_seconds=grace_period_seconds,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-        )
-
-    def patch(
-        self,
-        name: str,
-        body: typing.Any,
-        *,
-        pretty: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        force: typing.Optional[bool] = None
-    ) -> kubernetes.client.V1alpha1AuditSink:
-        return self.client.patch_audit_sink(
-            name=name,
-            body=body,
-            pretty=pretty,
-            dry_run=dry_run,
-            field_manager=field_manager,
-            force=force,
-        )
-
-
-class AuditregistrationV1alpha1CollectionAuditSinkManager:
-    def __init__(self, client: kubernetes.client.AuditregistrationV1alpha1Api) -> None:
-        self.client = client
-
-    def delete(
-        self,
-        *,
-        pretty: typing.Optional[str] = None,
-        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
-        _continue: typing.Optional[str] = None,
-        dry_run: typing.Optional[str] = None,
-        field_selector: typing.Optional[str] = None,
-        grace_period_seconds: typing.Optional[int] = None,
-        label_selector: typing.Optional[str] = None,
-        limit: typing.Optional[int] = None,
-        orphan_dependents: typing.Optional[bool] = None,
-        propagation_policy: typing.Optional[str] = None,
-        resource_version: typing.Optional[str] = None,
-        timeout_seconds: typing.Optional[int] = None
-    ) -> kubernetes.client.V1Status:
-        return self.client.delete_collection_audit_sink(
-            pretty=pretty,
-            body=body,
-            _continue=_continue,
-            dry_run=dry_run,
-            field_selector=field_selector,
-            grace_period_seconds=grace_period_seconds,
-            label_selector=label_selector,
-            limit=limit,
-            orphan_dependents=orphan_dependents,
-            propagation_policy=propagation_policy,
-            resource_version=resource_version,
-            timeout_seconds=timeout_seconds,
         )
 
 
@@ -7041,6 +7038,7 @@ class AutoscalingV1HorizontalPodAutoscalerForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1HorizontalPodAutoscalerList:
@@ -7052,6 +7050,7 @@ class AutoscalingV1HorizontalPodAutoscalerForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7072,6 +7071,7 @@ class AutoscalingV1NamespacedHorizontalPodAutoscalerManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1HorizontalPodAutoscalerList:
@@ -7084,6 +7084,7 @@ class AutoscalingV1NamespacedHorizontalPodAutoscalerManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7201,6 +7202,7 @@ class AutoscalingV1CollectionNamespacedHorizontalPodAutoscalerManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_horizontal_pod_autoscaler(
@@ -7216,6 +7218,7 @@ class AutoscalingV1CollectionNamespacedHorizontalPodAutoscalerManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -7286,6 +7289,7 @@ class AutoscalingV2beta1HorizontalPodAutoscalerForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V2beta1HorizontalPodAutoscalerList:
@@ -7297,6 +7301,7 @@ class AutoscalingV2beta1HorizontalPodAutoscalerForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7317,6 +7322,7 @@ class AutoscalingV2beta1NamespacedHorizontalPodAutoscalerManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V2beta1HorizontalPodAutoscalerList:
@@ -7329,6 +7335,7 @@ class AutoscalingV2beta1NamespacedHorizontalPodAutoscalerManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7446,6 +7453,7 @@ class AutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscalerManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_horizontal_pod_autoscaler(
@@ -7461,6 +7469,7 @@ class AutoscalingV2beta1CollectionNamespacedHorizontalPodAutoscalerManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -7531,6 +7540,7 @@ class AutoscalingV2beta2HorizontalPodAutoscalerForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V2beta2HorizontalPodAutoscalerList:
@@ -7542,6 +7552,7 @@ class AutoscalingV2beta2HorizontalPodAutoscalerForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7562,6 +7573,7 @@ class AutoscalingV2beta2NamespacedHorizontalPodAutoscalerManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V2beta2HorizontalPodAutoscalerList:
@@ -7574,6 +7586,7 @@ class AutoscalingV2beta2NamespacedHorizontalPodAutoscalerManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7691,6 +7704,7 @@ class AutoscalingV2beta2CollectionNamespacedHorizontalPodAutoscalerManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_horizontal_pod_autoscaler(
@@ -7706,6 +7720,7 @@ class AutoscalingV2beta2CollectionNamespacedHorizontalPodAutoscalerManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -7776,6 +7791,7 @@ class BatchV1JobForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1JobList:
@@ -7787,6 +7803,7 @@ class BatchV1JobForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7807,6 +7824,7 @@ class BatchV1NamespacedJobManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1JobList:
@@ -7819,6 +7837,7 @@ class BatchV1NamespacedJobManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -7936,6 +7955,7 @@ class BatchV1CollectionNamespacedJobManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_job(
@@ -7951,6 +7971,7 @@ class BatchV1CollectionNamespacedJobManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -8021,6 +8042,7 @@ class BatchV1beta1CronJobForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1CronJobList:
@@ -8032,6 +8054,7 @@ class BatchV1beta1CronJobForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8052,6 +8075,7 @@ class BatchV1beta1NamespacedCronJobManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1CronJobList:
@@ -8064,6 +8088,7 @@ class BatchV1beta1NamespacedCronJobManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8181,6 +8206,7 @@ class BatchV1beta1CollectionNamespacedCronJobManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_cron_job(
@@ -8196,6 +8222,7 @@ class BatchV1beta1CollectionNamespacedCronJobManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -8266,6 +8293,7 @@ class BatchV2alpha1CronJobForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V2alpha1CronJobList:
@@ -8277,6 +8305,7 @@ class BatchV2alpha1CronJobForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8297,6 +8326,7 @@ class BatchV2alpha1NamespacedCronJobManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V2alpha1CronJobList:
@@ -8309,6 +8339,7 @@ class BatchV2alpha1NamespacedCronJobManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8426,6 +8457,7 @@ class BatchV2alpha1CollectionNamespacedCronJobManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_cron_job(
@@ -8441,6 +8473,7 @@ class BatchV2alpha1CollectionNamespacedCronJobManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -8497,6 +8530,253 @@ class BatchV2alpha1NamespacedCronJobStatusManager:
         )
 
 
+class CertificatesV1CertificateSigningRequestManager:
+    def __init__(self, client: kubernetes.client.CertificatesV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CertificateSigningRequestList:
+        return self.client.list_certificate_signing_request(
+            pretty=pretty,
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+    def create(
+        self,
+        body: kubernetes.client.V1CertificateSigningRequest,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.create_certificate_signing_request(
+            body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
+        )
+
+    def read(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        exact: typing.Optional[bool] = None,
+        export: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.read_certificate_signing_request(
+            name=name, pretty=pretty, exact=exact, export=export
+        )
+
+    def replace(
+        self,
+        name: str,
+        body: kubernetes.client.V1CertificateSigningRequest,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.replace_certificate_signing_request(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def delete(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        dry_run: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_certificate_signing_request(
+            name=name,
+            pretty=pretty,
+            body=body,
+            dry_run=dry_run,
+            grace_period_seconds=grace_period_seconds,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.patch_certificate_signing_request(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class CertificatesV1CollectionCertificateSigningRequestManager:
+    def __init__(self, client: kubernetes.client.CertificatesV1Api) -> None:
+        self.client = client
+
+    def delete(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        _continue: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_collection_certificate_signing_request(
+            pretty=pretty,
+            body=body,
+            _continue=_continue,
+            dry_run=dry_run,
+            field_selector=field_selector,
+            grace_period_seconds=grace_period_seconds,
+            label_selector=label_selector,
+            limit=limit,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+        )
+
+
+class CertificatesV1CertificateSigningRequestApprovalManager:
+    def __init__(self, client: kubernetes.client.CertificatesV1Api) -> None:
+        self.client = client
+
+    def read(
+        self, name: str, *, pretty: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.read_certificate_signing_request_approval(
+            name=name, pretty=pretty
+        )
+
+    def replace(
+        self,
+        name: str,
+        body: kubernetes.client.V1CertificateSigningRequest,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.replace_certificate_signing_request_approval(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.patch_certificate_signing_request_approval(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class CertificatesV1CertificateSigningRequestStatusManager:
+    def __init__(self, client: kubernetes.client.CertificatesV1Api) -> None:
+        self.client = client
+
+    def read(
+        self, name: str, *, pretty: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.read_certificate_signing_request_status(
+            name=name, pretty=pretty
+        )
+
+    def replace(
+        self,
+        name: str,
+        body: kubernetes.client.V1CertificateSigningRequest,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.replace_certificate_signing_request_status(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1CertificateSigningRequest:
+        return self.client.patch_certificate_signing_request_status(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
 class CertificatesV1beta1CertificateSigningRequestManager:
     def __init__(self, client: kubernetes.client.CertificatesV1beta1Api) -> None:
         self.client = client
@@ -8511,6 +8791,7 @@ class CertificatesV1beta1CertificateSigningRequestManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1CertificateSigningRequestList:
@@ -8522,6 +8803,7 @@ class CertificatesV1beta1CertificateSigningRequestManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8626,6 +8908,7 @@ class CertificatesV1beta1CollectionCertificateSigningRequestManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_certificate_signing_request(
@@ -8640,6 +8923,7 @@ class CertificatesV1beta1CollectionCertificateSigningRequestManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -8648,21 +8932,47 @@ class CertificatesV1beta1CertificateSigningRequestApprovalManager:
     def __init__(self, client: kubernetes.client.CertificatesV1beta1Api) -> None:
         self.client = client
 
+    def read(
+        self, name: str, *, pretty: typing.Optional[str] = None
+    ) -> kubernetes.client.V1beta1CertificateSigningRequest:
+        return self.client.read_certificate_signing_request_approval(
+            name=name, pretty=pretty
+        )
+
     def replace(
         self,
         name: str,
         body: kubernetes.client.V1beta1CertificateSigningRequest,
         *,
+        pretty: typing.Optional[str] = None,
         dry_run: typing.Optional[str] = None,
-        field_manager: typing.Optional[str] = None,
-        pretty: typing.Optional[str] = None
+        field_manager: typing.Optional[str] = None
     ) -> kubernetes.client.V1beta1CertificateSigningRequest:
         return self.client.replace_certificate_signing_request_approval(
             name=name,
             body=body,
+            pretty=pretty,
             dry_run=dry_run,
             field_manager=field_manager,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1beta1CertificateSigningRequest:
+        return self.client.patch_certificate_signing_request_approval(
+            name=name,
+            body=body,
             pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
         )
 
 
@@ -8728,6 +9038,7 @@ class CoordinationV1LeaseForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1LeaseList:
@@ -8739,6 +9050,7 @@ class CoordinationV1LeaseForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8759,6 +9071,7 @@ class CoordinationV1NamespacedLeaseManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1LeaseList:
@@ -8771,6 +9084,7 @@ class CoordinationV1NamespacedLeaseManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8888,6 +9202,7 @@ class CoordinationV1CollectionNamespacedLeaseManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_lease(
@@ -8903,6 +9218,7 @@ class CoordinationV1CollectionNamespacedLeaseManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -8921,6 +9237,7 @@ class CoordinationV1beta1LeaseForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1LeaseList:
@@ -8932,6 +9249,7 @@ class CoordinationV1beta1LeaseForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -8952,6 +9270,7 @@ class CoordinationV1beta1NamespacedLeaseManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1LeaseList:
@@ -8964,6 +9283,7 @@ class CoordinationV1beta1NamespacedLeaseManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9081,6 +9401,7 @@ class CoordinationV1beta1CollectionNamespacedLeaseManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_lease(
@@ -9096,6 +9417,7 @@ class CoordinationV1beta1CollectionNamespacedLeaseManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -9114,6 +9436,7 @@ class DiscoveryV1beta1EndpointSliceForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1EndpointSliceList:
@@ -9125,6 +9448,7 @@ class DiscoveryV1beta1EndpointSliceForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9145,6 +9469,7 @@ class DiscoveryV1beta1NamespacedEndpointSliceManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1EndpointSliceList:
@@ -9157,6 +9482,7 @@ class DiscoveryV1beta1NamespacedEndpointSliceManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9274,6 +9600,7 @@ class DiscoveryV1beta1CollectionNamespacedEndpointSliceManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_endpoint_slice(
@@ -9289,6 +9616,206 @@ class DiscoveryV1beta1CollectionNamespacedEndpointSliceManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+        )
+
+
+class EventsV1EventForAllNamespacesManager:
+    def __init__(self, client: kubernetes.client.EventsV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        *,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        pretty: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.EventsV1EventList:
+        return self.client.list_event_for_all_namespaces(
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            pretty=pretty,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+
+class EventsV1NamespacedEventManager:
+    def __init__(self, client: kubernetes.client.EventsV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.EventsV1EventList:
+        return self.client.list_namespaced_event(
+            namespace=namespace,
+            pretty=pretty,
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+    def create(
+        self,
+        namespace: str,
+        body: kubernetes.client.EventsV1Event,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.EventsV1Event:
+        return self.client.create_namespaced_event(
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def read(
+        self,
+        name: str,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        exact: typing.Optional[bool] = None,
+        export: typing.Optional[bool] = None
+    ) -> kubernetes.client.EventsV1Event:
+        return self.client.read_namespaced_event(
+            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
+        )
+
+    def replace(
+        self,
+        name: str,
+        namespace: str,
+        body: kubernetes.client.EventsV1Event,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.EventsV1Event:
+        return self.client.replace_namespaced_event(
+            name=name,
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def delete(
+        self,
+        name: str,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        dry_run: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_namespaced_event(
+            name=name,
+            namespace=namespace,
+            pretty=pretty,
+            body=body,
+            dry_run=dry_run,
+            grace_period_seconds=grace_period_seconds,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+        )
+
+    def patch(
+        self,
+        name: str,
+        namespace: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.EventsV1Event:
+        return self.client.patch_namespaced_event(
+            name=name,
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class EventsV1CollectionNamespacedEventManager:
+    def __init__(self, client: kubernetes.client.EventsV1Api) -> None:
+        self.client = client
+
+    def delete(
+        self,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        _continue: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_collection_namespaced_event(
+            namespace=namespace,
+            pretty=pretty,
+            body=body,
+            _continue=_continue,
+            dry_run=dry_run,
+            field_selector=field_selector,
+            grace_period_seconds=grace_period_seconds,
+            label_selector=label_selector,
+            limit=limit,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -9307,6 +9834,7 @@ class EventsV1beta1EventForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1EventList:
@@ -9318,6 +9846,7 @@ class EventsV1beta1EventForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9338,6 +9867,7 @@ class EventsV1beta1NamespacedEventManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1EventList:
@@ -9350,6 +9880,7 @@ class EventsV1beta1NamespacedEventManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9467,6 +9998,7 @@ class EventsV1beta1CollectionNamespacedEventManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_event(
@@ -9482,6 +10014,7 @@ class EventsV1beta1CollectionNamespacedEventManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -9500,6 +10033,7 @@ class ExtensionsV1beta1IngressForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.ExtensionsV1beta1IngressList:
@@ -9511,6 +10045,7 @@ class ExtensionsV1beta1IngressForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9531,6 +10066,7 @@ class ExtensionsV1beta1NamespacedIngressManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.ExtensionsV1beta1IngressList:
@@ -9543,6 +10079,7 @@ class ExtensionsV1beta1NamespacedIngressManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9660,6 +10197,7 @@ class ExtensionsV1beta1CollectionNamespacedIngressManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_ingress(
@@ -9675,6 +10213,7 @@ class ExtensionsV1beta1CollectionNamespacedIngressManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -9747,6 +10286,7 @@ class FlowcontrolApiserverV1alpha1FlowSchemaManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1FlowSchemaList:
@@ -9758,6 +10298,7 @@ class FlowcontrolApiserverV1alpha1FlowSchemaManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -9864,6 +10405,7 @@ class FlowcontrolApiserverV1alpha1CollectionFlowSchemaManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_flow_schema(
@@ -9878,6 +10420,7 @@ class FlowcontrolApiserverV1alpha1CollectionFlowSchemaManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -9946,6 +10489,7 @@ class FlowcontrolApiserverV1alpha1PriorityLevelConfigurationManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1PriorityLevelConfigurationList:
@@ -9957,6 +10501,7 @@ class FlowcontrolApiserverV1alpha1PriorityLevelConfigurationManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10063,6 +10608,7 @@ class FlowcontrolApiserverV1alpha1CollectionPriorityLevelConfigurationManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_priority_level_configuration(
@@ -10077,6 +10623,7 @@ class FlowcontrolApiserverV1alpha1CollectionPriorityLevelConfigurationManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -10131,6 +10678,408 @@ class FlowcontrolApiserverV1alpha1PriorityLevelConfigurationStatusManager:
         )
 
 
+class NetworkingV1IngressClassManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1IngressClassList:
+        return self.client.list_ingress_class(
+            pretty=pretty,
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+    def create(
+        self,
+        body: kubernetes.client.V1IngressClass,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1IngressClass:
+        return self.client.create_ingress_class(
+            body=body, pretty=pretty, dry_run=dry_run, field_manager=field_manager
+        )
+
+    def read(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        exact: typing.Optional[bool] = None,
+        export: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1IngressClass:
+        return self.client.read_ingress_class(
+            name=name, pretty=pretty, exact=exact, export=export
+        )
+
+    def replace(
+        self,
+        name: str,
+        body: kubernetes.client.V1IngressClass,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1IngressClass:
+        return self.client.replace_ingress_class(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def delete(
+        self,
+        name: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        dry_run: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_ingress_class(
+            name=name,
+            pretty=pretty,
+            body=body,
+            dry_run=dry_run,
+            grace_period_seconds=grace_period_seconds,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+        )
+
+    def patch(
+        self,
+        name: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1IngressClass:
+        return self.client.patch_ingress_class(
+            name=name,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class NetworkingV1CollectionIngressClassManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
+        self.client = client
+
+    def delete(
+        self,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        _continue: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_collection_ingress_class(
+            pretty=pretty,
+            body=body,
+            _continue=_continue,
+            dry_run=dry_run,
+            field_selector=field_selector,
+            grace_period_seconds=grace_period_seconds,
+            label_selector=label_selector,
+            limit=limit,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+        )
+
+
+class NetworkingV1IngressForAllNamespacesManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        *,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        pretty: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1IngressList:
+        return self.client.list_ingress_for_all_namespaces(
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            pretty=pretty,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+
+class NetworkingV1NamespacedIngressManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
+        self.client = client
+
+    def list(
+        self,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        allow_watch_bookmarks: typing.Optional[bool] = None,
+        _continue: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None,
+        watch: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1IngressList:
+        return self.client.list_namespaced_ingress(
+            namespace=namespace,
+            pretty=pretty,
+            allow_watch_bookmarks=allow_watch_bookmarks,
+            _continue=_continue,
+            field_selector=field_selector,
+            label_selector=label_selector,
+            limit=limit,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+            watch=watch,
+        )
+
+    def create(
+        self,
+        namespace: str,
+        body: kubernetes.client.V1Ingress,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.create_namespaced_ingress(
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def read(
+        self,
+        name: str,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        exact: typing.Optional[bool] = None,
+        export: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.read_namespaced_ingress(
+            name=name, namespace=namespace, pretty=pretty, exact=exact, export=export
+        )
+
+    def replace(
+        self,
+        name: str,
+        namespace: str,
+        body: kubernetes.client.V1Ingress,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.replace_namespaced_ingress(
+            name=name,
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def delete(
+        self,
+        name: str,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        dry_run: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_namespaced_ingress(
+            name=name,
+            namespace=namespace,
+            pretty=pretty,
+            body=body,
+            dry_run=dry_run,
+            grace_period_seconds=grace_period_seconds,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+        )
+
+    def patch(
+        self,
+        name: str,
+        namespace: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.patch_namespaced_ingress(
+            name=name,
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
+class NetworkingV1CollectionNamespacedIngressManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
+        self.client = client
+
+    def delete(
+        self,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = None,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = None,
+        _continue: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_selector: typing.Optional[str] = None,
+        grace_period_seconds: typing.Optional[int] = None,
+        label_selector: typing.Optional[str] = None,
+        limit: typing.Optional[int] = None,
+        orphan_dependents: typing.Optional[bool] = None,
+        propagation_policy: typing.Optional[str] = None,
+        resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
+        timeout_seconds: typing.Optional[int] = None
+    ) -> kubernetes.client.V1Status:
+        return self.client.delete_collection_namespaced_ingress(
+            namespace=namespace,
+            pretty=pretty,
+            body=body,
+            _continue=_continue,
+            dry_run=dry_run,
+            field_selector=field_selector,
+            grace_period_seconds=grace_period_seconds,
+            label_selector=label_selector,
+            limit=limit,
+            orphan_dependents=orphan_dependents,
+            propagation_policy=propagation_policy,
+            resource_version=resource_version,
+            resource_version_match=resource_version_match,
+            timeout_seconds=timeout_seconds,
+        )
+
+
+class NetworkingV1NamespacedIngressStatusManager:
+    def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
+        self.client = client
+
+    def read(
+        self, name: str, namespace: str, *, pretty: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.read_namespaced_ingress_status(
+            name=name, namespace=namespace, pretty=pretty
+        )
+
+    def replace(
+        self,
+        name: str,
+        namespace: str,
+        body: kubernetes.client.V1Ingress,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.replace_namespaced_ingress_status(
+            name=name,
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+        )
+
+    def patch(
+        self,
+        name: str,
+        namespace: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = None,
+        dry_run: typing.Optional[str] = None,
+        field_manager: typing.Optional[str] = None,
+        force: typing.Optional[bool] = None
+    ) -> kubernetes.client.V1Ingress:
+        return self.client.patch_namespaced_ingress_status(
+            name=name,
+            namespace=namespace,
+            body=body,
+            pretty=pretty,
+            dry_run=dry_run,
+            field_manager=field_manager,
+            force=force,
+        )
+
+
 class NetworkingV1NamespacedNetworkPolicyManager:
     def __init__(self, client: kubernetes.client.NetworkingV1Api) -> None:
         self.client = client
@@ -10146,6 +11095,7 @@ class NetworkingV1NamespacedNetworkPolicyManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1NetworkPolicyList:
@@ -10158,6 +11108,7 @@ class NetworkingV1NamespacedNetworkPolicyManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10275,6 +11226,7 @@ class NetworkingV1CollectionNamespacedNetworkPolicyManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_network_policy(
@@ -10290,6 +11242,7 @@ class NetworkingV1CollectionNamespacedNetworkPolicyManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -10308,6 +11261,7 @@ class NetworkingV1NetworkPolicyForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1NetworkPolicyList:
@@ -10319,6 +11273,7 @@ class NetworkingV1NetworkPolicyForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10338,6 +11293,7 @@ class NetworkingV1beta1IngressClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1IngressClassList:
@@ -10349,6 +11305,7 @@ class NetworkingV1beta1IngressClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10453,6 +11410,7 @@ class NetworkingV1beta1CollectionIngressClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_ingress_class(
@@ -10467,6 +11425,7 @@ class NetworkingV1beta1CollectionIngressClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -10485,6 +11444,7 @@ class NetworkingV1beta1IngressForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.NetworkingV1beta1IngressList:
@@ -10496,6 +11456,7 @@ class NetworkingV1beta1IngressForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10516,6 +11477,7 @@ class NetworkingV1beta1NamespacedIngressManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.NetworkingV1beta1IngressList:
@@ -10528,6 +11490,7 @@ class NetworkingV1beta1NamespacedIngressManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10645,6 +11608,7 @@ class NetworkingV1beta1CollectionNamespacedIngressManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_ingress(
@@ -10660,6 +11624,7 @@ class NetworkingV1beta1CollectionNamespacedIngressManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -10730,6 +11695,7 @@ class NodeV1alpha1RuntimeClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1RuntimeClassList:
@@ -10741,6 +11707,7 @@ class NodeV1alpha1RuntimeClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10845,6 +11812,7 @@ class NodeV1alpha1CollectionRuntimeClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_runtime_class(
@@ -10859,6 +11827,7 @@ class NodeV1alpha1CollectionRuntimeClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -10877,6 +11846,7 @@ class NodeV1beta1RuntimeClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1RuntimeClassList:
@@ -10888,6 +11858,7 @@ class NodeV1beta1RuntimeClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -10992,6 +11963,7 @@ class NodeV1beta1CollectionRuntimeClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_runtime_class(
@@ -11006,6 +11978,7 @@ class NodeV1beta1CollectionRuntimeClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -11025,6 +11998,7 @@ class PolicyV1beta1NamespacedPodDisruptionBudgetManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1PodDisruptionBudgetList:
@@ -11037,6 +12011,7 @@ class PolicyV1beta1NamespacedPodDisruptionBudgetManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11154,6 +12129,7 @@ class PolicyV1beta1CollectionNamespacedPodDisruptionBudgetManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_pod_disruption_budget(
@@ -11169,6 +12145,7 @@ class PolicyV1beta1CollectionNamespacedPodDisruptionBudgetManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -11239,6 +12216,7 @@ class PolicyV1beta1PodDisruptionBudgetForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1PodDisruptionBudgetList:
@@ -11250,6 +12228,7 @@ class PolicyV1beta1PodDisruptionBudgetForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11269,6 +12248,7 @@ class PolicyV1beta1PodSecurityPolicyManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1PodSecurityPolicyList:
@@ -11280,6 +12260,7 @@ class PolicyV1beta1PodSecurityPolicyManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11384,6 +12365,7 @@ class PolicyV1beta1CollectionPodSecurityPolicyManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_pod_security_policy(
@@ -11398,6 +12380,7 @@ class PolicyV1beta1CollectionPodSecurityPolicyManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -11416,6 +12399,7 @@ class RbacAuthorizationV1ClusterRoleBindingManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ClusterRoleBindingList:
@@ -11427,6 +12411,7 @@ class RbacAuthorizationV1ClusterRoleBindingManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11524,6 +12509,7 @@ class RbacAuthorizationV1CollectionClusterRoleBindingManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_cluster_role_binding(
@@ -11538,6 +12524,7 @@ class RbacAuthorizationV1CollectionClusterRoleBindingManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -11556,6 +12543,7 @@ class RbacAuthorizationV1ClusterRoleManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1ClusterRoleList:
@@ -11567,6 +12555,7 @@ class RbacAuthorizationV1ClusterRoleManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11664,6 +12653,7 @@ class RbacAuthorizationV1CollectionClusterRoleManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_cluster_role(
@@ -11678,6 +12668,7 @@ class RbacAuthorizationV1CollectionClusterRoleManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -11697,6 +12688,7 @@ class RbacAuthorizationV1NamespacedRoleBindingManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1RoleBindingList:
@@ -11709,6 +12701,7 @@ class RbacAuthorizationV1NamespacedRoleBindingManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11820,6 +12813,7 @@ class RbacAuthorizationV1CollectionNamespacedRoleBindingManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_role_binding(
@@ -11835,6 +12829,7 @@ class RbacAuthorizationV1CollectionNamespacedRoleBindingManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -11854,6 +12849,7 @@ class RbacAuthorizationV1NamespacedRoleManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1RoleList:
@@ -11866,6 +12862,7 @@ class RbacAuthorizationV1NamespacedRoleManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -11977,6 +12974,7 @@ class RbacAuthorizationV1CollectionNamespacedRoleManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_role(
@@ -11992,6 +12990,7 @@ class RbacAuthorizationV1CollectionNamespacedRoleManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -12010,6 +13009,7 @@ class RbacAuthorizationV1RoleBindingForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1RoleBindingList:
@@ -12021,6 +13021,7 @@ class RbacAuthorizationV1RoleBindingForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12040,6 +13041,7 @@ class RbacAuthorizationV1RoleForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1RoleList:
@@ -12051,6 +13053,7 @@ class RbacAuthorizationV1RoleForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12070,6 +13073,7 @@ class RbacAuthorizationV1alpha1ClusterRoleBindingManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1ClusterRoleBindingList:
@@ -12081,6 +13085,7 @@ class RbacAuthorizationV1alpha1ClusterRoleBindingManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12178,6 +13183,7 @@ class RbacAuthorizationV1alpha1CollectionClusterRoleBindingManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_cluster_role_binding(
@@ -12192,6 +13198,7 @@ class RbacAuthorizationV1alpha1CollectionClusterRoleBindingManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -12210,6 +13217,7 @@ class RbacAuthorizationV1alpha1ClusterRoleManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1ClusterRoleList:
@@ -12221,6 +13229,7 @@ class RbacAuthorizationV1alpha1ClusterRoleManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12318,6 +13327,7 @@ class RbacAuthorizationV1alpha1CollectionClusterRoleManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_cluster_role(
@@ -12332,6 +13342,7 @@ class RbacAuthorizationV1alpha1CollectionClusterRoleManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -12351,6 +13362,7 @@ class RbacAuthorizationV1alpha1NamespacedRoleBindingManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1RoleBindingList:
@@ -12363,6 +13375,7 @@ class RbacAuthorizationV1alpha1NamespacedRoleBindingManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12474,6 +13487,7 @@ class RbacAuthorizationV1alpha1CollectionNamespacedRoleBindingManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_role_binding(
@@ -12489,6 +13503,7 @@ class RbacAuthorizationV1alpha1CollectionNamespacedRoleBindingManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -12508,6 +13523,7 @@ class RbacAuthorizationV1alpha1NamespacedRoleManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1RoleList:
@@ -12520,6 +13536,7 @@ class RbacAuthorizationV1alpha1NamespacedRoleManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12631,6 +13648,7 @@ class RbacAuthorizationV1alpha1CollectionNamespacedRoleManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_role(
@@ -12646,6 +13664,7 @@ class RbacAuthorizationV1alpha1CollectionNamespacedRoleManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -12664,6 +13683,7 @@ class RbacAuthorizationV1alpha1RoleBindingForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1RoleBindingList:
@@ -12675,6 +13695,7 @@ class RbacAuthorizationV1alpha1RoleBindingForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12694,6 +13715,7 @@ class RbacAuthorizationV1alpha1RoleForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1RoleList:
@@ -12705,6 +13727,7 @@ class RbacAuthorizationV1alpha1RoleForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12724,6 +13747,7 @@ class RbacAuthorizationV1beta1ClusterRoleBindingManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1ClusterRoleBindingList:
@@ -12735,6 +13759,7 @@ class RbacAuthorizationV1beta1ClusterRoleBindingManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12832,6 +13857,7 @@ class RbacAuthorizationV1beta1CollectionClusterRoleBindingManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_cluster_role_binding(
@@ -12846,6 +13872,7 @@ class RbacAuthorizationV1beta1CollectionClusterRoleBindingManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -12864,6 +13891,7 @@ class RbacAuthorizationV1beta1ClusterRoleManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1ClusterRoleList:
@@ -12875,6 +13903,7 @@ class RbacAuthorizationV1beta1ClusterRoleManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -12972,6 +14001,7 @@ class RbacAuthorizationV1beta1CollectionClusterRoleManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_cluster_role(
@@ -12986,6 +14016,7 @@ class RbacAuthorizationV1beta1CollectionClusterRoleManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13005,6 +14036,7 @@ class RbacAuthorizationV1beta1NamespacedRoleBindingManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1RoleBindingList:
@@ -13017,6 +14049,7 @@ class RbacAuthorizationV1beta1NamespacedRoleBindingManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13128,6 +14161,7 @@ class RbacAuthorizationV1beta1CollectionNamespacedRoleBindingManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_role_binding(
@@ -13143,6 +14177,7 @@ class RbacAuthorizationV1beta1CollectionNamespacedRoleBindingManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13162,6 +14197,7 @@ class RbacAuthorizationV1beta1NamespacedRoleManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1RoleList:
@@ -13174,6 +14210,7 @@ class RbacAuthorizationV1beta1NamespacedRoleManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13285,6 +14322,7 @@ class RbacAuthorizationV1beta1CollectionNamespacedRoleManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_role(
@@ -13300,6 +14338,7 @@ class RbacAuthorizationV1beta1CollectionNamespacedRoleManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13318,6 +14357,7 @@ class RbacAuthorizationV1beta1RoleBindingForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1RoleBindingList:
@@ -13329,6 +14369,7 @@ class RbacAuthorizationV1beta1RoleBindingForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13348,6 +14389,7 @@ class RbacAuthorizationV1beta1RoleForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1RoleList:
@@ -13359,6 +14401,7 @@ class RbacAuthorizationV1beta1RoleForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13378,6 +14421,7 @@ class SchedulingV1PriorityClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1PriorityClassList:
@@ -13389,6 +14433,7 @@ class SchedulingV1PriorityClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13493,6 +14538,7 @@ class SchedulingV1CollectionPriorityClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_priority_class(
@@ -13507,6 +14553,7 @@ class SchedulingV1CollectionPriorityClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13525,6 +14572,7 @@ class SchedulingV1alpha1PriorityClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1PriorityClassList:
@@ -13536,6 +14584,7 @@ class SchedulingV1alpha1PriorityClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13640,6 +14689,7 @@ class SchedulingV1alpha1CollectionPriorityClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_priority_class(
@@ -13654,6 +14704,7 @@ class SchedulingV1alpha1CollectionPriorityClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13672,6 +14723,7 @@ class SchedulingV1beta1PriorityClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1PriorityClassList:
@@ -13683,6 +14735,7 @@ class SchedulingV1beta1PriorityClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13787,6 +14840,7 @@ class SchedulingV1beta1CollectionPriorityClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_priority_class(
@@ -13801,6 +14855,7 @@ class SchedulingV1beta1CollectionPriorityClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13820,6 +14875,7 @@ class SettingsV1alpha1NamespacedPodPresetManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1PodPresetList:
@@ -13832,6 +14888,7 @@ class SettingsV1alpha1NamespacedPodPresetManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -13949,6 +15006,7 @@ class SettingsV1alpha1CollectionNamespacedPodPresetManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_namespaced_pod_preset(
@@ -13964,6 +15022,7 @@ class SettingsV1alpha1CollectionNamespacedPodPresetManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -13982,6 +15041,7 @@ class SettingsV1alpha1PodPresetForAllNamespacesManager:
         limit: typing.Optional[int] = None,
         pretty: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1PodPresetList:
@@ -13993,6 +15053,7 @@ class SettingsV1alpha1PodPresetForAllNamespacesManager:
             limit=limit,
             pretty=pretty,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14012,6 +15073,7 @@ class StorageV1CsiDriverManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1CSIDriverList:
@@ -14023,6 +15085,7 @@ class StorageV1CsiDriverManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14127,6 +15190,7 @@ class StorageV1CollectionCsiDriverManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_csi_driver(
@@ -14141,6 +15205,7 @@ class StorageV1CollectionCsiDriverManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -14159,6 +15224,7 @@ class StorageV1CsiNodeManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1CSINodeList:
@@ -14170,6 +15236,7 @@ class StorageV1CsiNodeManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14274,6 +15341,7 @@ class StorageV1CollectionCsiNodeManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_csi_node(
@@ -14288,6 +15356,7 @@ class StorageV1CollectionCsiNodeManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -14306,6 +15375,7 @@ class StorageV1StorageClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1StorageClassList:
@@ -14317,6 +15387,7 @@ class StorageV1StorageClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14421,6 +15492,7 @@ class StorageV1CollectionStorageClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_storage_class(
@@ -14435,6 +15507,7 @@ class StorageV1CollectionStorageClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -14453,6 +15526,7 @@ class StorageV1VolumeAttachmentManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1VolumeAttachmentList:
@@ -14464,6 +15538,7 @@ class StorageV1VolumeAttachmentManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14568,6 +15643,7 @@ class StorageV1CollectionVolumeAttachmentManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_volume_attachment(
@@ -14582,6 +15658,7 @@ class StorageV1CollectionVolumeAttachmentManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -14646,6 +15723,7 @@ class StorageV1alpha1VolumeAttachmentManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1alpha1VolumeAttachmentList:
@@ -14657,6 +15735,7 @@ class StorageV1alpha1VolumeAttachmentManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14761,6 +15840,7 @@ class StorageV1alpha1CollectionVolumeAttachmentManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_volume_attachment(
@@ -14775,6 +15855,7 @@ class StorageV1alpha1CollectionVolumeAttachmentManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -14793,6 +15874,7 @@ class StorageV1beta1CsiDriverManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1CSIDriverList:
@@ -14804,6 +15886,7 @@ class StorageV1beta1CsiDriverManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -14908,6 +15991,7 @@ class StorageV1beta1CollectionCsiDriverManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_csi_driver(
@@ -14922,6 +16006,7 @@ class StorageV1beta1CollectionCsiDriverManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -14940,6 +16025,7 @@ class StorageV1beta1CsiNodeManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1CSINodeList:
@@ -14951,6 +16037,7 @@ class StorageV1beta1CsiNodeManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -15055,6 +16142,7 @@ class StorageV1beta1CollectionCsiNodeManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_csi_node(
@@ -15069,6 +16157,7 @@ class StorageV1beta1CollectionCsiNodeManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -15087,6 +16176,7 @@ class StorageV1beta1StorageClassManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1StorageClassList:
@@ -15098,6 +16188,7 @@ class StorageV1beta1StorageClassManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -15202,6 +16293,7 @@ class StorageV1beta1CollectionStorageClassManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_storage_class(
@@ -15216,6 +16308,7 @@ class StorageV1beta1CollectionStorageClassManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )
 
@@ -15234,6 +16327,7 @@ class StorageV1beta1VolumeAttachmentManager:
         label_selector: typing.Optional[str] = None,
         limit: typing.Optional[int] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None,
         watch: typing.Optional[bool] = None
     ) -> kubernetes.client.V1beta1VolumeAttachmentList:
@@ -15245,6 +16339,7 @@ class StorageV1beta1VolumeAttachmentManager:
             label_selector=label_selector,
             limit=limit,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
             watch=watch,
         )
@@ -15349,6 +16444,7 @@ class StorageV1beta1CollectionVolumeAttachmentManager:
         orphan_dependents: typing.Optional[bool] = None,
         propagation_policy: typing.Optional[str] = None,
         resource_version: typing.Optional[str] = None,
+        resource_version_match: typing.Optional[str] = None,
         timeout_seconds: typing.Optional[int] = None
     ) -> kubernetes.client.V1Status:
         return self.client.delete_collection_volume_attachment(
@@ -15363,5 +16459,6 @@ class StorageV1beta1CollectionVolumeAttachmentManager:
             orphan_dependents=orphan_dependents,
             propagation_policy=propagation_policy,
             resource_version=resource_version,
+            resource_version_match=resource_version_match,
             timeout_seconds=timeout_seconds,
         )

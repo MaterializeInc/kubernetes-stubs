@@ -19,10 +19,6 @@ from kubernetes.client.api.apiregistration_v1beta1_api import \
 from kubernetes.client.api.apis_api import ApisApi as ApisApi
 from kubernetes.client.api.apps_api import AppsApi as AppsApi
 from kubernetes.client.api.apps_v1_api import AppsV1Api as AppsV1Api
-from kubernetes.client.api.auditregistration_api import \
-    AuditregistrationApi as AuditregistrationApi
-from kubernetes.client.api.auditregistration_v1alpha1_api import \
-    AuditregistrationV1alpha1Api as AuditregistrationV1alpha1Api
 from kubernetes.client.api.authentication_api import \
     AuthenticationApi as AuthenticationApi
 from kubernetes.client.api.authentication_v1_api import \
@@ -51,6 +47,8 @@ from kubernetes.client.api.batch_v2alpha1_api import \
     BatchV2alpha1Api as BatchV2alpha1Api
 from kubernetes.client.api.certificates_api import \
     CertificatesApi as CertificatesApi
+from kubernetes.client.api.certificates_v1_api import \
+    CertificatesV1Api as CertificatesV1Api
 from kubernetes.client.api.certificates_v1beta1_api import \
     CertificatesV1beta1Api as CertificatesV1beta1Api
 from kubernetes.client.api.coordination_api import \
@@ -67,6 +65,7 @@ from kubernetes.client.api.discovery_api import DiscoveryApi as DiscoveryApi
 from kubernetes.client.api.discovery_v1beta1_api import \
     DiscoveryV1beta1Api as DiscoveryV1beta1Api
 from kubernetes.client.api.events_api import EventsApi as EventsApi
+from kubernetes.client.api.events_v1_api import EventsV1Api as EventsV1Api
 from kubernetes.client.api.events_v1beta1_api import \
     EventsV1beta1Api as EventsV1beta1Api
 from kubernetes.client.api.extensions_api import ExtensionsApi as ExtensionsApi

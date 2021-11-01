@@ -17,6 +17,7 @@ class AdmissionregistrationV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1MutatingWebhookConfigurationList: ...
@@ -42,6 +43,7 @@ class AdmissionregistrationV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_mutating_webhook_configuration(
@@ -92,6 +94,7 @@ class AdmissionregistrationV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ValidatingWebhookConfigurationList: ...
@@ -117,6 +120,7 @@ class AdmissionregistrationV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_validating_webhook_configuration(

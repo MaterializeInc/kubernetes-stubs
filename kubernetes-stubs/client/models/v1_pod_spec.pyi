@@ -32,6 +32,7 @@ class V1PodSpec:
     security_context: typing.Optional[kubernetes.client.V1PodSecurityContext]
     service_account: typing.Optional[str]
     service_account_name: typing.Optional[str]
+    set_hostname_as_fqdn: typing.Optional[bool]
     share_process_namespace: typing.Optional[bool]
     subdomain: typing.Optional[str]
     termination_grace_period_seconds: typing.Optional[int]
@@ -77,6 +78,7 @@ class V1PodSpec:
         security_context: typing.Optional[kubernetes.client.V1PodSecurityContext] = ...,
         service_account: typing.Optional[str] = ...,
         service_account_name: typing.Optional[str] = ...,
+        set_hostname_as_fqdn: typing.Optional[bool] = ...,
         share_process_namespace: typing.Optional[bool] = ...,
         subdomain: typing.Optional[str] = ...,
         termination_grace_period_seconds: typing.Optional[int] = ...,
@@ -121,6 +123,7 @@ class V1PodSpecDict(typing.TypedDict, total=False):
     securityContext: typing.Optional[kubernetes.client.V1PodSecurityContextDict]
     serviceAccount: typing.Optional[str]
     serviceAccountName: typing.Optional[str]
+    setHostnameAsFQDN: typing.Optional[bool]
     shareProcessNamespace: typing.Optional[bool]
     subdomain: typing.Optional[str]
     terminationGracePeriodSeconds: typing.Optional[int]

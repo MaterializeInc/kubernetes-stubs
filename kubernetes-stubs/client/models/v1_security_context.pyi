@@ -13,6 +13,7 @@ class V1SecurityContext:
     run_as_non_root: typing.Optional[bool]
     run_as_user: typing.Optional[int]
     se_linux_options: typing.Optional[kubernetes.client.V1SELinuxOptions]
+    seccomp_profile: typing.Optional[kubernetes.client.V1SeccompProfile]
     windows_options: typing.Optional[kubernetes.client.V1WindowsSecurityContextOptions]
     def __init__(
         self,
@@ -26,6 +27,7 @@ class V1SecurityContext:
         run_as_non_root: typing.Optional[bool] = ...,
         run_as_user: typing.Optional[int] = ...,
         se_linux_options: typing.Optional[kubernetes.client.V1SELinuxOptions] = ...,
+        seccomp_profile: typing.Optional[kubernetes.client.V1SeccompProfile] = ...,
         windows_options: typing.Optional[
             kubernetes.client.V1WindowsSecurityContextOptions
         ] = ...
@@ -42,6 +44,7 @@ class V1SecurityContextDict(typing.TypedDict, total=False):
     runAsNonRoot: typing.Optional[bool]
     runAsUser: typing.Optional[int]
     seLinuxOptions: typing.Optional[kubernetes.client.V1SELinuxOptionsDict]
+    seccompProfile: typing.Optional[kubernetes.client.V1SeccompProfileDict]
     windowsOptions: typing.Optional[
         kubernetes.client.V1WindowsSecurityContextOptionsDict
     ]

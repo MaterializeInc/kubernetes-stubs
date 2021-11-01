@@ -3,23 +3,23 @@ import typing
 
 import kubernetes.client
 
-class V1alpha1AuditSink:
+class V1IngressClass:
     api_version: typing.Optional[str]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
-    spec: typing.Optional[kubernetes.client.V1alpha1AuditSinkSpec]
+    spec: typing.Optional[kubernetes.client.V1IngressClassSpec]
     def __init__(
         self,
         *,
         api_version: typing.Optional[str] = ...,
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
-        spec: typing.Optional[kubernetes.client.V1alpha1AuditSinkSpec] = ...
+        spec: typing.Optional[kubernetes.client.V1IngressClassSpec] = ...
     ) -> None: ...
-    def to_dict(self) -> V1alpha1AuditSinkDict: ...
+    def to_dict(self) -> V1IngressClassDict: ...
 
-class V1alpha1AuditSinkDict(typing.TypedDict, total=False):
+class V1IngressClassDict(typing.TypedDict, total=False):
     apiVersion: typing.Optional[str]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
-    spec: typing.Optional[kubernetes.client.V1alpha1AuditSinkSpecDict]
+    spec: typing.Optional[kubernetes.client.V1IngressClassSpecDict]

@@ -54,6 +54,29 @@ from kubernetes.client.models.apiregistration_v1beta1_service_reference import \
 from kubernetes.client.models.apiregistration_v1beta1_service_reference import \
     ApiregistrationV1beta1ServiceReferenceDict as \
     ApiregistrationV1beta1ServiceReferenceDict
+from kubernetes.client.models.core_v1_event import CoreV1Event as CoreV1Event
+from kubernetes.client.models.core_v1_event import \
+    CoreV1EventDict as CoreV1EventDict
+from kubernetes.client.models.core_v1_event_list import \
+    CoreV1EventList as CoreV1EventList
+from kubernetes.client.models.core_v1_event_list import \
+    CoreV1EventListDict as CoreV1EventListDict
+from kubernetes.client.models.core_v1_event_series import \
+    CoreV1EventSeries as CoreV1EventSeries
+from kubernetes.client.models.core_v1_event_series import \
+    CoreV1EventSeriesDict as CoreV1EventSeriesDict
+from kubernetes.client.models.events_v1_event import \
+    EventsV1Event as EventsV1Event
+from kubernetes.client.models.events_v1_event import \
+    EventsV1EventDict as EventsV1EventDict
+from kubernetes.client.models.events_v1_event_list import \
+    EventsV1EventList as EventsV1EventList
+from kubernetes.client.models.events_v1_event_list import \
+    EventsV1EventListDict as EventsV1EventListDict
+from kubernetes.client.models.events_v1_event_series import \
+    EventsV1EventSeries as EventsV1EventSeries
+from kubernetes.client.models.events_v1_event_series import \
+    EventsV1EventSeriesDict as EventsV1EventSeriesDict
 from kubernetes.client.models.extensions_v1beta1_http_ingress_path import \
     ExtensionsV1beta1HTTPIngressPath as ExtensionsV1beta1HTTPIngressPath
 from kubernetes.client.models.extensions_v1beta1_http_ingress_path import \
@@ -226,6 +249,29 @@ from kubernetes.client.models.v1_ceph_fs_volume_source import \
     V1CephFSVolumeSource as V1CephFSVolumeSource
 from kubernetes.client.models.v1_ceph_fs_volume_source import \
     V1CephFSVolumeSourceDict as V1CephFSVolumeSourceDict
+from kubernetes.client.models.v1_certificate_signing_request import \
+    V1CertificateSigningRequest as V1CertificateSigningRequest
+from kubernetes.client.models.v1_certificate_signing_request import \
+    V1CertificateSigningRequestDict as V1CertificateSigningRequestDict
+from kubernetes.client.models.v1_certificate_signing_request_condition import \
+    V1CertificateSigningRequestCondition as \
+    V1CertificateSigningRequestCondition
+from kubernetes.client.models.v1_certificate_signing_request_condition import \
+    V1CertificateSigningRequestConditionDict as \
+    V1CertificateSigningRequestConditionDict
+from kubernetes.client.models.v1_certificate_signing_request_list import \
+    V1CertificateSigningRequestList as V1CertificateSigningRequestList
+from kubernetes.client.models.v1_certificate_signing_request_list import \
+    V1CertificateSigningRequestListDict as V1CertificateSigningRequestListDict
+from kubernetes.client.models.v1_certificate_signing_request_spec import \
+    V1CertificateSigningRequestSpec as V1CertificateSigningRequestSpec
+from kubernetes.client.models.v1_certificate_signing_request_spec import \
+    V1CertificateSigningRequestSpecDict as V1CertificateSigningRequestSpecDict
+from kubernetes.client.models.v1_certificate_signing_request_status import \
+    V1CertificateSigningRequestStatus as V1CertificateSigningRequestStatus
+from kubernetes.client.models.v1_certificate_signing_request_status import \
+    V1CertificateSigningRequestStatusDict as \
+    V1CertificateSigningRequestStatusDict
 from kubernetes.client.models.v1_cinder_persistent_volume_source import \
     V1CinderPersistentVolumeSource as V1CinderPersistentVolumeSource
 from kubernetes.client.models.v1_cinder_persistent_volume_source import \
@@ -525,15 +571,10 @@ from kubernetes.client.models.v1_ephemeral_container import \
     V1EphemeralContainer as V1EphemeralContainer
 from kubernetes.client.models.v1_ephemeral_container import \
     V1EphemeralContainerDict as V1EphemeralContainerDict
-from kubernetes.client.models.v1_event import V1Event as V1Event
-from kubernetes.client.models.v1_event import V1EventDict as V1EventDict
-from kubernetes.client.models.v1_event_list import V1EventList as V1EventList
-from kubernetes.client.models.v1_event_list import \
-    V1EventListDict as V1EventListDict
-from kubernetes.client.models.v1_event_series import \
-    V1EventSeries as V1EventSeries
-from kubernetes.client.models.v1_event_series import \
-    V1EventSeriesDict as V1EventSeriesDict
+from kubernetes.client.models.v1_ephemeral_volume_source import \
+    V1EphemeralVolumeSource as V1EphemeralVolumeSource
+from kubernetes.client.models.v1_ephemeral_volume_source import \
+    V1EphemeralVolumeSourceDict as V1EphemeralVolumeSourceDict
 from kubernetes.client.models.v1_event_source import \
     V1EventSource as V1EventSource
 from kubernetes.client.models.v1_event_source import \
@@ -616,6 +657,56 @@ from kubernetes.client.models.v1_http_header import \
     V1HTTPHeader as V1HTTPHeader
 from kubernetes.client.models.v1_http_header import \
     V1HTTPHeaderDict as V1HTTPHeaderDict
+from kubernetes.client.models.v1_http_ingress_path import \
+    V1HTTPIngressPath as V1HTTPIngressPath
+from kubernetes.client.models.v1_http_ingress_path import \
+    V1HTTPIngressPathDict as V1HTTPIngressPathDict
+from kubernetes.client.models.v1_http_ingress_rule_value import \
+    V1HTTPIngressRuleValue as V1HTTPIngressRuleValue
+from kubernetes.client.models.v1_http_ingress_rule_value import \
+    V1HTTPIngressRuleValueDict as V1HTTPIngressRuleValueDict
+from kubernetes.client.models.v1_ingress import V1Ingress as V1Ingress
+from kubernetes.client.models.v1_ingress import V1IngressDict as V1IngressDict
+from kubernetes.client.models.v1_ingress_backend import \
+    V1IngressBackend as V1IngressBackend
+from kubernetes.client.models.v1_ingress_backend import \
+    V1IngressBackendDict as V1IngressBackendDict
+from kubernetes.client.models.v1_ingress_class import \
+    V1IngressClass as V1IngressClass
+from kubernetes.client.models.v1_ingress_class import \
+    V1IngressClassDict as V1IngressClassDict
+from kubernetes.client.models.v1_ingress_class_list import \
+    V1IngressClassList as V1IngressClassList
+from kubernetes.client.models.v1_ingress_class_list import \
+    V1IngressClassListDict as V1IngressClassListDict
+from kubernetes.client.models.v1_ingress_class_spec import \
+    V1IngressClassSpec as V1IngressClassSpec
+from kubernetes.client.models.v1_ingress_class_spec import \
+    V1IngressClassSpecDict as V1IngressClassSpecDict
+from kubernetes.client.models.v1_ingress_list import \
+    V1IngressList as V1IngressList
+from kubernetes.client.models.v1_ingress_list import \
+    V1IngressListDict as V1IngressListDict
+from kubernetes.client.models.v1_ingress_rule import \
+    V1IngressRule as V1IngressRule
+from kubernetes.client.models.v1_ingress_rule import \
+    V1IngressRuleDict as V1IngressRuleDict
+from kubernetes.client.models.v1_ingress_service_backend import \
+    V1IngressServiceBackend as V1IngressServiceBackend
+from kubernetes.client.models.v1_ingress_service_backend import \
+    V1IngressServiceBackendDict as V1IngressServiceBackendDict
+from kubernetes.client.models.v1_ingress_spec import \
+    V1IngressSpec as V1IngressSpec
+from kubernetes.client.models.v1_ingress_spec import \
+    V1IngressSpecDict as V1IngressSpecDict
+from kubernetes.client.models.v1_ingress_status import \
+    V1IngressStatus as V1IngressStatus
+from kubernetes.client.models.v1_ingress_status import \
+    V1IngressStatusDict as V1IngressStatusDict
+from kubernetes.client.models.v1_ingress_tls import \
+    V1IngressTLS as V1IngressTLS
+from kubernetes.client.models.v1_ingress_tls import \
+    V1IngressTLSDict as V1IngressTLSDict
 from kubernetes.client.models.v1_ip_block import V1IPBlock as V1IPBlock
 from kubernetes.client.models.v1_ip_block import V1IPBlockDict as V1IPBlockDict
 from kubernetes.client.models.v1_iscsi_persistent_volume_source import \
@@ -873,6 +964,10 @@ from kubernetes.client.models.v1_persistent_volume_claim_status import \
     V1PersistentVolumeClaimStatus as V1PersistentVolumeClaimStatus
 from kubernetes.client.models.v1_persistent_volume_claim_status import \
     V1PersistentVolumeClaimStatusDict as V1PersistentVolumeClaimStatusDict
+from kubernetes.client.models.v1_persistent_volume_claim_template import \
+    V1PersistentVolumeClaimTemplate as V1PersistentVolumeClaimTemplate
+from kubernetes.client.models.v1_persistent_volume_claim_template import \
+    V1PersistentVolumeClaimTemplateDict as V1PersistentVolumeClaimTemplateDict
 from kubernetes.client.models.v1_persistent_volume_claim_volume_source import \
     V1PersistentVolumeClaimVolumeSource as V1PersistentVolumeClaimVolumeSource
 from kubernetes.client.models.v1_persistent_volume_claim_volume_source import \
@@ -1127,6 +1222,10 @@ from kubernetes.client.models.v1_se_linux_options import \
     V1SELinuxOptions as V1SELinuxOptions
 from kubernetes.client.models.v1_se_linux_options import \
     V1SELinuxOptionsDict as V1SELinuxOptionsDict
+from kubernetes.client.models.v1_seccomp_profile import \
+    V1SeccompProfile as V1SeccompProfile
+from kubernetes.client.models.v1_seccomp_profile import \
+    V1SeccompProfileDict as V1SeccompProfileDict
 from kubernetes.client.models.v1_secret import V1Secret as V1Secret
 from kubernetes.client.models.v1_secret import V1SecretDict as V1SecretDict
 from kubernetes.client.models.v1_secret_env_source import \
@@ -1191,6 +1290,10 @@ from kubernetes.client.models.v1_service_account_token_projection import \
     V1ServiceAccountTokenProjection as V1ServiceAccountTokenProjection
 from kubernetes.client.models.v1_service_account_token_projection import \
     V1ServiceAccountTokenProjectionDict as V1ServiceAccountTokenProjectionDict
+from kubernetes.client.models.v1_service_backend_port import \
+    V1ServiceBackendPort as V1ServiceBackendPort
+from kubernetes.client.models.v1_service_backend_port import \
+    V1ServiceBackendPortDict as V1ServiceBackendPortDict
 from kubernetes.client.models.v1_service_list import \
     V1ServiceList as V1ServiceList
 from kubernetes.client.models.v1_service_list import \
@@ -1421,18 +1524,6 @@ from kubernetes.client.models.v1alpha1_aggregation_rule import \
     V1alpha1AggregationRule as V1alpha1AggregationRule
 from kubernetes.client.models.v1alpha1_aggregation_rule import \
     V1alpha1AggregationRuleDict as V1alpha1AggregationRuleDict
-from kubernetes.client.models.v1alpha1_audit_sink import \
-    V1alpha1AuditSink as V1alpha1AuditSink
-from kubernetes.client.models.v1alpha1_audit_sink import \
-    V1alpha1AuditSinkDict as V1alpha1AuditSinkDict
-from kubernetes.client.models.v1alpha1_audit_sink_list import \
-    V1alpha1AuditSinkList as V1alpha1AuditSinkList
-from kubernetes.client.models.v1alpha1_audit_sink_list import \
-    V1alpha1AuditSinkListDict as V1alpha1AuditSinkListDict
-from kubernetes.client.models.v1alpha1_audit_sink_spec import \
-    V1alpha1AuditSinkSpec as V1alpha1AuditSinkSpec
-from kubernetes.client.models.v1alpha1_audit_sink_spec import \
-    V1alpha1AuditSinkSpecDict as V1alpha1AuditSinkSpecDict
 from kubernetes.client.models.v1alpha1_cluster_role import \
     V1alpha1ClusterRole as V1alpha1ClusterRole
 from kubernetes.client.models.v1alpha1_cluster_role import \
@@ -1507,10 +1598,6 @@ from kubernetes.client.models.v1alpha1_pod_preset_spec import \
     V1alpha1PodPresetSpec as V1alpha1PodPresetSpec
 from kubernetes.client.models.v1alpha1_pod_preset_spec import \
     V1alpha1PodPresetSpecDict as V1alpha1PodPresetSpecDict
-from kubernetes.client.models.v1alpha1_policy import \
-    V1alpha1Policy as V1alpha1Policy
-from kubernetes.client.models.v1alpha1_policy import \
-    V1alpha1PolicyDict as V1alpha1PolicyDict
 from kubernetes.client.models.v1alpha1_policy_rule import \
     V1alpha1PolicyRule as V1alpha1PolicyRule
 from kubernetes.client.models.v1alpha1_policy_rule import \
@@ -1609,10 +1696,6 @@ from kubernetes.client.models.v1alpha1_service_account_subject import \
     V1alpha1ServiceAccountSubject as V1alpha1ServiceAccountSubject
 from kubernetes.client.models.v1alpha1_service_account_subject import \
     V1alpha1ServiceAccountSubjectDict as V1alpha1ServiceAccountSubjectDict
-from kubernetes.client.models.v1alpha1_service_reference import \
-    V1alpha1ServiceReference as V1alpha1ServiceReference
-from kubernetes.client.models.v1alpha1_service_reference import \
-    V1alpha1ServiceReferenceDict as V1alpha1ServiceReferenceDict
 from kubernetes.client.models.v1alpha1_user_subject import \
     V1alpha1UserSubject as V1alpha1UserSubject
 from kubernetes.client.models.v1alpha1_user_subject import \
@@ -1641,18 +1724,6 @@ from kubernetes.client.models.v1alpha1_volume_error import \
     V1alpha1VolumeError as V1alpha1VolumeError
 from kubernetes.client.models.v1alpha1_volume_error import \
     V1alpha1VolumeErrorDict as V1alpha1VolumeErrorDict
-from kubernetes.client.models.v1alpha1_webhook import \
-    V1alpha1Webhook as V1alpha1Webhook
-from kubernetes.client.models.v1alpha1_webhook import \
-    V1alpha1WebhookDict as V1alpha1WebhookDict
-from kubernetes.client.models.v1alpha1_webhook_client_config import \
-    V1alpha1WebhookClientConfig as V1alpha1WebhookClientConfig
-from kubernetes.client.models.v1alpha1_webhook_client_config import \
-    V1alpha1WebhookClientConfigDict as V1alpha1WebhookClientConfigDict
-from kubernetes.client.models.v1alpha1_webhook_throttle_config import \
-    V1alpha1WebhookThrottleConfig as V1alpha1WebhookThrottleConfig
-from kubernetes.client.models.v1alpha1_webhook_throttle_config import \
-    V1alpha1WebhookThrottleConfigDict as V1alpha1WebhookThrottleConfigDict
 from kubernetes.client.models.v1beta1_aggregation_rule import \
     V1beta1AggregationRule as V1beta1AggregationRule
 from kubernetes.client.models.v1beta1_aggregation_rule import \

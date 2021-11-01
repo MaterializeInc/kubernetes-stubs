@@ -15,6 +15,7 @@ class V1Volume:
     csi: typing.Optional[kubernetes.client.V1CSIVolumeSource]
     downward_api: typing.Optional[kubernetes.client.V1DownwardAPIVolumeSource]
     empty_dir: typing.Optional[kubernetes.client.V1EmptyDirVolumeSource]
+    ephemeral: typing.Optional[kubernetes.client.V1EphemeralVolumeSource]
     fc: typing.Optional[kubernetes.client.V1FCVolumeSource]
     flex_volume: typing.Optional[kubernetes.client.V1FlexVolumeSource]
     flocker: typing.Optional[kubernetes.client.V1FlockerVolumeSource]
@@ -57,6 +58,7 @@ class V1Volume:
             kubernetes.client.V1DownwardAPIVolumeSource
         ] = ...,
         empty_dir: typing.Optional[kubernetes.client.V1EmptyDirVolumeSource] = ...,
+        ephemeral: typing.Optional[kubernetes.client.V1EphemeralVolumeSource] = ...,
         fc: typing.Optional[kubernetes.client.V1FCVolumeSource] = ...,
         flex_volume: typing.Optional[kubernetes.client.V1FlexVolumeSource] = ...,
         flocker: typing.Optional[kubernetes.client.V1FlockerVolumeSource] = ...,
@@ -102,6 +104,7 @@ class V1VolumeDict(typing.TypedDict, total=False):
     csi: typing.Optional[kubernetes.client.V1CSIVolumeSourceDict]
     downwardAPI: typing.Optional[kubernetes.client.V1DownwardAPIVolumeSourceDict]
     emptyDir: typing.Optional[kubernetes.client.V1EmptyDirVolumeSourceDict]
+    ephemeral: typing.Optional[kubernetes.client.V1EphemeralVolumeSourceDict]
     fc: typing.Optional[kubernetes.client.V1FCVolumeSourceDict]
     flexVolume: typing.Optional[kubernetes.client.V1FlexVolumeSourceDict]
     flocker: typing.Optional[kubernetes.client.V1FlockerVolumeSourceDict]
