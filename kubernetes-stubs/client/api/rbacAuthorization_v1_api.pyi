@@ -17,6 +17,7 @@ class RbacAuthorizationV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ClusterRoleBindingList: ...
@@ -42,6 +43,7 @@ class RbacAuthorizationV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_cluster_role_binding(
@@ -87,6 +89,7 @@ class RbacAuthorizationV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ClusterRoleList: ...
@@ -112,6 +115,7 @@ class RbacAuthorizationV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_cluster_role(
@@ -158,6 +162,7 @@ class RbacAuthorizationV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1RoleBindingList: ...
@@ -185,6 +190,7 @@ class RbacAuthorizationV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_role_binding(
@@ -234,6 +240,7 @@ class RbacAuthorizationV1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1RoleList: ...
@@ -261,6 +268,7 @@ class RbacAuthorizationV1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_namespaced_role(
@@ -309,6 +317,7 @@ class RbacAuthorizationV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1RoleBindingList: ...
@@ -322,6 +331,7 @@ class RbacAuthorizationV1Api:
         limit: typing.Optional[int] = ...,
         pretty: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1RoleList: ...

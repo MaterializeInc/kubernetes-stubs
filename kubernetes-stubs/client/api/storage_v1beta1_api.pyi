@@ -17,6 +17,7 @@ class StorageV1beta1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1CSIDriverList: ...
@@ -42,6 +43,7 @@ class StorageV1beta1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_csi_driver(
@@ -92,6 +94,7 @@ class StorageV1beta1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1CSINodeList: ...
@@ -117,6 +120,7 @@ class StorageV1beta1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_csi_node(
@@ -167,6 +171,7 @@ class StorageV1beta1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1StorageClassList: ...
@@ -192,6 +197,7 @@ class StorageV1beta1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_storage_class(
@@ -242,6 +248,7 @@ class StorageV1beta1Api:
         label_selector: typing.Optional[str] = ...,
         limit: typing.Optional[int] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1VolumeAttachmentList: ...
@@ -267,6 +274,7 @@ class StorageV1beta1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...,
         resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
     def read_volume_attachment(

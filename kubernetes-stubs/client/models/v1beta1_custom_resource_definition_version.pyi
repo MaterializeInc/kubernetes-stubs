@@ -7,6 +7,8 @@ class V1beta1CustomResourceDefinitionVersion:
     additional_printer_columns: typing.Optional[
         list[kubernetes.client.V1beta1CustomResourceColumnDefinition]
     ]
+    deprecated: typing.Optional[bool]
+    deprecation_warning: typing.Optional[str]
     name: str
     schema: typing.Optional[kubernetes.client.V1beta1CustomResourceValidation]
     served: bool
@@ -18,6 +20,8 @@ class V1beta1CustomResourceDefinitionVersion:
         additional_printer_columns: typing.Optional[
             list[kubernetes.client.V1beta1CustomResourceColumnDefinition]
         ] = ...,
+        deprecated: typing.Optional[bool] = ...,
+        deprecation_warning: typing.Optional[str] = ...,
         name: str,
         schema: typing.Optional[
             kubernetes.client.V1beta1CustomResourceValidation
@@ -34,6 +38,8 @@ class V1beta1CustomResourceDefinitionVersionDict(typing.TypedDict, total=False):
     additionalPrinterColumns: typing.Optional[
         list[kubernetes.client.V1beta1CustomResourceColumnDefinitionDict]
     ]
+    deprecated: typing.Optional[bool]
+    deprecationWarning: typing.Optional[str]
     name: str
     schema: typing.Optional[kubernetes.client.V1beta1CustomResourceValidationDict]
     served: bool
