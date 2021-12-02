@@ -12,7 +12,7 @@ class EventsV1Event:
     deprecated_source: typing.Optional[kubernetes.client.V1EventSource]
     event_time: datetime.datetime
     kind: typing.Optional[str]
-    metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
+    metadata: kubernetes.client.V1ObjectMeta
     note: typing.Optional[str]
     reason: typing.Optional[str]
     regarding: typing.Optional[kubernetes.client.V1ObjectReference]
@@ -32,7 +32,7 @@ class EventsV1Event:
         deprecated_source: typing.Optional[kubernetes.client.V1EventSource] = ...,
         event_time: datetime.datetime,
         kind: typing.Optional[str] = ...,
-        metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
+        metadata: kubernetes.client.V1ObjectMeta,
         note: typing.Optional[str] = ...,
         reason: typing.Optional[str] = ...,
         regarding: typing.Optional[kubernetes.client.V1ObjectReference] = ...,
@@ -53,7 +53,7 @@ class EventsV1EventDict(typing.TypedDict, total=False):
     deprecatedSource: typing.Optional[kubernetes.client.V1EventSourceDict]
     eventTime: datetime.datetime
     kind: typing.Optional[str]
-    metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
+    metadata: kubernetes.client.V1ObjectMetaDict
     note: typing.Optional[str]
     reason: typing.Optional[str]
     regarding: typing.Optional[kubernetes.client.V1ObjectReferenceDict]

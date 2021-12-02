@@ -54,6 +54,10 @@ from kubernetes.client.models.apiregistration_v1beta1_service_reference import \
 from kubernetes.client.models.apiregistration_v1beta1_service_reference import \
     ApiregistrationV1beta1ServiceReferenceDict as \
     ApiregistrationV1beta1ServiceReferenceDict
+from kubernetes.client.models.authentication_v1_token_request import \
+    AuthenticationV1TokenRequest as AuthenticationV1TokenRequest
+from kubernetes.client.models.authentication_v1_token_request import \
+    AuthenticationV1TokenRequestDict as AuthenticationV1TokenRequestDict
 from kubernetes.client.models.core_v1_event import CoreV1Event as CoreV1Event
 from kubernetes.client.models.core_v1_event import \
     CoreV1EventDict as CoreV1EventDict
@@ -120,6 +124,10 @@ from kubernetes.client.models.flowcontrol_v1alpha1_subject import \
     FlowcontrolV1alpha1Subject as FlowcontrolV1alpha1Subject
 from kubernetes.client.models.flowcontrol_v1alpha1_subject import \
     FlowcontrolV1alpha1SubjectDict as FlowcontrolV1alpha1SubjectDict
+from kubernetes.client.models.flowcontrol_v1beta1_subject import \
+    FlowcontrolV1beta1Subject as FlowcontrolV1beta1Subject
+from kubernetes.client.models.flowcontrol_v1beta1_subject import \
+    FlowcontrolV1beta1SubjectDict as FlowcontrolV1beta1SubjectDict
 from kubernetes.client.models.networking_v1beta1_http_ingress_path import \
     NetworkingV1beta1HTTPIngressPath as NetworkingV1beta1HTTPIngressPath
 from kubernetes.client.models.networking_v1beta1_http_ingress_path import \
@@ -163,6 +171,14 @@ from kubernetes.client.models.rbac_v1alpha1_subject import \
     RbacV1alpha1Subject as RbacV1alpha1Subject
 from kubernetes.client.models.rbac_v1alpha1_subject import \
     RbacV1alpha1SubjectDict as RbacV1alpha1SubjectDict
+from kubernetes.client.models.rbac_v1beta1_subject import \
+    RbacV1beta1Subject as RbacV1beta1Subject
+from kubernetes.client.models.rbac_v1beta1_subject import \
+    RbacV1beta1SubjectDict as RbacV1beta1SubjectDict
+from kubernetes.client.models.storage_v1_token_request import \
+    StorageV1TokenRequest as StorageV1TokenRequest
+from kubernetes.client.models.storage_v1_token_request import \
+    StorageV1TokenRequestDict as StorageV1TokenRequestDict
 from kubernetes.client.models.v1_affinity import V1Affinity as V1Affinity
 from kubernetes.client.models.v1_affinity import \
     V1AffinityDict as V1AffinityDict
@@ -312,6 +328,9 @@ from kubernetes.client.models.v1_component_status_list import \
     V1ComponentStatusList as V1ComponentStatusList
 from kubernetes.client.models.v1_component_status_list import \
     V1ComponentStatusListDict as V1ComponentStatusListDict
+from kubernetes.client.models.v1_condition import V1Condition as V1Condition
+from kubernetes.client.models.v1_condition import \
+    V1ConditionDict as V1ConditionDict
 from kubernetes.client.models.v1_config_map import V1ConfigMap as V1ConfigMap
 from kubernetes.client.models.v1_config_map import \
     V1ConfigMapDict as V1ConfigMapDict
@@ -935,6 +954,9 @@ from kubernetes.client.models.v1_object_reference import \
     V1ObjectReference as V1ObjectReference
 from kubernetes.client.models.v1_object_reference import \
     V1ObjectReferenceDict as V1ObjectReferenceDict
+from kubernetes.client.models.v1_overhead import V1Overhead as V1Overhead
+from kubernetes.client.models.v1_overhead import \
+    V1OverheadDict as V1OverheadDict
 from kubernetes.client.models.v1_owner_reference import \
     V1OwnerReference as V1OwnerReference
 from kubernetes.client.models.v1_owner_reference import \
@@ -1049,6 +1071,10 @@ from kubernetes.client.models.v1_policy_rule import \
     V1PolicyRule as V1PolicyRule
 from kubernetes.client.models.v1_policy_rule import \
     V1PolicyRuleDict as V1PolicyRuleDict
+from kubernetes.client.models.v1_port_status import \
+    V1PortStatus as V1PortStatus
+from kubernetes.client.models.v1_port_status import \
+    V1PortStatusDict as V1PortStatusDict
 from kubernetes.client.models.v1_portworx_volume_source import \
     V1PortworxVolumeSource as V1PortworxVolumeSource
 from kubernetes.client.models.v1_portworx_volume_source import \
@@ -1192,6 +1218,14 @@ from kubernetes.client.models.v1_rule_with_operations import \
     V1RuleWithOperations as V1RuleWithOperations
 from kubernetes.client.models.v1_rule_with_operations import \
     V1RuleWithOperationsDict as V1RuleWithOperationsDict
+from kubernetes.client.models.v1_runtime_class import \
+    V1RuntimeClass as V1RuntimeClass
+from kubernetes.client.models.v1_runtime_class import \
+    V1RuntimeClassDict as V1RuntimeClassDict
+from kubernetes.client.models.v1_runtime_class_list import \
+    V1RuntimeClassList as V1RuntimeClassList
+from kubernetes.client.models.v1_runtime_class_list import \
+    V1RuntimeClassListDict as V1RuntimeClassListDict
 from kubernetes.client.models.v1_scale import V1Scale as V1Scale
 from kubernetes.client.models.v1_scale import V1ScaleDict as V1ScaleDict
 from kubernetes.client.models.v1_scale_io_persistent_volume_source import \
@@ -1209,6 +1243,9 @@ from kubernetes.client.models.v1_scale_status import \
     V1ScaleStatus as V1ScaleStatus
 from kubernetes.client.models.v1_scale_status import \
     V1ScaleStatusDict as V1ScaleStatusDict
+from kubernetes.client.models.v1_scheduling import V1Scheduling as V1Scheduling
+from kubernetes.client.models.v1_scheduling import \
+    V1SchedulingDict as V1SchedulingDict
 from kubernetes.client.models.v1_scope_selector import \
     V1ScopeSelector as V1ScopeSelector
 from kubernetes.client.models.v1_scope_selector import \
@@ -1391,10 +1428,6 @@ from kubernetes.client.models.v1_tcp_socket_action import \
     V1TCPSocketAction as V1TCPSocketAction
 from kubernetes.client.models.v1_tcp_socket_action import \
     V1TCPSocketActionDict as V1TCPSocketActionDict
-from kubernetes.client.models.v1_token_request import \
-    V1TokenRequest as V1TokenRequest
-from kubernetes.client.models.v1_token_request import \
-    V1TokenRequestDict as V1TokenRequestDict
 from kubernetes.client.models.v1_token_request_spec import \
     V1TokenRequestSpec as V1TokenRequestSpec
 from kubernetes.client.models.v1_token_request_spec import \
@@ -1586,18 +1619,6 @@ from kubernetes.client.models.v1alpha1_overhead import \
     V1alpha1Overhead as V1alpha1Overhead
 from kubernetes.client.models.v1alpha1_overhead import \
     V1alpha1OverheadDict as V1alpha1OverheadDict
-from kubernetes.client.models.v1alpha1_pod_preset import \
-    V1alpha1PodPreset as V1alpha1PodPreset
-from kubernetes.client.models.v1alpha1_pod_preset import \
-    V1alpha1PodPresetDict as V1alpha1PodPresetDict
-from kubernetes.client.models.v1alpha1_pod_preset_list import \
-    V1alpha1PodPresetList as V1alpha1PodPresetList
-from kubernetes.client.models.v1alpha1_pod_preset_list import \
-    V1alpha1PodPresetListDict as V1alpha1PodPresetListDict
-from kubernetes.client.models.v1alpha1_pod_preset_spec import \
-    V1alpha1PodPresetSpec as V1alpha1PodPresetSpec
-from kubernetes.client.models.v1alpha1_pod_preset_spec import \
-    V1alpha1PodPresetSpecDict as V1alpha1PodPresetSpecDict
 from kubernetes.client.models.v1alpha1_policy_rule import \
     V1alpha1PolicyRule as V1alpha1PolicyRule
 from kubernetes.client.models.v1alpha1_policy_rule import \
@@ -1692,10 +1713,30 @@ from kubernetes.client.models.v1alpha1_scheduling import \
     V1alpha1Scheduling as V1alpha1Scheduling
 from kubernetes.client.models.v1alpha1_scheduling import \
     V1alpha1SchedulingDict as V1alpha1SchedulingDict
+from kubernetes.client.models.v1alpha1_server_storage_version import \
+    V1alpha1ServerStorageVersion as V1alpha1ServerStorageVersion
+from kubernetes.client.models.v1alpha1_server_storage_version import \
+    V1alpha1ServerStorageVersionDict as V1alpha1ServerStorageVersionDict
 from kubernetes.client.models.v1alpha1_service_account_subject import \
     V1alpha1ServiceAccountSubject as V1alpha1ServiceAccountSubject
 from kubernetes.client.models.v1alpha1_service_account_subject import \
     V1alpha1ServiceAccountSubjectDict as V1alpha1ServiceAccountSubjectDict
+from kubernetes.client.models.v1alpha1_storage_version import \
+    V1alpha1StorageVersion as V1alpha1StorageVersion
+from kubernetes.client.models.v1alpha1_storage_version import \
+    V1alpha1StorageVersionDict as V1alpha1StorageVersionDict
+from kubernetes.client.models.v1alpha1_storage_version_condition import \
+    V1alpha1StorageVersionCondition as V1alpha1StorageVersionCondition
+from kubernetes.client.models.v1alpha1_storage_version_condition import \
+    V1alpha1StorageVersionConditionDict as V1alpha1StorageVersionConditionDict
+from kubernetes.client.models.v1alpha1_storage_version_list import \
+    V1alpha1StorageVersionList as V1alpha1StorageVersionList
+from kubernetes.client.models.v1alpha1_storage_version_list import \
+    V1alpha1StorageVersionListDict as V1alpha1StorageVersionListDict
+from kubernetes.client.models.v1alpha1_storage_version_status import \
+    V1alpha1StorageVersionStatus as V1alpha1StorageVersionStatus
+from kubernetes.client.models.v1alpha1_storage_version_status import \
+    V1alpha1StorageVersionStatusDict as V1alpha1StorageVersionStatusDict
 from kubernetes.client.models.v1alpha1_user_subject import \
     V1alpha1UserSubject as V1alpha1UserSubject
 from kubernetes.client.models.v1alpha1_user_subject import \
@@ -1951,10 +1992,38 @@ from kubernetes.client.models.v1beta1_external_documentation import \
     V1beta1ExternalDocumentation as V1beta1ExternalDocumentation
 from kubernetes.client.models.v1beta1_external_documentation import \
     V1beta1ExternalDocumentationDict as V1beta1ExternalDocumentationDict
+from kubernetes.client.models.v1beta1_flow_distinguisher_method import \
+    V1beta1FlowDistinguisherMethod as V1beta1FlowDistinguisherMethod
+from kubernetes.client.models.v1beta1_flow_distinguisher_method import \
+    V1beta1FlowDistinguisherMethodDict as V1beta1FlowDistinguisherMethodDict
+from kubernetes.client.models.v1beta1_flow_schema import \
+    V1beta1FlowSchema as V1beta1FlowSchema
+from kubernetes.client.models.v1beta1_flow_schema import \
+    V1beta1FlowSchemaDict as V1beta1FlowSchemaDict
+from kubernetes.client.models.v1beta1_flow_schema_condition import \
+    V1beta1FlowSchemaCondition as V1beta1FlowSchemaCondition
+from kubernetes.client.models.v1beta1_flow_schema_condition import \
+    V1beta1FlowSchemaConditionDict as V1beta1FlowSchemaConditionDict
+from kubernetes.client.models.v1beta1_flow_schema_list import \
+    V1beta1FlowSchemaList as V1beta1FlowSchemaList
+from kubernetes.client.models.v1beta1_flow_schema_list import \
+    V1beta1FlowSchemaListDict as V1beta1FlowSchemaListDict
+from kubernetes.client.models.v1beta1_flow_schema_spec import \
+    V1beta1FlowSchemaSpec as V1beta1FlowSchemaSpec
+from kubernetes.client.models.v1beta1_flow_schema_spec import \
+    V1beta1FlowSchemaSpecDict as V1beta1FlowSchemaSpecDict
+from kubernetes.client.models.v1beta1_flow_schema_status import \
+    V1beta1FlowSchemaStatus as V1beta1FlowSchemaStatus
+from kubernetes.client.models.v1beta1_flow_schema_status import \
+    V1beta1FlowSchemaStatusDict as V1beta1FlowSchemaStatusDict
 from kubernetes.client.models.v1beta1_fs_group_strategy_options import \
     V1beta1FSGroupStrategyOptions as V1beta1FSGroupStrategyOptions
 from kubernetes.client.models.v1beta1_fs_group_strategy_options import \
     V1beta1FSGroupStrategyOptionsDict as V1beta1FSGroupStrategyOptionsDict
+from kubernetes.client.models.v1beta1_group_subject import \
+    V1beta1GroupSubject as V1beta1GroupSubject
+from kubernetes.client.models.v1beta1_group_subject import \
+    V1beta1GroupSubjectDict as V1beta1GroupSubjectDict
 from kubernetes.client.models.v1beta1_host_port_range import \
     V1beta1HostPortRange as V1beta1HostPortRange
 from kubernetes.client.models.v1beta1_host_port_range import \
@@ -1994,6 +2063,16 @@ from kubernetes.client.models.v1beta1_lease_spec import \
     V1beta1LeaseSpec as V1beta1LeaseSpec
 from kubernetes.client.models.v1beta1_lease_spec import \
     V1beta1LeaseSpecDict as V1beta1LeaseSpecDict
+from kubernetes.client.models.v1beta1_limit_response import \
+    V1beta1LimitResponse as V1beta1LimitResponse
+from kubernetes.client.models.v1beta1_limit_response import \
+    V1beta1LimitResponseDict as V1beta1LimitResponseDict
+from kubernetes.client.models.v1beta1_limited_priority_level_configuration import \
+    V1beta1LimitedPriorityLevelConfiguration as \
+    V1beta1LimitedPriorityLevelConfiguration
+from kubernetes.client.models.v1beta1_limited_priority_level_configuration import \
+    V1beta1LimitedPriorityLevelConfigurationDict as \
+    V1beta1LimitedPriorityLevelConfigurationDict
 from kubernetes.client.models.v1beta1_local_subject_access_review import \
     V1beta1LocalSubjectAccessReview as V1beta1LocalSubjectAccessReview
 from kubernetes.client.models.v1beta1_local_subject_access_review import \
@@ -2017,6 +2096,10 @@ from kubernetes.client.models.v1beta1_non_resource_attributes import \
     V1beta1NonResourceAttributes as V1beta1NonResourceAttributes
 from kubernetes.client.models.v1beta1_non_resource_attributes import \
     V1beta1NonResourceAttributesDict as V1beta1NonResourceAttributesDict
+from kubernetes.client.models.v1beta1_non_resource_policy_rule import \
+    V1beta1NonResourcePolicyRule as V1beta1NonResourcePolicyRule
+from kubernetes.client.models.v1beta1_non_resource_policy_rule import \
+    V1beta1NonResourcePolicyRuleDict as V1beta1NonResourcePolicyRuleDict
 from kubernetes.client.models.v1beta1_non_resource_rule import \
     V1beta1NonResourceRule as V1beta1NonResourceRule
 from kubernetes.client.models.v1beta1_non_resource_rule import \
@@ -2058,6 +2141,10 @@ from kubernetes.client.models.v1beta1_policy_rule import \
     V1beta1PolicyRule as V1beta1PolicyRule
 from kubernetes.client.models.v1beta1_policy_rule import \
     V1beta1PolicyRuleDict as V1beta1PolicyRuleDict
+from kubernetes.client.models.v1beta1_policy_rules_with_subjects import \
+    V1beta1PolicyRulesWithSubjects as V1beta1PolicyRulesWithSubjects
+from kubernetes.client.models.v1beta1_policy_rules_with_subjects import \
+    V1beta1PolicyRulesWithSubjectsDict as V1beta1PolicyRulesWithSubjectsDict
 from kubernetes.client.models.v1beta1_priority_class import \
     V1beta1PriorityClass as V1beta1PriorityClass
 from kubernetes.client.models.v1beta1_priority_class import \
@@ -2066,10 +2153,53 @@ from kubernetes.client.models.v1beta1_priority_class_list import \
     V1beta1PriorityClassList as V1beta1PriorityClassList
 from kubernetes.client.models.v1beta1_priority_class_list import \
     V1beta1PriorityClassListDict as V1beta1PriorityClassListDict
+from kubernetes.client.models.v1beta1_priority_level_configuration import \
+    V1beta1PriorityLevelConfiguration as V1beta1PriorityLevelConfiguration
+from kubernetes.client.models.v1beta1_priority_level_configuration import \
+    V1beta1PriorityLevelConfigurationDict as \
+    V1beta1PriorityLevelConfigurationDict
+from kubernetes.client.models.v1beta1_priority_level_configuration_condition import \
+    V1beta1PriorityLevelConfigurationCondition as \
+    V1beta1PriorityLevelConfigurationCondition
+from kubernetes.client.models.v1beta1_priority_level_configuration_condition import \
+    V1beta1PriorityLevelConfigurationConditionDict as \
+    V1beta1PriorityLevelConfigurationConditionDict
+from kubernetes.client.models.v1beta1_priority_level_configuration_list import \
+    V1beta1PriorityLevelConfigurationList as \
+    V1beta1PriorityLevelConfigurationList
+from kubernetes.client.models.v1beta1_priority_level_configuration_list import \
+    V1beta1PriorityLevelConfigurationListDict as \
+    V1beta1PriorityLevelConfigurationListDict
+from kubernetes.client.models.v1beta1_priority_level_configuration_reference import \
+    V1beta1PriorityLevelConfigurationReference as \
+    V1beta1PriorityLevelConfigurationReference
+from kubernetes.client.models.v1beta1_priority_level_configuration_reference import \
+    V1beta1PriorityLevelConfigurationReferenceDict as \
+    V1beta1PriorityLevelConfigurationReferenceDict
+from kubernetes.client.models.v1beta1_priority_level_configuration_spec import \
+    V1beta1PriorityLevelConfigurationSpec as \
+    V1beta1PriorityLevelConfigurationSpec
+from kubernetes.client.models.v1beta1_priority_level_configuration_spec import \
+    V1beta1PriorityLevelConfigurationSpecDict as \
+    V1beta1PriorityLevelConfigurationSpecDict
+from kubernetes.client.models.v1beta1_priority_level_configuration_status import \
+    V1beta1PriorityLevelConfigurationStatus as \
+    V1beta1PriorityLevelConfigurationStatus
+from kubernetes.client.models.v1beta1_priority_level_configuration_status import \
+    V1beta1PriorityLevelConfigurationStatusDict as \
+    V1beta1PriorityLevelConfigurationStatusDict
+from kubernetes.client.models.v1beta1_queuing_configuration import \
+    V1beta1QueuingConfiguration as V1beta1QueuingConfiguration
+from kubernetes.client.models.v1beta1_queuing_configuration import \
+    V1beta1QueuingConfigurationDict as V1beta1QueuingConfigurationDict
 from kubernetes.client.models.v1beta1_resource_attributes import \
     V1beta1ResourceAttributes as V1beta1ResourceAttributes
 from kubernetes.client.models.v1beta1_resource_attributes import \
     V1beta1ResourceAttributesDict as V1beta1ResourceAttributesDict
+from kubernetes.client.models.v1beta1_resource_policy_rule import \
+    V1beta1ResourcePolicyRule as V1beta1ResourcePolicyRule
+from kubernetes.client.models.v1beta1_resource_policy_rule import \
+    V1beta1ResourcePolicyRuleDict as V1beta1ResourcePolicyRuleDict
 from kubernetes.client.models.v1beta1_resource_rule import \
     V1beta1ResourceRule as V1beta1ResourceRule
 from kubernetes.client.models.v1beta1_resource_rule import \
@@ -2145,6 +2275,10 @@ from kubernetes.client.models.v1beta1_self_subject_rules_review_spec import \
 from kubernetes.client.models.v1beta1_self_subject_rules_review_spec import \
     V1beta1SelfSubjectRulesReviewSpecDict as \
     V1beta1SelfSubjectRulesReviewSpecDict
+from kubernetes.client.models.v1beta1_service_account_subject import \
+    V1beta1ServiceAccountSubject as V1beta1ServiceAccountSubject
+from kubernetes.client.models.v1beta1_service_account_subject import \
+    V1beta1ServiceAccountSubjectDict as V1beta1ServiceAccountSubjectDict
 from kubernetes.client.models.v1beta1_storage_class import \
     V1beta1StorageClass as V1beta1StorageClass
 from kubernetes.client.models.v1beta1_storage_class import \
@@ -2153,10 +2287,6 @@ from kubernetes.client.models.v1beta1_storage_class_list import \
     V1beta1StorageClassList as V1beta1StorageClassList
 from kubernetes.client.models.v1beta1_storage_class_list import \
     V1beta1StorageClassListDict as V1beta1StorageClassListDict
-from kubernetes.client.models.v1beta1_subject import \
-    V1beta1Subject as V1beta1Subject
-from kubernetes.client.models.v1beta1_subject import \
-    V1beta1SubjectDict as V1beta1SubjectDict
 from kubernetes.client.models.v1beta1_subject_access_review import \
     V1beta1SubjectAccessReview as V1beta1SubjectAccessReview
 from kubernetes.client.models.v1beta1_subject_access_review import \
@@ -2180,6 +2310,10 @@ from kubernetes.client.models.v1beta1_supplemental_groups_strategy_options impor
 from kubernetes.client.models.v1beta1_supplemental_groups_strategy_options import \
     V1beta1SupplementalGroupsStrategyOptionsDict as \
     V1beta1SupplementalGroupsStrategyOptionsDict
+from kubernetes.client.models.v1beta1_token_request import \
+    V1beta1TokenRequest as V1beta1TokenRequest
+from kubernetes.client.models.v1beta1_token_request import \
+    V1beta1TokenRequestDict as V1beta1TokenRequestDict
 from kubernetes.client.models.v1beta1_token_review import \
     V1beta1TokenReview as V1beta1TokenReview
 from kubernetes.client.models.v1beta1_token_review import \
@@ -2196,6 +2330,10 @@ from kubernetes.client.models.v1beta1_user_info import \
     V1beta1UserInfo as V1beta1UserInfo
 from kubernetes.client.models.v1beta1_user_info import \
     V1beta1UserInfoDict as V1beta1UserInfoDict
+from kubernetes.client.models.v1beta1_user_subject import \
+    V1beta1UserSubject as V1beta1UserSubject
+from kubernetes.client.models.v1beta1_user_subject import \
+    V1beta1UserSubjectDict as V1beta1UserSubjectDict
 from kubernetes.client.models.v1beta1_validating_webhook import \
     V1beta1ValidatingWebhook as V1beta1ValidatingWebhook
 from kubernetes.client.models.v1beta1_validating_webhook import \
@@ -2260,6 +2398,18 @@ from kubernetes.client.models.v2alpha1_job_template_spec import \
     V2alpha1JobTemplateSpec as V2alpha1JobTemplateSpec
 from kubernetes.client.models.v2alpha1_job_template_spec import \
     V2alpha1JobTemplateSpecDict as V2alpha1JobTemplateSpecDict
+from kubernetes.client.models.v2beta1_container_resource_metric_source import \
+    V2beta1ContainerResourceMetricSource as \
+    V2beta1ContainerResourceMetricSource
+from kubernetes.client.models.v2beta1_container_resource_metric_source import \
+    V2beta1ContainerResourceMetricSourceDict as \
+    V2beta1ContainerResourceMetricSourceDict
+from kubernetes.client.models.v2beta1_container_resource_metric_status import \
+    V2beta1ContainerResourceMetricStatus as \
+    V2beta1ContainerResourceMetricStatus
+from kubernetes.client.models.v2beta1_container_resource_metric_status import \
+    V2beta1ContainerResourceMetricStatusDict as \
+    V2beta1ContainerResourceMetricStatusDict
 from kubernetes.client.models.v2beta1_cross_version_object_reference import \
     V2beta1CrossVersionObjectReference as V2beta1CrossVersionObjectReference
 from kubernetes.client.models.v2beta1_cross_version_object_reference import \
@@ -2331,6 +2481,18 @@ from kubernetes.client.models.v2beta1_resource_metric_status import \
     V2beta1ResourceMetricStatus as V2beta1ResourceMetricStatus
 from kubernetes.client.models.v2beta1_resource_metric_status import \
     V2beta1ResourceMetricStatusDict as V2beta1ResourceMetricStatusDict
+from kubernetes.client.models.v2beta2_container_resource_metric_source import \
+    V2beta2ContainerResourceMetricSource as \
+    V2beta2ContainerResourceMetricSource
+from kubernetes.client.models.v2beta2_container_resource_metric_source import \
+    V2beta2ContainerResourceMetricSourceDict as \
+    V2beta2ContainerResourceMetricSourceDict
+from kubernetes.client.models.v2beta2_container_resource_metric_status import \
+    V2beta2ContainerResourceMetricStatus as \
+    V2beta2ContainerResourceMetricStatus
+from kubernetes.client.models.v2beta2_container_resource_metric_status import \
+    V2beta2ContainerResourceMetricStatusDict as \
+    V2beta2ContainerResourceMetricStatusDict
 from kubernetes.client.models.v2beta2_cross_version_object_reference import \
     V2beta2CrossVersionObjectReference as V2beta2CrossVersionObjectReference
 from kubernetes.client.models.v2beta2_cross_version_object_reference import \

@@ -75,6 +75,12 @@ from kubernetes.client.api.flowcontrolApiserver_api import \
     FlowcontrolApiserverApi as FlowcontrolApiserverApi
 from kubernetes.client.api.flowcontrolApiserver_v1alpha1_api import \
     FlowcontrolApiserverV1alpha1Api as FlowcontrolApiserverV1alpha1Api
+from kubernetes.client.api.flowcontrolApiserver_v1beta1_api import \
+    FlowcontrolApiserverV1beta1Api as FlowcontrolApiserverV1beta1Api
+from kubernetes.client.api.internalApiserver_api import \
+    InternalApiserverApi as InternalApiserverApi
+from kubernetes.client.api.internalApiserver_v1alpha1_api import \
+    InternalApiserverV1alpha1Api as InternalApiserverV1alpha1Api
 from kubernetes.client.api.logs_api import LogsApi as LogsApi
 from kubernetes.client.api.networking_api import NetworkingApi as NetworkingApi
 from kubernetes.client.api.networking_v1_api import \
@@ -82,10 +88,12 @@ from kubernetes.client.api.networking_v1_api import \
 from kubernetes.client.api.networking_v1beta1_api import \
     NetworkingV1beta1Api as NetworkingV1beta1Api
 from kubernetes.client.api.node_api import NodeApi as NodeApi
+from kubernetes.client.api.node_v1_api import NodeV1Api as NodeV1Api
 from kubernetes.client.api.node_v1alpha1_api import \
     NodeV1alpha1Api as NodeV1alpha1Api
 from kubernetes.client.api.node_v1beta1_api import \
     NodeV1beta1Api as NodeV1beta1Api
+from kubernetes.client.api.openid_api import OpenidApi as OpenidApi
 from kubernetes.client.api.policy_api import PolicyApi as PolicyApi
 from kubernetes.client.api.policy_v1beta1_api import \
     PolicyV1beta1Api as PolicyV1beta1Api
@@ -104,9 +112,6 @@ from kubernetes.client.api.scheduling_v1alpha1_api import \
     SchedulingV1alpha1Api as SchedulingV1alpha1Api
 from kubernetes.client.api.scheduling_v1beta1_api import \
     SchedulingV1beta1Api as SchedulingV1beta1Api
-from kubernetes.client.api.settings_api import SettingsApi as SettingsApi
-from kubernetes.client.api.settings_v1alpha1_api import \
-    SettingsV1alpha1Api as SettingsV1alpha1Api
 from kubernetes.client.api.storage_api import StorageApi as StorageApi
 from kubernetes.client.api.storage_v1_api import StorageV1Api as StorageV1Api
 from kubernetes.client.api.storage_v1alpha1_api import \
@@ -114,3 +119,4 @@ from kubernetes.client.api.storage_v1alpha1_api import \
 from kubernetes.client.api.storage_v1beta1_api import \
     StorageV1beta1Api as StorageV1beta1Api
 from kubernetes.client.api.version_api import VersionApi as VersionApi
+from kubernetes.client.api.WellKnown_api import WellKnownApi as WellKnownApi

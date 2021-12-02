@@ -1288,12 +1288,12 @@ class CoreV1Api:
         self,
         name: str,
         namespace: str,
-        body: kubernetes.client.V1TokenRequest,
+        body: kubernetes.client.AuthenticationV1TokenRequest,
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
-    ) -> kubernetes.client.V1TokenRequest: ...
+    ) -> kubernetes.client.AuthenticationV1TokenRequest: ...
     def list_namespaced_service(
         self,
         namespace: str,

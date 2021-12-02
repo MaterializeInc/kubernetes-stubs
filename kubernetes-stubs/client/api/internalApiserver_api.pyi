@@ -2,7 +2,7 @@ import typing
 
 import kubernetes.client
 
-class SettingsApi:
+class InternalApiserverApi:
     def __init__(
         self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...
     ) -> None: ...

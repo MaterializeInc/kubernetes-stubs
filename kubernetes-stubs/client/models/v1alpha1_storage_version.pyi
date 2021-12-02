@@ -3,26 +3,26 @@ import typing
 
 import kubernetes.client
 
-class V1TokenRequest:
+class V1alpha1StorageVersion:
     api_version: typing.Optional[str]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
-    spec: kubernetes.client.V1TokenRequestSpec
-    status: typing.Optional[kubernetes.client.V1TokenRequestStatus]
+    spec: typing.Any
+    status: kubernetes.client.V1alpha1StorageVersionStatus
     def __init__(
         self,
         *,
         api_version: typing.Optional[str] = ...,
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
-        spec: kubernetes.client.V1TokenRequestSpec,
-        status: typing.Optional[kubernetes.client.V1TokenRequestStatus] = ...
+        spec: typing.Any,
+        status: kubernetes.client.V1alpha1StorageVersionStatus
     ) -> None: ...
-    def to_dict(self) -> V1TokenRequestDict: ...
+    def to_dict(self) -> V1alpha1StorageVersionDict: ...
 
-class V1TokenRequestDict(typing.TypedDict, total=False):
+class V1alpha1StorageVersionDict(typing.TypedDict, total=False):
     apiVersion: typing.Optional[str]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
-    spec: kubernetes.client.V1TokenRequestSpecDict
-    status: typing.Optional[kubernetes.client.V1TokenRequestStatusDict]
+    spec: typing.Any
+    status: kubernetes.client.V1alpha1StorageVersionStatusDict

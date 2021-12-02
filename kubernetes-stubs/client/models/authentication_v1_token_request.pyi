@@ -3,23 +3,26 @@ import typing
 
 import kubernetes.client
 
-class V1alpha1PodPreset:
+class AuthenticationV1TokenRequest:
     api_version: typing.Optional[str]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
-    spec: typing.Optional[kubernetes.client.V1alpha1PodPresetSpec]
+    spec: kubernetes.client.V1TokenRequestSpec
+    status: typing.Optional[kubernetes.client.V1TokenRequestStatus]
     def __init__(
         self,
         *,
         api_version: typing.Optional[str] = ...,
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
-        spec: typing.Optional[kubernetes.client.V1alpha1PodPresetSpec] = ...
+        spec: kubernetes.client.V1TokenRequestSpec,
+        status: typing.Optional[kubernetes.client.V1TokenRequestStatus] = ...
     ) -> None: ...
-    def to_dict(self) -> V1alpha1PodPresetDict: ...
+    def to_dict(self) -> AuthenticationV1TokenRequestDict: ...
 
-class V1alpha1PodPresetDict(typing.TypedDict, total=False):
+class AuthenticationV1TokenRequestDict(typing.TypedDict, total=False):
     apiVersion: typing.Optional[str]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
-    spec: typing.Optional[kubernetes.client.V1alpha1PodPresetSpecDict]
+    spec: kubernetes.client.V1TokenRequestSpecDict
+    status: typing.Optional[kubernetes.client.V1TokenRequestStatusDict]
