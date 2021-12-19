@@ -11,6 +11,7 @@ class V1Probe:
     period_seconds: typing.Optional[int]
     success_threshold: typing.Optional[int]
     tcp_socket: typing.Optional[kubernetes.client.V1TCPSocketAction]
+    termination_grace_period_seconds: typing.Optional[int]
     timeout_seconds: typing.Optional[int]
     def __init__(
         self,
@@ -22,6 +23,7 @@ class V1Probe:
         period_seconds: typing.Optional[int] = ...,
         success_threshold: typing.Optional[int] = ...,
         tcp_socket: typing.Optional[kubernetes.client.V1TCPSocketAction] = ...,
+        termination_grace_period_seconds: typing.Optional[int] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> None: ...
     def to_dict(self) -> V1ProbeDict: ...
@@ -34,4 +36,5 @@ class V1ProbeDict(typing.TypedDict, total=False):
     periodSeconds: typing.Optional[int]
     successThreshold: typing.Optional[int]
     tcpSocket: typing.Optional[kubernetes.client.V1TCPSocketActionDict]
+    terminationGracePeriodSeconds: typing.Optional[int]
     timeoutSeconds: typing.Optional[int]

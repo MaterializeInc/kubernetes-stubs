@@ -2,26 +2,12 @@ import typing
 
 import kubernetes.client
 
-class BatchV2alpha1Api:
+class PolicyV1Api:
     def __init__(
         self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...
     ) -> None: ...
     def get_api_resources(self) -> kubernetes.client.V1APIResourceList: ...
-    def list_cron_job_for_all_namespaces(
-        self,
-        *,
-        allow_watch_bookmarks: typing.Optional[bool] = ...,
-        _continue: typing.Optional[str] = ...,
-        field_selector: typing.Optional[str] = ...,
-        label_selector: typing.Optional[str] = ...,
-        limit: typing.Optional[int] = ...,
-        pretty: typing.Optional[str] = ...,
-        resource_version: typing.Optional[str] = ...,
-        resource_version_match: typing.Optional[str] = ...,
-        timeout_seconds: typing.Optional[int] = ...,
-        watch: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V2alpha1CronJobList: ...
-    def list_namespaced_cron_job(
+    def list_namespaced_pod_disruption_budget(
         self,
         namespace: str,
         *,
@@ -35,17 +21,17 @@ class BatchV2alpha1Api:
         resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...,
         watch: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V2alpha1CronJobList: ...
-    def create_namespaced_cron_job(
+    ) -> kubernetes.client.V1PodDisruptionBudgetList: ...
+    def create_namespaced_pod_disruption_budget(
         self,
         namespace: str,
-        body: kubernetes.client.V2alpha1CronJob,
+        body: kubernetes.client.V1PodDisruptionBudget,
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
-    def delete_collection_namespaced_cron_job(
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def delete_collection_namespaced_pod_disruption_budget(
         self,
         namespace: str,
         *,
@@ -63,26 +49,20 @@ class BatchV2alpha1Api:
         resource_version_match: typing.Optional[str] = ...,
         timeout_seconds: typing.Optional[int] = ...
     ) -> kubernetes.client.V1Status: ...
-    def read_namespaced_cron_job(
+    def read_namespaced_pod_disruption_budget(
+        self, name: str, namespace: str, *, pretty: typing.Optional[str] = ...
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def replace_namespaced_pod_disruption_budget(
         self,
         name: str,
         namespace: str,
-        *,
-        pretty: typing.Optional[str] = ...,
-        exact: typing.Optional[bool] = ...,
-        export: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
-    def replace_namespaced_cron_job(
-        self,
-        name: str,
-        namespace: str,
-        body: kubernetes.client.V2alpha1CronJob,
+        body: kubernetes.client.V1PodDisruptionBudget,
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
-    def delete_namespaced_cron_job(
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def delete_namespaced_pod_disruption_budget(
         self,
         name: str,
         namespace: str,
@@ -94,7 +74,7 @@ class BatchV2alpha1Api:
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Status: ...
-    def patch_namespaced_cron_job(
+    def patch_namespaced_pod_disruption_budget(
         self,
         name: str,
         namespace: str,
@@ -104,21 +84,21 @@ class BatchV2alpha1Api:
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
-    def read_namespaced_cron_job_status(
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def read_namespaced_pod_disruption_budget_status(
         self, name: str, namespace: str, *, pretty: typing.Optional[str] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
-    def replace_namespaced_cron_job_status(
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def replace_namespaced_pod_disruption_budget_status(
         self,
         name: str,
         namespace: str,
-        body: kubernetes.client.V2alpha1CronJob,
+        body: kubernetes.client.V1PodDisruptionBudget,
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
-    def patch_namespaced_cron_job_status(
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def patch_namespaced_pod_disruption_budget_status(
         self,
         name: str,
         namespace: str,
@@ -128,4 +108,18 @@ class BatchV2alpha1Api:
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
-    ) -> kubernetes.client.V2alpha1CronJob: ...
+    ) -> kubernetes.client.V1PodDisruptionBudget: ...
+    def list_pod_disruption_budget_for_all_namespaces(
+        self,
+        *,
+        allow_watch_bookmarks: typing.Optional[bool] = ...,
+        _continue: typing.Optional[str] = ...,
+        field_selector: typing.Optional[str] = ...,
+        label_selector: typing.Optional[str] = ...,
+        limit: typing.Optional[int] = ...,
+        pretty: typing.Optional[str] = ...,
+        resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
+        timeout_seconds: typing.Optional[int] = ...,
+        watch: typing.Optional[bool] = ...
+    ) -> kubernetes.client.V1PodDisruptionBudgetList: ...

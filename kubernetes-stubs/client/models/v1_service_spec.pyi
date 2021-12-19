@@ -11,8 +11,10 @@ class V1ServiceSpec:
     external_name: typing.Optional[str]
     external_traffic_policy: typing.Optional[str]
     health_check_node_port: typing.Optional[int]
+    internal_traffic_policy: typing.Optional[str]
     ip_families: typing.Optional[list[str]]
     ip_family_policy: typing.Optional[str]
+    load_balancer_class: typing.Optional[str]
     load_balancer_ip: typing.Optional[str]
     load_balancer_source_ranges: typing.Optional[list[str]]
     ports: typing.Optional[list[kubernetes.client.V1ServicePort]]
@@ -32,8 +34,10 @@ class V1ServiceSpec:
         external_name: typing.Optional[str] = ...,
         external_traffic_policy: typing.Optional[str] = ...,
         health_check_node_port: typing.Optional[int] = ...,
+        internal_traffic_policy: typing.Optional[str] = ...,
         ip_families: typing.Optional[list[str]] = ...,
         ip_family_policy: typing.Optional[str] = ...,
+        load_balancer_class: typing.Optional[str] = ...,
         load_balancer_ip: typing.Optional[str] = ...,
         load_balancer_source_ranges: typing.Optional[list[str]] = ...,
         ports: typing.Optional[list[kubernetes.client.V1ServicePort]] = ...,
@@ -56,8 +60,10 @@ class V1ServiceSpecDict(typing.TypedDict, total=False):
     externalName: typing.Optional[str]
     externalTrafficPolicy: typing.Optional[str]
     healthCheckNodePort: typing.Optional[int]
+    internalTrafficPolicy: typing.Optional[str]
     ipFamilies: typing.Optional[list[str]]
     ipFamilyPolicy: typing.Optional[str]
+    loadBalancerClass: typing.Optional[str]
     loadBalancerIP: typing.Optional[str]
     loadBalancerSourceRanges: typing.Optional[list[str]]
     ports: typing.Optional[list[kubernetes.client.V1ServicePortDict]]

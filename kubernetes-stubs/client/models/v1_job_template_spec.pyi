@@ -3,7 +3,7 @@ import typing
 
 import kubernetes.client
 
-class V2alpha1JobTemplateSpec:
+class V1JobTemplateSpec:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1JobSpec]
     def __init__(
@@ -12,8 +12,8 @@ class V2alpha1JobTemplateSpec:
         metadata: typing.Optional[kubernetes.client.V1ObjectMeta] = ...,
         spec: typing.Optional[kubernetes.client.V1JobSpec] = ...
     ) -> None: ...
-    def to_dict(self) -> V2alpha1JobTemplateSpecDict: ...
+    def to_dict(self) -> V1JobTemplateSpecDict: ...
 
-class V2alpha1JobTemplateSpecDict(typing.TypedDict, total=False):
+class V1JobTemplateSpecDict(typing.TypedDict, total=False):
     metadata: typing.Optional[kubernetes.client.V1ObjectMetaDict]
     spec: typing.Optional[kubernetes.client.V1JobSpecDict]

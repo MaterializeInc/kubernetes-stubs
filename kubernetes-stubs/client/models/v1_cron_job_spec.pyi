@@ -3,10 +3,10 @@ import typing
 
 import kubernetes.client
 
-class V2alpha1CronJobSpec:
+class V1CronJobSpec:
     concurrency_policy: typing.Optional[str]
     failed_jobs_history_limit: typing.Optional[int]
-    job_template: kubernetes.client.V2alpha1JobTemplateSpec
+    job_template: kubernetes.client.V1JobTemplateSpec
     schedule: str
     starting_deadline_seconds: typing.Optional[int]
     successful_jobs_history_limit: typing.Optional[int]
@@ -16,18 +16,18 @@ class V2alpha1CronJobSpec:
         *,
         concurrency_policy: typing.Optional[str] = ...,
         failed_jobs_history_limit: typing.Optional[int] = ...,
-        job_template: kubernetes.client.V2alpha1JobTemplateSpec,
+        job_template: kubernetes.client.V1JobTemplateSpec,
         schedule: str,
         starting_deadline_seconds: typing.Optional[int] = ...,
         successful_jobs_history_limit: typing.Optional[int] = ...,
         suspend: typing.Optional[bool] = ...
     ) -> None: ...
-    def to_dict(self) -> V2alpha1CronJobSpecDict: ...
+    def to_dict(self) -> V1CronJobSpecDict: ...
 
-class V2alpha1CronJobSpecDict(typing.TypedDict, total=False):
+class V1CronJobSpecDict(typing.TypedDict, total=False):
     concurrencyPolicy: typing.Optional[str]
     failedJobsHistoryLimit: typing.Optional[int]
-    jobTemplate: kubernetes.client.V2alpha1JobTemplateSpecDict
+    jobTemplate: kubernetes.client.V1JobTemplateSpecDict
     schedule: str
     startingDeadlineSeconds: typing.Optional[int]
     successfulJobsHistoryLimit: typing.Optional[int]

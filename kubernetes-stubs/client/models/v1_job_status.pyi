@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1JobStatus:
     active: typing.Optional[int]
+    completed_indexes: typing.Optional[str]
     completion_time: typing.Optional[datetime.datetime]
     conditions: typing.Optional[list[kubernetes.client.V1JobCondition]]
     failed: typing.Optional[int]
@@ -14,6 +15,7 @@ class V1JobStatus:
         self,
         *,
         active: typing.Optional[int] = ...,
+        completed_indexes: typing.Optional[str] = ...,
         completion_time: typing.Optional[datetime.datetime] = ...,
         conditions: typing.Optional[list[kubernetes.client.V1JobCondition]] = ...,
         failed: typing.Optional[int] = ...,
@@ -24,6 +26,7 @@ class V1JobStatus:
 
 class V1JobStatusDict(typing.TypedDict, total=False):
     active: typing.Optional[int]
+    completedIndexes: typing.Optional[str]
     completionTime: typing.Optional[datetime.datetime]
     conditions: typing.Optional[list[kubernetes.client.V1JobConditionDict]]
     failed: typing.Optional[int]

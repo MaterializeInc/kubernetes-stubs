@@ -43,8 +43,6 @@ from kubernetes.client.api.batch_api import BatchApi as BatchApi
 from kubernetes.client.api.batch_v1_api import BatchV1Api as BatchV1Api
 from kubernetes.client.api.batch_v1beta1_api import \
     BatchV1beta1Api as BatchV1beta1Api
-from kubernetes.client.api.batch_v2alpha1_api import \
-    BatchV2alpha1Api as BatchV2alpha1Api
 from kubernetes.client.api.certificates_api import \
     CertificatesApi as CertificatesApi
 from kubernetes.client.api.certificates_v1_api import \
@@ -62,6 +60,8 @@ from kubernetes.client.api.core_v1_api import CoreV1Api as CoreV1Api
 from kubernetes.client.api.custom_objects_api import \
     CustomObjectsApi as CustomObjectsApi
 from kubernetes.client.api.discovery_api import DiscoveryApi as DiscoveryApi
+from kubernetes.client.api.discovery_v1_api import \
+    DiscoveryV1Api as DiscoveryV1Api
 from kubernetes.client.api.discovery_v1beta1_api import \
     DiscoveryV1beta1Api as DiscoveryV1beta1Api
 from kubernetes.client.api.events_api import EventsApi as EventsApi
@@ -73,8 +73,6 @@ from kubernetes.client.api.extensions_v1beta1_api import \
     ExtensionsV1beta1Api as ExtensionsV1beta1Api
 from kubernetes.client.api.flowcontrolApiserver_api import \
     FlowcontrolApiserverApi as FlowcontrolApiserverApi
-from kubernetes.client.api.flowcontrolApiserver_v1alpha1_api import \
-    FlowcontrolApiserverV1alpha1Api as FlowcontrolApiserverV1alpha1Api
 from kubernetes.client.api.flowcontrolApiserver_v1beta1_api import \
     FlowcontrolApiserverV1beta1Api as FlowcontrolApiserverV1beta1Api
 from kubernetes.client.api.internalApiserver_api import \
@@ -95,6 +93,7 @@ from kubernetes.client.api.node_v1beta1_api import \
     NodeV1beta1Api as NodeV1beta1Api
 from kubernetes.client.api.openid_api import OpenidApi as OpenidApi
 from kubernetes.client.api.policy_api import PolicyApi as PolicyApi
+from kubernetes.client.api.policy_v1_api import PolicyV1Api as PolicyV1Api
 from kubernetes.client.api.policy_v1beta1_api import \
     PolicyV1beta1Api as PolicyV1beta1Api
 from kubernetes.client.api.rbacAuthorization_api import \

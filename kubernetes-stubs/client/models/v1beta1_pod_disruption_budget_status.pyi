@@ -4,6 +4,7 @@ import typing
 import kubernetes.client
 
 class V1beta1PodDisruptionBudgetStatus:
+    conditions: typing.Optional[list[kubernetes.client.V1Condition]]
     current_healthy: int
     desired_healthy: int
     disrupted_pods: typing.Optional[dict[str, datetime.datetime]]
@@ -13,6 +14,7 @@ class V1beta1PodDisruptionBudgetStatus:
     def __init__(
         self,
         *,
+        conditions: typing.Optional[list[kubernetes.client.V1Condition]] = ...,
         current_healthy: int,
         desired_healthy: int,
         disrupted_pods: typing.Optional[dict[str, datetime.datetime]] = ...,
@@ -23,6 +25,7 @@ class V1beta1PodDisruptionBudgetStatus:
     def to_dict(self) -> V1beta1PodDisruptionBudgetStatusDict: ...
 
 class V1beta1PodDisruptionBudgetStatusDict(typing.TypedDict, total=False):
+    conditions: typing.Optional[list[kubernetes.client.V1ConditionDict]]
     currentHealthy: int
     desiredHealthy: int
     disruptedPods: typing.Optional[dict[str, datetime.datetime]]

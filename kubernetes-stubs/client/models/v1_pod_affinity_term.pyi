@@ -5,12 +5,14 @@ import kubernetes.client
 
 class V1PodAffinityTerm:
     label_selector: typing.Optional[kubernetes.client.V1LabelSelector]
+    namespace_selector: typing.Optional[kubernetes.client.V1LabelSelector]
     namespaces: typing.Optional[list[str]]
     topology_key: str
     def __init__(
         self,
         *,
         label_selector: typing.Optional[kubernetes.client.V1LabelSelector] = ...,
+        namespace_selector: typing.Optional[kubernetes.client.V1LabelSelector] = ...,
         namespaces: typing.Optional[list[str]] = ...,
         topology_key: str
     ) -> None: ...
@@ -18,5 +20,6 @@ class V1PodAffinityTerm:
 
 class V1PodAffinityTermDict(typing.TypedDict, total=False):
     labelSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
+    namespaceSelector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
     namespaces: typing.Optional[list[str]]
     topologyKey: str

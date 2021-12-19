@@ -3,23 +3,23 @@ import typing
 
 import kubernetes.client
 
-class V2alpha1CronJobList:
+class V1alpha1CSIStorageCapacityList:
     api_version: typing.Optional[str]
-    items: list[kubernetes.client.V2alpha1CronJob]
+    items: list[kubernetes.client.V1alpha1CSIStorageCapacity]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
     def __init__(
         self,
         *,
         api_version: typing.Optional[str] = ...,
-        items: list[kubernetes.client.V2alpha1CronJob],
+        items: list[kubernetes.client.V1alpha1CSIStorageCapacity],
         kind: typing.Optional[str] = ...,
         metadata: typing.Optional[kubernetes.client.V1ListMeta] = ...
     ) -> None: ...
-    def to_dict(self) -> V2alpha1CronJobListDict: ...
+    def to_dict(self) -> V1alpha1CSIStorageCapacityListDict: ...
 
-class V2alpha1CronJobListDict(typing.TypedDict, total=False):
+class V1alpha1CSIStorageCapacityListDict(typing.TypedDict, total=False):
     apiVersion: typing.Optional[str]
-    items: list[kubernetes.client.V2alpha1CronJobDict]
+    items: list[kubernetes.client.V1alpha1CSIStorageCapacityDict]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMetaDict]
