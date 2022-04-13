@@ -4,6 +4,7 @@ import typing
 import kubernetes.client
 
 class V1StatefulSetStatus:
+    available_replicas: typing.Optional[int]
     collision_count: typing.Optional[int]
     conditions: typing.Optional[list[kubernetes.client.V1StatefulSetCondition]]
     current_replicas: typing.Optional[int]
@@ -16,6 +17,7 @@ class V1StatefulSetStatus:
     def __init__(
         self,
         *,
+        available_replicas: typing.Optional[int] = ...,
         collision_count: typing.Optional[int] = ...,
         conditions: typing.Optional[
             list[kubernetes.client.V1StatefulSetCondition]
@@ -31,6 +33,7 @@ class V1StatefulSetStatus:
     def to_dict(self) -> V1StatefulSetStatusDict: ...
 
 class V1StatefulSetStatusDict(typing.TypedDict, total=False):
+    availableReplicas: typing.Optional[int]
     collisionCount: typing.Optional[int]
     conditions: typing.Optional[list[kubernetes.client.V1StatefulSetConditionDict]]
     currentReplicas: typing.Optional[int]

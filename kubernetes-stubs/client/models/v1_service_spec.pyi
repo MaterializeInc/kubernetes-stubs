@@ -22,7 +22,6 @@ class V1ServiceSpec:
     selector: typing.Optional[dict[str, str]]
     session_affinity: typing.Optional[str]
     session_affinity_config: typing.Optional[kubernetes.client.V1SessionAffinityConfig]
-    topology_keys: typing.Optional[list[str]]
     type: typing.Optional[str]
     def __init__(
         self,
@@ -47,7 +46,6 @@ class V1ServiceSpec:
         session_affinity_config: typing.Optional[
             kubernetes.client.V1SessionAffinityConfig
         ] = ...,
-        topology_keys: typing.Optional[list[str]] = ...,
         type: typing.Optional[str] = ...
     ) -> None: ...
     def to_dict(self) -> V1ServiceSpecDict: ...
@@ -73,5 +71,4 @@ class V1ServiceSpecDict(typing.TypedDict, total=False):
     sessionAffinityConfig: typing.Optional[
         kubernetes.client.V1SessionAffinityConfigDict
     ]
-    topologyKeys: typing.Optional[list[str]]
     type: typing.Optional[str]

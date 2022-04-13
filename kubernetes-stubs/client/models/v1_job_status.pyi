@@ -11,6 +11,9 @@ class V1JobStatus:
     failed: typing.Optional[int]
     start_time: typing.Optional[datetime.datetime]
     succeeded: typing.Optional[int]
+    uncounted_terminated_pods: typing.Optional[
+        kubernetes.client.V1UncountedTerminatedPods
+    ]
     def __init__(
         self,
         *,
@@ -20,7 +23,10 @@ class V1JobStatus:
         conditions: typing.Optional[list[kubernetes.client.V1JobCondition]] = ...,
         failed: typing.Optional[int] = ...,
         start_time: typing.Optional[datetime.datetime] = ...,
-        succeeded: typing.Optional[int] = ...
+        succeeded: typing.Optional[int] = ...,
+        uncounted_terminated_pods: typing.Optional[
+            kubernetes.client.V1UncountedTerminatedPods
+        ] = ...
     ) -> None: ...
     def to_dict(self) -> V1JobStatusDict: ...
 
@@ -32,3 +38,6 @@ class V1JobStatusDict(typing.TypedDict, total=False):
     failed: typing.Optional[int]
     startTime: typing.Optional[datetime.datetime]
     succeeded: typing.Optional[int]
+    uncountedTerminatedPods: typing.Optional[
+        kubernetes.client.V1UncountedTerminatedPodsDict
+    ]
