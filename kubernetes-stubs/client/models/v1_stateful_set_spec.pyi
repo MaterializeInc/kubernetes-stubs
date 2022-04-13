@@ -4,6 +4,7 @@ import typing
 import kubernetes.client
 
 class V1StatefulSetSpec:
+    min_ready_seconds: typing.Optional[int]
     pod_management_policy: typing.Optional[str]
     replicas: typing.Optional[int]
     revision_history_limit: typing.Optional[int]
@@ -17,6 +18,7 @@ class V1StatefulSetSpec:
     def __init__(
         self,
         *,
+        min_ready_seconds: typing.Optional[int] = ...,
         pod_management_policy: typing.Optional[str] = ...,
         replicas: typing.Optional[int] = ...,
         revision_history_limit: typing.Optional[int] = ...,
@@ -33,6 +35,7 @@ class V1StatefulSetSpec:
     def to_dict(self) -> V1StatefulSetSpecDict: ...
 
 class V1StatefulSetSpecDict(typing.TypedDict, total=False):
+    minReadySeconds: typing.Optional[int]
     podManagementPolicy: typing.Optional[str]
     replicas: typing.Optional[int]
     revisionHistoryLimit: typing.Optional[int]

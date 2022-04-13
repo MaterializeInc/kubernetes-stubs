@@ -4,6 +4,7 @@ import typing
 import kubernetes.client
 
 class V1CertificateSigningRequestSpec:
+    expiration_seconds: typing.Optional[int]
     extra: typing.Optional[dict[str, list[str]]]
     groups: typing.Optional[list[str]]
     request: str
@@ -14,6 +15,7 @@ class V1CertificateSigningRequestSpec:
     def __init__(
         self,
         *,
+        expiration_seconds: typing.Optional[int] = ...,
         extra: typing.Optional[dict[str, list[str]]] = ...,
         groups: typing.Optional[list[str]] = ...,
         request: str,
@@ -25,6 +27,7 @@ class V1CertificateSigningRequestSpec:
     def to_dict(self) -> V1CertificateSigningRequestSpecDict: ...
 
 class V1CertificateSigningRequestSpecDict(typing.TypedDict, total=False):
+    expirationSeconds: typing.Optional[int]
     extra: typing.Optional[dict[str, list[str]]]
     groups: typing.Optional[list[str]]
     request: str

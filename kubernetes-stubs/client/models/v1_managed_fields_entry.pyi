@@ -9,6 +9,7 @@ class V1ManagedFieldsEntry:
     fields_v1: typing.Optional[typing.Any]
     manager: typing.Optional[str]
     operation: typing.Optional[str]
+    subresource: typing.Optional[str]
     time: typing.Optional[datetime.datetime]
     def __init__(
         self,
@@ -18,6 +19,7 @@ class V1ManagedFieldsEntry:
         fields_v1: typing.Optional[typing.Any] = ...,
         manager: typing.Optional[str] = ...,
         operation: typing.Optional[str] = ...,
+        subresource: typing.Optional[str] = ...,
         time: typing.Optional[datetime.datetime] = ...
     ) -> None: ...
     def to_dict(self) -> V1ManagedFieldsEntryDict: ...
@@ -28,4 +30,5 @@ class V1ManagedFieldsEntryDict(typing.TypedDict, total=False):
     fieldsV1: typing.Optional[typing.Any]
     manager: typing.Optional[str]
     operation: typing.Optional[str]
+    subresource: typing.Optional[str]
     time: typing.Optional[datetime.datetime]
