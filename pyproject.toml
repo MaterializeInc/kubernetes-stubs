@@ -11,9 +11,6 @@ packages = [
     { include = "kubernetes-stubs" },
 ]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-
 [tool.poetry.dev-dependencies]
 black = "^21.6b0"
 isort = "^5.9.2"
