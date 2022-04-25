@@ -43,7 +43,8 @@ class AutoscalingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1HorizontalPodAutoscaler: ...
     def delete_collection_namespaced_horizontal_pod_autoscaler(
         self,
@@ -74,7 +75,8 @@ class AutoscalingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1HorizontalPodAutoscaler: ...
     def delete_namespaced_horizontal_pod_autoscaler(
         self,
@@ -97,6 +99,7 @@ class AutoscalingV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1HorizontalPodAutoscaler: ...
     def read_namespaced_horizontal_pod_autoscaler_status(
@@ -110,7 +113,8 @@ class AutoscalingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1HorizontalPodAutoscaler: ...
     def patch_namespaced_horizontal_pod_autoscaler_status(
         self,
@@ -121,5 +125,6 @@ class AutoscalingV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1HorizontalPodAutoscaler: ...

@@ -27,7 +27,8 @@ class InternalApiserverV1alpha1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1alpha1StorageVersion: ...
     def delete_collection_storage_version(
         self,
@@ -56,7 +57,8 @@ class InternalApiserverV1alpha1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1alpha1StorageVersion: ...
     def delete_storage_version(
         self,
@@ -77,6 +79,7 @@ class InternalApiserverV1alpha1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1alpha1StorageVersion: ...
     def read_storage_version_status(
@@ -89,7 +92,8 @@ class InternalApiserverV1alpha1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1alpha1StorageVersion: ...
     def patch_storage_version_status(
         self,
@@ -99,5 +103,6 @@ class InternalApiserverV1alpha1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1alpha1StorageVersion: ...

@@ -43,7 +43,8 @@ class StorageV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1CSIStorageCapacity: ...
     def delete_collection_namespaced_csi_storage_capacity(
         self,
@@ -74,7 +75,8 @@ class StorageV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1CSIStorageCapacity: ...
     def delete_namespaced_csi_storage_capacity(
         self,
@@ -97,5 +99,6 @@ class StorageV1beta1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1CSIStorageCapacity: ...

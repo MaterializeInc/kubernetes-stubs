@@ -27,7 +27,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ClusterRoleBinding: ...
     def delete_collection_cluster_role_binding(
         self,
@@ -56,7 +57,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ClusterRoleBinding: ...
     def delete_cluster_role_binding(
         self,
@@ -77,6 +79,7 @@ class RbacAuthorizationV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ClusterRoleBinding: ...
     def list_cluster_role(
@@ -99,7 +102,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ClusterRole: ...
     def delete_collection_cluster_role(
         self,
@@ -128,7 +132,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ClusterRole: ...
     def delete_cluster_role(
         self,
@@ -149,6 +154,7 @@ class RbacAuthorizationV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ClusterRole: ...
     def list_namespaced_role_binding(
@@ -173,7 +179,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1RoleBinding: ...
     def delete_collection_namespaced_role_binding(
         self,
@@ -204,7 +211,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1RoleBinding: ...
     def delete_namespaced_role_binding(
         self,
@@ -227,6 +235,7 @@ class RbacAuthorizationV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1RoleBinding: ...
     def list_namespaced_role(
@@ -251,7 +260,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Role: ...
     def delete_collection_namespaced_role(
         self,
@@ -282,7 +292,8 @@ class RbacAuthorizationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Role: ...
     def delete_namespaced_role(
         self,
@@ -305,6 +316,7 @@ class RbacAuthorizationV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Role: ...
     def list_role_binding_for_all_namespaces(

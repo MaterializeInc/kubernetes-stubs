@@ -14,6 +14,7 @@ class AuthorizationV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1LocalSubjectAccessReview: ...
     def create_self_subject_access_review(
@@ -22,6 +23,7 @@ class AuthorizationV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1SelfSubjectAccessReview: ...
     def create_self_subject_rules_review(
@@ -30,6 +32,7 @@ class AuthorizationV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1SelfSubjectRulesReview: ...
     def create_subject_access_review(
@@ -38,5 +41,6 @@ class AuthorizationV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1SubjectAccessReview: ...

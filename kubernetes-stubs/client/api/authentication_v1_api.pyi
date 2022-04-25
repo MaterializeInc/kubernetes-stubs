@@ -13,5 +13,6 @@ class AuthenticationV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1TokenReview: ...

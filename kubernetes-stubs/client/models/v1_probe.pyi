@@ -6,6 +6,7 @@ import kubernetes.client
 class V1Probe:
     exec: typing.Optional[kubernetes.client.V1ExecAction]
     failure_threshold: typing.Optional[int]
+    grpc: typing.Optional[kubernetes.client.V1GRPCAction]
     http_get: typing.Optional[kubernetes.client.V1HTTPGetAction]
     initial_delay_seconds: typing.Optional[int]
     period_seconds: typing.Optional[int]
@@ -18,6 +19,7 @@ class V1Probe:
         *,
         exec: typing.Optional[kubernetes.client.V1ExecAction] = ...,
         failure_threshold: typing.Optional[int] = ...,
+        grpc: typing.Optional[kubernetes.client.V1GRPCAction] = ...,
         http_get: typing.Optional[kubernetes.client.V1HTTPGetAction] = ...,
         initial_delay_seconds: typing.Optional[int] = ...,
         period_seconds: typing.Optional[int] = ...,
@@ -31,6 +33,7 @@ class V1Probe:
 class V1ProbeDict(typing.TypedDict, total=False):
     exec: typing.Optional[kubernetes.client.V1ExecActionDict]
     failureThreshold: typing.Optional[int]
+    grpc: typing.Optional[kubernetes.client.V1GRPCActionDict]
     httpGet: typing.Optional[kubernetes.client.V1HTTPGetActionDict]
     initialDelaySeconds: typing.Optional[int]
     periodSeconds: typing.Optional[int]

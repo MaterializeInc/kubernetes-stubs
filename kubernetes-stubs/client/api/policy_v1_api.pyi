@@ -29,7 +29,8 @@ class PolicyV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PodDisruptionBudget: ...
     def delete_collection_namespaced_pod_disruption_budget(
         self,
@@ -60,7 +61,8 @@ class PolicyV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PodDisruptionBudget: ...
     def delete_namespaced_pod_disruption_budget(
         self,
@@ -83,6 +85,7 @@ class PolicyV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodDisruptionBudget: ...
     def read_namespaced_pod_disruption_budget_status(
@@ -96,7 +99,8 @@ class PolicyV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PodDisruptionBudget: ...
     def patch_namespaced_pod_disruption_budget_status(
         self,
@@ -107,6 +111,7 @@ class PolicyV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodDisruptionBudget: ...
     def list_pod_disruption_budget_for_all_namespaces(

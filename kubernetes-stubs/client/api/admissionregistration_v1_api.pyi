@@ -27,7 +27,8 @@ class AdmissionregistrationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1MutatingWebhookConfiguration: ...
     def delete_collection_mutating_webhook_configuration(
         self,
@@ -56,7 +57,8 @@ class AdmissionregistrationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1MutatingWebhookConfiguration: ...
     def delete_mutating_webhook_configuration(
         self,
@@ -77,6 +79,7 @@ class AdmissionregistrationV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1MutatingWebhookConfiguration: ...
     def list_validating_webhook_configuration(
@@ -99,7 +102,8 @@ class AdmissionregistrationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ValidatingWebhookConfiguration: ...
     def delete_collection_validating_webhook_configuration(
         self,
@@ -128,7 +132,8 @@ class AdmissionregistrationV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ValidatingWebhookConfiguration: ...
     def delete_validating_webhook_configuration(
         self,
@@ -149,5 +154,6 @@ class AdmissionregistrationV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ValidatingWebhookConfiguration: ...

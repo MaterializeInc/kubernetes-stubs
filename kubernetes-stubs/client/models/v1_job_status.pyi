@@ -9,6 +9,7 @@ class V1JobStatus:
     completion_time: typing.Optional[datetime.datetime]
     conditions: typing.Optional[list[kubernetes.client.V1JobCondition]]
     failed: typing.Optional[int]
+    ready: typing.Optional[int]
     start_time: typing.Optional[datetime.datetime]
     succeeded: typing.Optional[int]
     uncounted_terminated_pods: typing.Optional[
@@ -22,6 +23,7 @@ class V1JobStatus:
         completion_time: typing.Optional[datetime.datetime] = ...,
         conditions: typing.Optional[list[kubernetes.client.V1JobCondition]] = ...,
         failed: typing.Optional[int] = ...,
+        ready: typing.Optional[int] = ...,
         start_time: typing.Optional[datetime.datetime] = ...,
         succeeded: typing.Optional[int] = ...,
         uncounted_terminated_pods: typing.Optional[
@@ -36,6 +38,7 @@ class V1JobStatusDict(typing.TypedDict, total=False):
     completionTime: typing.Optional[datetime.datetime]
     conditions: typing.Optional[list[kubernetes.client.V1JobConditionDict]]
     failed: typing.Optional[int]
+    ready: typing.Optional[int]
     startTime: typing.Optional[datetime.datetime]
     succeeded: typing.Optional[int]
     uncountedTerminatedPods: typing.Optional[

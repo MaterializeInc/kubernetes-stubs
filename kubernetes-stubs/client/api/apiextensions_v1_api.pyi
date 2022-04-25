@@ -27,7 +27,8 @@ class ApiextensionsV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CustomResourceDefinition: ...
     def delete_collection_custom_resource_definition(
         self,
@@ -56,7 +57,8 @@ class ApiextensionsV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CustomResourceDefinition: ...
     def delete_custom_resource_definition(
         self,
@@ -77,6 +79,7 @@ class ApiextensionsV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CustomResourceDefinition: ...
     def read_custom_resource_definition_status(
@@ -89,7 +92,8 @@ class ApiextensionsV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CustomResourceDefinition: ...
     def patch_custom_resource_definition_status(
         self,
@@ -99,5 +103,6 @@ class ApiextensionsV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CustomResourceDefinition: ...

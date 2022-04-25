@@ -100,7 +100,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Namespace: ...
     def create_namespaced_binding(
         self,
@@ -109,6 +110,7 @@ class CoreV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Binding: ...
     def list_namespaced_config_map(
@@ -133,7 +135,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ConfigMap: ...
     def delete_collection_namespaced_config_map(
         self,
@@ -164,7 +167,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ConfigMap: ...
     def delete_namespaced_config_map(
         self,
@@ -187,6 +191,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ConfigMap: ...
     def list_namespaced_endpoints(
@@ -211,7 +216,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Endpoints: ...
     def delete_collection_namespaced_endpoints(
         self,
@@ -242,7 +248,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Endpoints: ...
     def delete_namespaced_endpoints(
         self,
@@ -265,6 +272,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Endpoints: ...
     def list_namespaced_event(
@@ -289,7 +297,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.CoreV1Event: ...
     def delete_collection_namespaced_event(
         self,
@@ -320,7 +329,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.CoreV1Event: ...
     def delete_namespaced_event(
         self,
@@ -343,6 +353,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.CoreV1Event: ...
     def list_namespaced_limit_range(
@@ -367,7 +378,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1LimitRange: ...
     def delete_collection_namespaced_limit_range(
         self,
@@ -398,7 +410,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1LimitRange: ...
     def delete_namespaced_limit_range(
         self,
@@ -421,6 +434,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1LimitRange: ...
     def list_namespaced_persistent_volume_claim(
@@ -445,7 +459,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaim: ...
     def delete_collection_namespaced_persistent_volume_claim(
         self,
@@ -476,7 +491,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaim: ...
     def delete_namespaced_persistent_volume_claim(
         self,
@@ -499,6 +515,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaim: ...
     def read_namespaced_persistent_volume_claim_status(
@@ -512,7 +529,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaim: ...
     def patch_namespaced_persistent_volume_claim_status(
         self,
@@ -523,6 +541,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolumeClaim: ...
     def list_namespaced_pod(
@@ -547,7 +566,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Pod: ...
     def delete_collection_namespaced_pod(
         self,
@@ -578,7 +598,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Pod: ...
     def delete_namespaced_pod(
         self,
@@ -601,6 +622,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Pod: ...
     def connect_get_namespaced_pod_attach(
@@ -633,6 +655,7 @@ class CoreV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Binding: ...
     def read_namespaced_pod_ephemeralcontainers(
@@ -646,7 +669,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Pod: ...
     def patch_namespaced_pod_ephemeralcontainers(
         self,
@@ -657,6 +681,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Pod: ...
     def create_namespaced_pod_eviction(
@@ -667,6 +692,7 @@ class CoreV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Eviction: ...
     def connect_get_namespaced_pod_exec(
@@ -767,7 +793,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Pod: ...
     def patch_namespaced_pod_status(
         self,
@@ -778,6 +805,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Pod: ...
     def list_namespaced_pod_template(
@@ -802,7 +830,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PodTemplate: ...
     def delete_collection_namespaced_pod_template(
         self,
@@ -833,7 +862,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PodTemplate: ...
     def delete_namespaced_pod_template(
         self,
@@ -856,6 +886,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PodTemplate: ...
     def list_namespaced_replication_controller(
@@ -880,7 +911,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ReplicationController: ...
     def delete_collection_namespaced_replication_controller(
         self,
@@ -911,7 +943,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ReplicationController: ...
     def delete_namespaced_replication_controller(
         self,
@@ -934,6 +967,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ReplicationController: ...
     def read_namespaced_replication_controller_scale(
@@ -947,7 +981,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Scale: ...
     def patch_namespaced_replication_controller_scale(
         self,
@@ -958,6 +993,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Scale: ...
     def read_namespaced_replication_controller_status(
@@ -971,7 +1007,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ReplicationController: ...
     def patch_namespaced_replication_controller_status(
         self,
@@ -982,6 +1019,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ReplicationController: ...
     def list_namespaced_resource_quota(
@@ -1006,7 +1044,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ResourceQuota: ...
     def delete_collection_namespaced_resource_quota(
         self,
@@ -1037,7 +1076,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ResourceQuota: ...
     def delete_namespaced_resource_quota(
         self,
@@ -1060,6 +1100,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ResourceQuota: ...
     def read_namespaced_resource_quota_status(
@@ -1073,7 +1114,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ResourceQuota: ...
     def patch_namespaced_resource_quota_status(
         self,
@@ -1084,6 +1126,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ResourceQuota: ...
     def list_namespaced_secret(
@@ -1108,7 +1151,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Secret: ...
     def delete_collection_namespaced_secret(
         self,
@@ -1139,7 +1183,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Secret: ...
     def delete_namespaced_secret(
         self,
@@ -1162,6 +1207,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Secret: ...
     def list_namespaced_service_account(
@@ -1186,7 +1232,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ServiceAccount: ...
     def delete_collection_namespaced_service_account(
         self,
@@ -1217,7 +1264,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1ServiceAccount: ...
     def delete_namespaced_service_account(
         self,
@@ -1240,6 +1288,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1ServiceAccount: ...
     def create_namespaced_service_account_token(
@@ -1250,6 +1299,7 @@ class CoreV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.AuthenticationV1TokenRequest: ...
     def list_namespaced_service(
@@ -1274,8 +1324,27 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Service: ...
+    def delete_collection_namespaced_service(
+        self,
+        namespace: str,
+        *,
+        pretty: typing.Optional[str] = ...,
+        body: typing.Optional[kubernetes.client.V1DeleteOptions] = ...,
+        _continue: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_selector: typing.Optional[str] = ...,
+        grace_period_seconds: typing.Optional[int] = ...,
+        label_selector: typing.Optional[str] = ...,
+        limit: typing.Optional[int] = ...,
+        orphan_dependents: typing.Optional[bool] = ...,
+        propagation_policy: typing.Optional[str] = ...,
+        resource_version: typing.Optional[str] = ...,
+        resource_version_match: typing.Optional[str] = ...,
+        timeout_seconds: typing.Optional[int] = ...
+    ) -> kubernetes.client.V1Status: ...
     def read_namespaced_service(
         self, name: str, namespace: str, *, pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Service: ...
@@ -1287,7 +1356,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Service: ...
     def delete_namespaced_service(
         self,
@@ -1300,7 +1370,7 @@ class CoreV1Api:
         grace_period_seconds: typing.Optional[int] = ...,
         orphan_dependents: typing.Optional[bool] = ...,
         propagation_policy: typing.Optional[str] = ...
-    ) -> kubernetes.client.V1Status: ...
+    ) -> kubernetes.client.V1Service: ...
     def patch_namespaced_service(
         self,
         name: str,
@@ -1310,6 +1380,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Service: ...
     def connect_get_namespaced_service_proxy(
@@ -1365,7 +1436,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Service: ...
     def patch_namespaced_service_status(
         self,
@@ -1376,6 +1448,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Service: ...
     def read_namespace(
@@ -1388,7 +1461,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Namespace: ...
     def delete_namespace(
         self,
@@ -1409,6 +1483,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Namespace: ...
     def replace_namespace_finalize(
@@ -1418,6 +1493,7 @@ class CoreV1Api:
         *,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         pretty: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Namespace: ...
     def read_namespace_status(
@@ -1430,7 +1506,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Namespace: ...
     def patch_namespace_status(
         self,
@@ -1440,6 +1517,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Namespace: ...
     def list_node(
@@ -1462,7 +1540,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Node: ...
     def delete_collection_node(
         self,
@@ -1491,7 +1570,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Node: ...
     def delete_node(
         self,
@@ -1512,6 +1592,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Node: ...
     def connect_get_node_proxy(
@@ -1566,7 +1647,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Node: ...
     def patch_node_status(
         self,
@@ -1576,6 +1658,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Node: ...
     def list_persistent_volume_claim_for_all_namespaces(
@@ -1612,7 +1695,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PersistentVolume: ...
     def delete_collection_persistent_volume(
         self,
@@ -1641,7 +1725,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PersistentVolume: ...
     def delete_persistent_volume(
         self,
@@ -1662,6 +1747,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolume: ...
     def read_persistent_volume_status(
@@ -1674,7 +1760,8 @@ class CoreV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1PersistentVolume: ...
     def patch_persistent_volume_status(
         self,
@@ -1684,6 +1771,7 @@ class CoreV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1PersistentVolume: ...
     def list_pod_for_all_namespaces(
