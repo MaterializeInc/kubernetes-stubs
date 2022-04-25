@@ -21,6 +21,7 @@ class V1PodSpec:
     init_containers: typing.Optional[list[kubernetes.client.V1Container]]
     node_name: typing.Optional[str]
     node_selector: typing.Optional[dict[str, str]]
+    os: typing.Optional[kubernetes.client.V1PodOS]
     overhead: typing.Optional[dict[str, str]]
     preemption_policy: typing.Optional[str]
     priority: typing.Optional[int]
@@ -65,6 +66,7 @@ class V1PodSpec:
         init_containers: typing.Optional[list[kubernetes.client.V1Container]] = ...,
         node_name: typing.Optional[str] = ...,
         node_selector: typing.Optional[dict[str, str]] = ...,
+        os: typing.Optional[kubernetes.client.V1PodOS] = ...,
         overhead: typing.Optional[dict[str, str]] = ...,
         preemption_policy: typing.Optional[str] = ...,
         priority: typing.Optional[int] = ...,
@@ -112,6 +114,7 @@ class V1PodSpecDict(typing.TypedDict, total=False):
     initContainers: typing.Optional[list[kubernetes.client.V1ContainerDict]]
     nodeName: typing.Optional[str]
     nodeSelector: typing.Optional[dict[str, str]]
+    os: typing.Optional[kubernetes.client.V1PodOSDict]
     overhead: typing.Optional[dict[str, str]]
     preemptionPolicy: typing.Optional[str]
     priority: typing.Optional[int]

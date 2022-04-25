@@ -27,7 +27,8 @@ class FlowcontrolApiserverV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1FlowSchema: ...
     def delete_collection_flow_schema(
         self,
@@ -56,7 +57,8 @@ class FlowcontrolApiserverV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1FlowSchema: ...
     def delete_flow_schema(
         self,
@@ -77,6 +79,7 @@ class FlowcontrolApiserverV1beta1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1FlowSchema: ...
     def read_flow_schema_status(
@@ -89,7 +92,8 @@ class FlowcontrolApiserverV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1FlowSchema: ...
     def patch_flow_schema_status(
         self,
@@ -99,6 +103,7 @@ class FlowcontrolApiserverV1beta1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1FlowSchema: ...
     def list_priority_level_configuration(
@@ -121,7 +126,8 @@ class FlowcontrolApiserverV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1PriorityLevelConfiguration: ...
     def delete_collection_priority_level_configuration(
         self,
@@ -150,7 +156,8 @@ class FlowcontrolApiserverV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1PriorityLevelConfiguration: ...
     def delete_priority_level_configuration(
         self,
@@ -171,6 +178,7 @@ class FlowcontrolApiserverV1beta1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1PriorityLevelConfiguration: ...
     def read_priority_level_configuration_status(
@@ -183,7 +191,8 @@ class FlowcontrolApiserverV1beta1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1beta1PriorityLevelConfiguration: ...
     def patch_priority_level_configuration_status(
         self,
@@ -193,5 +202,6 @@ class FlowcontrolApiserverV1beta1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1beta1PriorityLevelConfiguration: ...

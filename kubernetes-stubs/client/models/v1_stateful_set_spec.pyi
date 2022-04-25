@@ -5,6 +5,9 @@ import kubernetes.client
 
 class V1StatefulSetSpec:
     min_ready_seconds: typing.Optional[int]
+    persistent_volume_claim_retention_policy: typing.Optional[
+        kubernetes.client.V1StatefulSetPersistentVolumeClaimRetentionPolicy
+    ]
     pod_management_policy: typing.Optional[str]
     replicas: typing.Optional[int]
     revision_history_limit: typing.Optional[int]
@@ -19,6 +22,9 @@ class V1StatefulSetSpec:
         self,
         *,
         min_ready_seconds: typing.Optional[int] = ...,
+        persistent_volume_claim_retention_policy: typing.Optional[
+            kubernetes.client.V1StatefulSetPersistentVolumeClaimRetentionPolicy
+        ] = ...,
         pod_management_policy: typing.Optional[str] = ...,
         replicas: typing.Optional[int] = ...,
         revision_history_limit: typing.Optional[int] = ...,
@@ -36,6 +42,9 @@ class V1StatefulSetSpec:
 
 class V1StatefulSetSpecDict(typing.TypedDict, total=False):
     minReadySeconds: typing.Optional[int]
+    persistentVolumeClaimRetentionPolicy: typing.Optional[
+        kubernetes.client.V1StatefulSetPersistentVolumeClaimRetentionPolicyDict
+    ]
     podManagementPolicy: typing.Optional[str]
     replicas: typing.Optional[int]
     revisionHistoryLimit: typing.Optional[int]

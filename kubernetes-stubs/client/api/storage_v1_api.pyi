@@ -27,7 +27,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CSIDriver: ...
     def delete_collection_csi_driver(
         self,
@@ -56,7 +57,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CSIDriver: ...
     def delete_csi_driver(
         self,
@@ -77,6 +79,7 @@ class StorageV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CSIDriver: ...
     def list_csi_node(
@@ -99,7 +102,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CSINode: ...
     def delete_collection_csi_node(
         self,
@@ -128,7 +132,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CSINode: ...
     def delete_csi_node(
         self,
@@ -149,6 +154,7 @@ class StorageV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CSINode: ...
     def list_storage_class(
@@ -171,7 +177,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1StorageClass: ...
     def delete_collection_storage_class(
         self,
@@ -200,7 +207,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1StorageClass: ...
     def delete_storage_class(
         self,
@@ -221,6 +229,7 @@ class StorageV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1StorageClass: ...
     def list_volume_attachment(
@@ -243,7 +252,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1VolumeAttachment: ...
     def delete_collection_volume_attachment(
         self,
@@ -272,7 +282,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1VolumeAttachment: ...
     def delete_volume_attachment(
         self,
@@ -293,6 +304,7 @@ class StorageV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1VolumeAttachment: ...
     def read_volume_attachment_status(
@@ -305,7 +317,8 @@ class StorageV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1VolumeAttachment: ...
     def patch_volume_attachment_status(
         self,
@@ -315,5 +328,6 @@ class StorageV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1VolumeAttachment: ...

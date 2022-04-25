@@ -25,6 +25,8 @@ from kubernetes.client.api.autoscaling_api import \
     AutoscalingApi as AutoscalingApi
 from kubernetes.client.api.autoscaling_v1_api import \
     AutoscalingV1Api as AutoscalingV1Api
+from kubernetes.client.api.autoscaling_v2_api import \
+    AutoscalingV2Api as AutoscalingV2Api
 from kubernetes.client.api.autoscaling_v2beta1_api import \
     AutoscalingV2beta1Api as AutoscalingV2beta1Api
 from kubernetes.client.api.autoscaling_v2beta2_api import \
@@ -58,6 +60,8 @@ from kubernetes.client.api.flowcontrolApiserver_api import \
     FlowcontrolApiserverApi as FlowcontrolApiserverApi
 from kubernetes.client.api.flowcontrolApiserver_v1beta1_api import \
     FlowcontrolApiserverV1beta1Api as FlowcontrolApiserverV1beta1Api
+from kubernetes.client.api.flowcontrolApiserver_v1beta2_api import \
+    FlowcontrolApiserverV1beta2Api as FlowcontrolApiserverV1beta2Api
 from kubernetes.client.api.internalApiserver_api import \
     InternalApiserverApi as InternalApiserverApi
 from kubernetes.client.api.internalApiserver_v1alpha1_api import \
@@ -81,13 +85,9 @@ from kubernetes.client.api.rbacAuthorization_api import \
     RbacAuthorizationApi as RbacAuthorizationApi
 from kubernetes.client.api.rbacAuthorization_v1_api import \
     RbacAuthorizationV1Api as RbacAuthorizationV1Api
-from kubernetes.client.api.rbacAuthorization_v1alpha1_api import \
-    RbacAuthorizationV1alpha1Api as RbacAuthorizationV1alpha1Api
 from kubernetes.client.api.scheduling_api import SchedulingApi as SchedulingApi
 from kubernetes.client.api.scheduling_v1_api import \
     SchedulingV1Api as SchedulingV1Api
-from kubernetes.client.api.scheduling_v1alpha1_api import \
-    SchedulingV1alpha1Api as SchedulingV1alpha1Api
 from kubernetes.client.api.storage_api import StorageApi as StorageApi
 from kubernetes.client.api.storage_v1_api import StorageV1Api as StorageV1Api
 from kubernetes.client.api.storage_v1alpha1_api import \
