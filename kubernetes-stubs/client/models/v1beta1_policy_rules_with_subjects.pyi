@@ -9,6 +9,7 @@ class V1beta1PolicyRulesWithSubjects:
     ]
     resource_rules: typing.Optional[list[kubernetes.client.V1beta1ResourcePolicyRule]]
     subjects: list[kubernetes.client.V1beta1Subject]
+
     def __init__(
         self,
         *,

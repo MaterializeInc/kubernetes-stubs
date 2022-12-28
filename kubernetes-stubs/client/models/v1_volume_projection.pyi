@@ -10,6 +10,7 @@ class V1VolumeProjection:
     service_account_token: typing.Optional[
         kubernetes.client.V1ServiceAccountTokenProjection
     ]
+
     def __init__(
         self,
         *,

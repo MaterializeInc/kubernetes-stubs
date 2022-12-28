@@ -13,6 +13,7 @@ class VersionInfo:
     major: str
     minor: str
     platform: str
+
     def __init__(
         self,
         *,

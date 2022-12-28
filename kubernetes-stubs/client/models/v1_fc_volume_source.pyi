@@ -9,6 +9,7 @@ class V1FCVolumeSource:
     read_only: typing.Optional[bool]
     target_ww_ns: typing.Optional[list[str]]
     wwids: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

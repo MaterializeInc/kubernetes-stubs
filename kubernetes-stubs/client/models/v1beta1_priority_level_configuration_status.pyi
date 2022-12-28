@@ -7,6 +7,7 @@ class V1beta1PriorityLevelConfigurationStatus:
     conditions: typing.Optional[
         list[kubernetes.client.V1beta1PriorityLevelConfigurationCondition]
     ]
+
     def __init__(
         self,
         *,

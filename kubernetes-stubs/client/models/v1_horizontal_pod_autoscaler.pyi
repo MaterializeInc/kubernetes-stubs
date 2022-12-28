@@ -9,6 +9,7 @@ class V1HorizontalPodAutoscaler:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1HorizontalPodAutoscalerSpec]
     status: typing.Optional[kubernetes.client.V1HorizontalPodAutoscalerStatus]
+
     def __init__(
         self,
         *,

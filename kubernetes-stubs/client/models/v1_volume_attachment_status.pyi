@@ -8,6 +8,7 @@ class V1VolumeAttachmentStatus:
     attached: bool
     attachment_metadata: typing.Optional[dict[str, str]]
     detach_error: typing.Optional[kubernetes.client.V1VolumeError]
+
     def __init__(
         self,
         *,

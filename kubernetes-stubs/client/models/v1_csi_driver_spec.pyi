@@ -11,6 +11,7 @@ class V1CSIDriverSpec:
     storage_capacity: typing.Optional[bool]
     token_requests: typing.Optional[list[kubernetes.client.StorageV1TokenRequest]]
     volume_lifecycle_modes: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

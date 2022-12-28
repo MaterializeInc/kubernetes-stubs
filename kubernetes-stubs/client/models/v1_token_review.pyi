@@ -9,6 +9,7 @@ class V1TokenReview:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1TokenReviewSpec
     status: typing.Optional[kubernetes.client.V1TokenReviewStatus]
+
     def __init__(
         self,
         *,

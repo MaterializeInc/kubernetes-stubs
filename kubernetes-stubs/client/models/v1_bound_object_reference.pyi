@@ -8,6 +8,7 @@ class V1BoundObjectReference:
     kind: typing.Optional[str]
     name: typing.Optional[str]
     uid: typing.Optional[str]
+
     def __init__(
         self,
         *,

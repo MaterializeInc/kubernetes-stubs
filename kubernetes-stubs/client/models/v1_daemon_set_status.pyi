@@ -14,6 +14,7 @@ class V1DaemonSetStatus:
     number_unavailable: typing.Optional[int]
     observed_generation: typing.Optional[int]
     updated_number_scheduled: typing.Optional[int]
+
     def __init__(
         self,
         *,

@@ -7,6 +7,7 @@ class V1alpha1ServerStorageVersion:
     api_server_id: typing.Optional[str]
     decodable_versions: typing.Optional[list[str]]
     encoding_version: typing.Optional[str]
+
     def __init__(
         self,
         *,

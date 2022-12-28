@@ -10,6 +10,7 @@ class V1beta1FlowSchemaSpec:
     matching_precedence: typing.Optional[int]
     priority_level_configuration: kubernetes.client.V1beta1PriorityLevelConfigurationReference
     rules: typing.Optional[list[kubernetes.client.V1beta1PolicyRulesWithSubjects]]
+
     def __init__(
         self,
         *,

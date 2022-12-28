@@ -9,6 +9,7 @@ class V1ControllerRevision:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     revision: int
+
     def __init__(
         self,
         *,

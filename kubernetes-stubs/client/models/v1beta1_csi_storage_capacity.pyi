@@ -11,6 +11,7 @@ class V1beta1CSIStorageCapacity:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     node_topology: typing.Optional[kubernetes.client.V1LabelSelector]
     storage_class_name: str
+
     def __init__(
         self,
         *,

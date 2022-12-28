@@ -10,6 +10,7 @@ class V1OwnerReference:
     kind: str
     name: str
     uid: str
+
     def __init__(
         self,
         *,

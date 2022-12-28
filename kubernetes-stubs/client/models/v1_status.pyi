@@ -12,6 +12,7 @@ class V1Status:
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
     reason: typing.Optional[str]
     status: typing.Optional[str]
+
     def __init__(
         self,
         *,

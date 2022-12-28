@@ -8,6 +8,7 @@ class V1Subject:
     kind: str
     name: str
     namespace: typing.Optional[str]
+
     def __init__(
         self,
         *,

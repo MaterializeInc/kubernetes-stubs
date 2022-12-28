@@ -11,6 +11,7 @@ class V1ObjectReference:
     namespace: typing.Optional[str]
     resource_version: typing.Optional[str]
     uid: typing.Optional[str]
+
     def __init__(
         self,
         *,

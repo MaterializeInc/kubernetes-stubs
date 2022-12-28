@@ -7,6 +7,7 @@ class V1EndpointSubset:
     addresses: typing.Optional[list[kubernetes.client.V1EndpointAddress]]
     not_ready_addresses: typing.Optional[list[kubernetes.client.V1EndpointAddress]]
     ports: typing.Optional[list[kubernetes.client.CoreV1EndpointPort]]
+
     def __init__(
         self,
         *,

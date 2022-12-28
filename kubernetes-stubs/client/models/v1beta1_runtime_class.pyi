@@ -10,6 +10,7 @@ class V1beta1RuntimeClass:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     overhead: typing.Optional[kubernetes.client.V1beta1Overhead]
     scheduling: typing.Optional[kubernetes.client.V1beta1Scheduling]
+
     def __init__(
         self,
         *,

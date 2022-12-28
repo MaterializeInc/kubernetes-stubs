@@ -13,6 +13,7 @@ class V1ContainerStatus:
     restart_count: int
     started: typing.Optional[bool]
     state: typing.Optional[kubernetes.client.V1ContainerState]
+
     def __init__(
         self,
         *,

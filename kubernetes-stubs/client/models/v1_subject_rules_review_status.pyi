@@ -8,6 +8,7 @@ class V1SubjectRulesReviewStatus:
     incomplete: bool
     non_resource_rules: list[kubernetes.client.V1NonResourceRule]
     resource_rules: list[kubernetes.client.V1ResourceRule]
+
     def __init__(
         self,
         *,

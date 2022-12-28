@@ -9,6 +9,7 @@ class V1Scale:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1ScaleSpec]
     status: typing.Optional[kubernetes.client.V1ScaleStatus]
+
     def __init__(
         self,
         *,

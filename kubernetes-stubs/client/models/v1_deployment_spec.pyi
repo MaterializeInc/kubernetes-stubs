@@ -12,6 +12,7 @@ class V1DeploymentSpec:
     selector: kubernetes.client.V1LabelSelector
     strategy: typing.Optional[kubernetes.client.V1DeploymentStrategy]
     template: kubernetes.client.V1PodTemplateSpec
+
     def __init__(
         self,
         *,

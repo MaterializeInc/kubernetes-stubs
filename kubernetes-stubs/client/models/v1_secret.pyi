@@ -11,6 +11,7 @@ class V1Secret:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     string_data: typing.Optional[dict[str, str]]
     type: typing.Optional[str]
+
     def __init__(
         self,
         *,

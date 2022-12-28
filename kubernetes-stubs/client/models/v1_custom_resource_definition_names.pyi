@@ -10,6 +10,7 @@ class V1CustomResourceDefinitionNames:
     plural: str
     short_names: typing.Optional[list[str]]
     singular: typing.Optional[str]
+
     def __init__(
         self,
         *,

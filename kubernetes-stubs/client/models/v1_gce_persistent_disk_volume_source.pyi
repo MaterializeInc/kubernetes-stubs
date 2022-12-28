@@ -8,6 +8,7 @@ class V1GCEPersistentDiskVolumeSource:
     partition: typing.Optional[int]
     pd_name: str
     read_only: typing.Optional[bool]
+
     def __init__(
         self,
         *,

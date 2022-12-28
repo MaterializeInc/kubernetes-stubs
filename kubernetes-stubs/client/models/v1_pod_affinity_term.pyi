@@ -8,6 +8,7 @@ class V1PodAffinityTerm:
     namespace_selector: typing.Optional[kubernetes.client.V1LabelSelector]
     namespaces: typing.Optional[list[str]]
     topology_key: str
+
     def __init__(
         self,
         *,

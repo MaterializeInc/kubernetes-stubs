@@ -7,6 +7,7 @@ class V1ScopedResourceSelectorRequirement:
     operator: str
     scope_name: str
     values: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

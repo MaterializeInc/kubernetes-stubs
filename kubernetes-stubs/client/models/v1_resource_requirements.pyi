@@ -6,6 +6,7 @@ import kubernetes.client
 class V1ResourceRequirements:
     limits: typing.Optional[dict[str, str]]
     requests: typing.Optional[dict[str, str]]
+
     def __init__(
         self,
         *,

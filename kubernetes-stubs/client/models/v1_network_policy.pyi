@@ -8,6 +8,7 @@ class V1NetworkPolicy:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1NetworkPolicySpec]
+
     def __init__(
         self,
         *,

@@ -7,6 +7,7 @@ class V2beta2ContainerResourceMetricStatus:
     container: str
     current: kubernetes.client.V2beta2MetricValueStatus
     name: str
+
     def __init__(
         self,
         *,

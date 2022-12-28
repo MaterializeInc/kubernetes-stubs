@@ -8,6 +8,7 @@ class V1ConfigMapList:
     items: list[kubernetes.client.V1ConfigMap]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

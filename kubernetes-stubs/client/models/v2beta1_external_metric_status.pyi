@@ -8,6 +8,7 @@ class V2beta1ExternalMetricStatus:
     current_value: str
     metric_name: str
     metric_selector: typing.Optional[kubernetes.client.V1LabelSelector]
+
     def __init__(
         self,
         *,

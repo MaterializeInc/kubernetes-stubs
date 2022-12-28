@@ -9,6 +9,7 @@ class V1alpha1StorageVersionStatus:
     storage_versions: typing.Optional[
         list[kubernetes.client.V1alpha1ServerStorageVersion]
     ]
+
     def __init__(
         self,
         *,

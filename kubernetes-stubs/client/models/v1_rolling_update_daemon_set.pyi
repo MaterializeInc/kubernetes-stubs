@@ -6,6 +6,7 @@ import kubernetes.client
 class V1RollingUpdateDaemonSet:
     max_surge: typing.Optional[typing.Any]
     max_unavailable: typing.Optional[typing.Any]
+
     def __init__(
         self,
         *,

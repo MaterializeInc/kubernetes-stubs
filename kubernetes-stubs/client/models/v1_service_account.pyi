@@ -10,6 +10,7 @@ class V1ServiceAccount:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     secrets: typing.Optional[list[kubernetes.client.V1ObjectReference]]
+
     def __init__(
         self,
         *,

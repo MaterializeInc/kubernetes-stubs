@@ -8,6 +8,7 @@ class V2beta2MetricTarget:
     average_value: typing.Optional[str]
     type: str
     value: typing.Optional[str]
+
     def __init__(
         self,
         *,

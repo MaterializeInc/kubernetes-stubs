@@ -7,6 +7,7 @@ class V2beta2ContainerResourceMetricSource:
     container: str
     name: str
     target: kubernetes.client.V2beta2MetricTarget
+
     def __init__(
         self,
         *,

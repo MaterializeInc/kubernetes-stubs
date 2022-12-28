@@ -8,6 +8,7 @@ class V1EnvVarSource:
     field_ref: typing.Optional[kubernetes.client.V1ObjectFieldSelector]
     resource_field_ref: typing.Optional[kubernetes.client.V1ResourceFieldSelector]
     secret_key_ref: typing.Optional[kubernetes.client.V1SecretKeySelector]
+
     def __init__(
         self,
         *,

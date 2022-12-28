@@ -8,6 +8,7 @@ class V1CSINode:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1CSINodeSpec
+
     def __init__(
         self,
         *,

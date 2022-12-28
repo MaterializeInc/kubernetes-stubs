@@ -8,6 +8,7 @@ class V1Taint:
     key: str
     time_added: typing.Optional[datetime.datetime]
     value: typing.Optional[str]
+
     def __init__(
         self,
         *,

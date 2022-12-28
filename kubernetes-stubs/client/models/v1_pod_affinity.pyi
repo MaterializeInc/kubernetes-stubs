@@ -10,6 +10,7 @@ class V1PodAffinity:
     required_during_scheduling_ignored_during_execution: typing.Optional[
         list[kubernetes.client.V1PodAffinityTerm]
     ]
+
     def __init__(
         self,
         *,

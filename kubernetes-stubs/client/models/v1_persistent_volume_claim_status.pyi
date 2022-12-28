@@ -10,6 +10,7 @@ class V1PersistentVolumeClaimStatus:
         list[kubernetes.client.V1PersistentVolumeClaimCondition]
     ]
     phase: typing.Optional[str]
+
     def __init__(
         self,
         *,

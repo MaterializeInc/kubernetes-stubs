@@ -6,6 +6,7 @@ import kubernetes.client
 class V1ProjectedVolumeSource:
     default_mode: typing.Optional[int]
     sources: typing.Optional[list[kubernetes.client.V1VolumeProjection]]
+
     def __init__(
         self,
         *,

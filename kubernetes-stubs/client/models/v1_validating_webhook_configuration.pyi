@@ -8,6 +8,7 @@ class V1ValidatingWebhookConfiguration:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     webhooks: typing.Optional[list[kubernetes.client.V1ValidatingWebhook]]
+
     def __init__(
         self,
         *,

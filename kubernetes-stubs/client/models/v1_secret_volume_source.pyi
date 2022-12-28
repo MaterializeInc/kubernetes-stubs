@@ -8,6 +8,7 @@ class V1SecretVolumeSource:
     items: typing.Optional[list[kubernetes.client.V1KeyToPath]]
     optional: typing.Optional[bool]
     secret_name: typing.Optional[str]
+
     def __init__(
         self,
         *,

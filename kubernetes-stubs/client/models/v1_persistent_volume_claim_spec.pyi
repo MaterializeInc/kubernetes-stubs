@@ -12,6 +12,7 @@ class V1PersistentVolumeClaimSpec:
     storage_class_name: typing.Optional[str]
     volume_mode: typing.Optional[str]
     volume_name: typing.Optional[str]
+
     def __init__(
         self,
         *,

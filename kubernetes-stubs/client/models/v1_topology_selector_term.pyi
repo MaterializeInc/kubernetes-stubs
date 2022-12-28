@@ -7,6 +7,7 @@ class V1TopologySelectorTerm:
     match_label_expressions: typing.Optional[
         list[kubernetes.client.V1TopologySelectorLabelRequirement]
     ]
+
     def __init__(
         self,
         *,

@@ -9,6 +9,7 @@ class V1DaemonSet:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1DaemonSetSpec]
     status: typing.Optional[kubernetes.client.V1DaemonSetStatus]
+
     def __init__(
         self,
         *,

@@ -6,6 +6,7 @@ import kubernetes.client
 class V1beta1LimitResponse:
     queuing: typing.Optional[kubernetes.client.V1beta1QueuingConfiguration]
     type: str
+
     def __init__(
         self,
         *,

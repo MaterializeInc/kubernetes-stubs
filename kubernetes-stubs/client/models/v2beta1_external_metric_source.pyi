@@ -8,6 +8,7 @@ class V2beta1ExternalMetricSource:
     metric_selector: typing.Optional[kubernetes.client.V1LabelSelector]
     target_average_value: typing.Optional[str]
     target_value: typing.Optional[str]
+
     def __init__(
         self,
         *,

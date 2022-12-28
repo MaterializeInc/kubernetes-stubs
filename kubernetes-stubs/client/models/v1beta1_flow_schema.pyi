@@ -9,6 +9,7 @@ class V1beta1FlowSchema:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1beta1FlowSchemaSpec]
     status: typing.Optional[kubernetes.client.V1beta1FlowSchemaStatus]
+
     def __init__(
         self,
         *,

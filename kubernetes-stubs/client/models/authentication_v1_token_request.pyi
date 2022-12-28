@@ -9,6 +9,7 @@ class AuthenticationV1TokenRequest:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1TokenRequestSpec
     status: typing.Optional[kubernetes.client.V1TokenRequestStatus]
+
     def __init__(
         self,
         *,

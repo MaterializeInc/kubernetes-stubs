@@ -8,6 +8,7 @@ class V1IngressSpec:
     ingress_class_name: typing.Optional[str]
     rules: typing.Optional[list[kubernetes.client.V1IngressRule]]
     tls: typing.Optional[list[kubernetes.client.V1IngressTLS]]
+
     def __init__(
         self,
         *,

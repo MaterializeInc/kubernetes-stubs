@@ -10,6 +10,7 @@ class V1AzureDiskVolumeSource:
     fs_type: typing.Optional[str]
     kind: typing.Optional[str]
     read_only: typing.Optional[bool]
+
     def __init__(
         self,
         *,

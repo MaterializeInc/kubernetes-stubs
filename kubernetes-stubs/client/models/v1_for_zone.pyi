@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1ForZone:
     name: str
+
     def __init__(self, *, name: str) -> None: ...
     def to_dict(self) -> V1ForZoneDict: ...
 
