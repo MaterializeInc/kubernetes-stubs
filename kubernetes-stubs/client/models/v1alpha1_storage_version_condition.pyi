@@ -10,6 +10,7 @@ class V1alpha1StorageVersionCondition:
     reason: str
     status: str
     type: str
+
     def __init__(
         self,
         *,

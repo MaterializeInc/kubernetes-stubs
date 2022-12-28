@@ -8,6 +8,7 @@ class V1LimitRange:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1LimitRangeSpec]
+
     def __init__(
         self,
         *,

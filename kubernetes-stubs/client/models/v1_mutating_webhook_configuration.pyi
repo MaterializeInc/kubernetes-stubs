@@ -8,6 +8,7 @@ class V1MutatingWebhookConfiguration:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     webhooks: typing.Optional[list[kubernetes.client.V1MutatingWebhook]]
+
     def __init__(
         self,
         *,

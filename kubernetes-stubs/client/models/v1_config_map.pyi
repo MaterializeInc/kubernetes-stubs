@@ -10,6 +10,7 @@ class V1ConfigMap:
     immutable: typing.Optional[bool]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
+
     def __init__(
         self,
         *,

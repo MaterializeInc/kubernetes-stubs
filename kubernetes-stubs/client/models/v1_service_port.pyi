@@ -10,6 +10,7 @@ class V1ServicePort:
     port: int
     protocol: typing.Optional[str]
     target_port: typing.Optional[typing.Any]
+
     def __init__(
         self,
         *,

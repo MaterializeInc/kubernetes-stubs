@@ -9,6 +9,7 @@ class V1StatefulSetCondition:
     reason: typing.Optional[str]
     status: str
     type: str
+
     def __init__(
         self,
         *,

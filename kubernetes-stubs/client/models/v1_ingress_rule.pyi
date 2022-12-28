@@ -6,6 +6,7 @@ import kubernetes.client
 class V1IngressRule:
     host: typing.Optional[str]
     http: typing.Optional[kubernetes.client.V1HTTPIngressRuleValue]
+
     def __init__(
         self,
         *,

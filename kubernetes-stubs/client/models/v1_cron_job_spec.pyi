@@ -11,6 +11,7 @@ class V1CronJobSpec:
     starting_deadline_seconds: typing.Optional[int]
     successful_jobs_history_limit: typing.Optional[int]
     suspend: typing.Optional[bool]
+
     def __init__(
         self,
         *,

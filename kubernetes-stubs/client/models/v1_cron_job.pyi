@@ -9,6 +9,7 @@ class V1CronJob:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1CronJobSpec]
     status: typing.Optional[kubernetes.client.V1CronJobStatus]
+
     def __init__(
         self,
         *,

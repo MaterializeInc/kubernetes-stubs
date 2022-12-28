@@ -8,6 +8,7 @@ class CoreV1EndpointPort:
     name: typing.Optional[str]
     port: int
     protocol: typing.Optional[str]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1ComponentCondition:
     message: typing.Optional[str]
     status: str
     type: str
+
     def __init__(
         self,
         *,

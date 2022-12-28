@@ -6,6 +6,7 @@ import kubernetes.client
 class V1ContainerImage:
     names: typing.Optional[list[str]]
     size_bytes: typing.Optional[int]
+
     def __init__(
         self,
         *,

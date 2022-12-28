@@ -14,6 +14,7 @@ class V1StatefulSetStatus:
     replicas: int
     update_revision: typing.Optional[str]
     updated_replicas: typing.Optional[int]
+
     def __init__(
         self,
         *,

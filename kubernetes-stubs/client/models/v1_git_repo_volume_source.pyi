@@ -7,6 +7,7 @@ class V1GitRepoVolumeSource:
     directory: typing.Optional[str]
     repository: str
     revision: typing.Optional[str]
+
     def __init__(
         self,
         *,

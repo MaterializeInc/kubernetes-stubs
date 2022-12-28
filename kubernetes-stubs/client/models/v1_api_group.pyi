@@ -12,6 +12,7 @@ class V1APIGroup:
         list[kubernetes.client.V1ServerAddressByClientCIDR]
     ]
     versions: list[kubernetes.client.V1GroupVersionForDiscovery]
+
     def __init__(
         self,
         *,

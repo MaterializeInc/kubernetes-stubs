@@ -10,6 +10,7 @@ class V1Condition:
     reason: str
     status: str
     type: str
+
     def __init__(
         self,
         *,

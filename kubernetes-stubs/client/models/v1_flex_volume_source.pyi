@@ -9,6 +9,7 @@ class V1FlexVolumeSource:
     options: typing.Optional[dict[str, str]]
     read_only: typing.Optional[bool]
     secret_ref: typing.Optional[kubernetes.client.V1LocalObjectReference]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1LabelSelector:
         list[kubernetes.client.V1LabelSelectorRequirement]
     ]
     match_labels: typing.Optional[dict[str, str]]
+
     def __init__(
         self,
         *,

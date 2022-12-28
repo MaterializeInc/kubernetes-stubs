@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1APIServiceStatus:
     conditions: typing.Optional[list[kubernetes.client.V1APIServiceCondition]]
+
     def __init__(
         self,
         *,

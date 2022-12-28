@@ -9,6 +9,7 @@ class V1IngressClassParametersReference:
     name: str
     namespace: typing.Optional[str]
     scope: typing.Optional[str]
+
     def __init__(
         self,
         *,

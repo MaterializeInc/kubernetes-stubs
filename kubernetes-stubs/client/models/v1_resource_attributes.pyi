@@ -11,6 +11,7 @@ class V1ResourceAttributes:
     subresource: typing.Optional[str]
     verb: typing.Optional[str]
     version: typing.Optional[str]
+
     def __init__(
         self,
         *,

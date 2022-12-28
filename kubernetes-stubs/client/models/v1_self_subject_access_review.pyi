@@ -9,6 +9,7 @@ class V1SelfSubjectAccessReview:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1SelfSubjectAccessReviewSpec
     status: typing.Optional[kubernetes.client.V1SubjectAccessReviewStatus]
+
     def __init__(
         self,
         *,

@@ -10,6 +10,7 @@ class V1NodeAffinity:
     required_during_scheduling_ignored_during_execution: typing.Optional[
         kubernetes.client.V1NodeSelector
     ]
+
     def __init__(
         self,
         *,

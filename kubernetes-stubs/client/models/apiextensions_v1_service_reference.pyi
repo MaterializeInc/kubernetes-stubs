@@ -8,6 +8,7 @@ class ApiextensionsV1ServiceReference:
     namespace: str
     path: typing.Optional[str]
     port: typing.Optional[int]
+
     def __init__(
         self,
         *,

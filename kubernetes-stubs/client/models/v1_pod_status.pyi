@@ -19,6 +19,7 @@ class V1PodStatus:
     qos_class: typing.Optional[str]
     reason: typing.Optional[str]
     start_time: typing.Optional[datetime.datetime]
+
     def __init__(
         self,
         *,

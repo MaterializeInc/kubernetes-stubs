@@ -8,6 +8,7 @@ class V1Lease:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1LeaseSpec]
+
     def __init__(
         self,
         *,

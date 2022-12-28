@@ -11,6 +11,7 @@ class V1beta1Endpoint:
     node_name: typing.Optional[str]
     target_ref: typing.Optional[kubernetes.client.V1ObjectReference]
     topology: typing.Optional[dict[str, str]]
+
     def __init__(
         self,
         *,

@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1beta1FlowSchemaStatus:
     conditions: typing.Optional[list[kubernetes.client.V1beta1FlowSchemaCondition]]
+
     def __init__(
         self,
         *,

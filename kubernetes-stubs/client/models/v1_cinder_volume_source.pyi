@@ -8,6 +8,7 @@ class V1CinderVolumeSource:
     read_only: typing.Optional[bool]
     secret_ref: typing.Optional[kubernetes.client.V1LocalObjectReference]
     volume_id: str
+
     def __init__(
         self,
         *,

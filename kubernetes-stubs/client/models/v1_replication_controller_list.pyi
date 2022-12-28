@@ -8,6 +8,7 @@ class V1ReplicationControllerList:
     items: list[kubernetes.client.V1ReplicationController]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

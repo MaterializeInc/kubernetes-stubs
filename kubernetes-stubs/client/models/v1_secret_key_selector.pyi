@@ -7,6 +7,7 @@ class V1SecretKeySelector:
     key: str
     name: typing.Optional[str]
     optional: typing.Optional[bool]
+
     def __init__(
         self,
         *,

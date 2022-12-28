@@ -11,6 +11,7 @@ class V1NodeSpec:
     provider_id: typing.Optional[str]
     taints: typing.Optional[list[kubernetes.client.V1Taint]]
     unschedulable: typing.Optional[bool]
+
     def __init__(
         self,
         *,

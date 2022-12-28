@@ -6,6 +6,7 @@ import kubernetes.client
 class V2beta2HorizontalPodAutoscalerBehavior:
     scale_down: typing.Optional[kubernetes.client.V2beta2HPAScalingRules]
     scale_up: typing.Optional[kubernetes.client.V2beta2HPAScalingRules]
+
     def __init__(
         self,
         *,

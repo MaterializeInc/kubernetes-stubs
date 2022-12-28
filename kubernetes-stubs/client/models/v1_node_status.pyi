@@ -15,6 +15,7 @@ class V1NodeStatus:
     phase: typing.Optional[str]
     volumes_attached: typing.Optional[list[kubernetes.client.V1AttachedVolume]]
     volumes_in_use: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1APIResourceList:
     group_version: str
     kind: typing.Optional[str]
     resources: list[kubernetes.client.V1APIResource]
+
     def __init__(
         self,
         *,

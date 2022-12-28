@@ -8,6 +8,7 @@ class V1StatefulSetUpdateStrategy:
         kubernetes.client.V1RollingUpdateStatefulSetStrategy
     ]
     type: typing.Optional[str]
+
     def __init__(
         self,
         *,

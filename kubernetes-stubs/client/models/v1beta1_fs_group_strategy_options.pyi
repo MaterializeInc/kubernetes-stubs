@@ -6,6 +6,7 @@ import kubernetes.client
 class V1beta1FSGroupStrategyOptions:
     ranges: typing.Optional[list[kubernetes.client.V1beta1IDRange]]
     rule: typing.Optional[str]
+
     def __init__(
         self,
         *,

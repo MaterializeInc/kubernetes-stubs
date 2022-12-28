@@ -14,6 +14,7 @@ class V1APIResource:
     storage_version_hash: typing.Optional[str]
     verbs: list[str]
     version: typing.Optional[str]
+
     def __init__(
         self,
         *,

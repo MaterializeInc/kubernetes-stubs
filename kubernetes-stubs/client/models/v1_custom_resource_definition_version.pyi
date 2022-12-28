@@ -14,6 +14,7 @@ class V1CustomResourceDefinitionVersion:
     served: bool
     storage: bool
     subresources: typing.Optional[kubernetes.client.V1CustomResourceSubresources]
+
     def __init__(
         self,
         *,

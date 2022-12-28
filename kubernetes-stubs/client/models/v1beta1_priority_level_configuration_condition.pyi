@@ -9,6 +9,7 @@ class V1beta1PriorityLevelConfigurationCondition:
     reason: typing.Optional[str]
     status: typing.Optional[str]
     type: typing.Optional[str]
+
     def __init__(
         self,
         *,

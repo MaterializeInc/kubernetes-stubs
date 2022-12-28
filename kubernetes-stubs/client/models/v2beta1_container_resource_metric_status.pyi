@@ -8,6 +8,7 @@ class V2beta1ContainerResourceMetricStatus:
     current_average_utilization: typing.Optional[int]
     current_average_value: str
     name: str
+
     def __init__(
         self,
         *,

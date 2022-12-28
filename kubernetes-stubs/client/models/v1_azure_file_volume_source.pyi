@@ -7,6 +7,7 @@ class V1AzureFileVolumeSource:
     read_only: typing.Optional[bool]
     secret_name: str
     share_name: str
+
     def __init__(
         self,
         *,

@@ -7,6 +7,7 @@ class V1EphemeralVolumeSource:
     volume_claim_template: typing.Optional[
         kubernetes.client.V1PersistentVolumeClaimTemplate
     ]
+
     def __init__(
         self,
         *,

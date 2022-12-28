@@ -8,6 +8,7 @@ class EventsV1EventList:
     items: list[kubernetes.client.EventsV1Event]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

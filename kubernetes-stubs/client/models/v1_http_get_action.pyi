@@ -9,6 +9,7 @@ class V1HTTPGetAction:
     path: typing.Optional[str]
     port: typing.Any
     scheme: typing.Optional[str]
+
     def __init__(
         self,
         *,

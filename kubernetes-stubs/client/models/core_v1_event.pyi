@@ -21,6 +21,7 @@ class CoreV1Event:
     series: typing.Optional[kubernetes.client.CoreV1EventSeries]
     source: typing.Optional[kubernetes.client.V1EventSource]
     type: typing.Optional[str]
+
     def __init__(
         self,
         *,

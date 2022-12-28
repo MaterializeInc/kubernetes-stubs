@@ -13,6 +13,7 @@ class V1CSIPersistentVolumeSource:
     read_only: typing.Optional[bool]
     volume_attributes: typing.Optional[dict[str, str]]
     volume_handle: str
+
     def __init__(
         self,
         *,

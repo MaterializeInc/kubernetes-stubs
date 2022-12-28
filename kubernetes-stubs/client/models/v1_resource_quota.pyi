@@ -9,6 +9,7 @@ class V1ResourceQuota:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1ResourceQuotaSpec]
     status: typing.Optional[kubernetes.client.V1ResourceQuotaStatus]
+
     def __init__(
         self,
         *,

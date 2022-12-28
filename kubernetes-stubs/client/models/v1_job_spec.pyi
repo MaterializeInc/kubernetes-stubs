@@ -14,6 +14,7 @@ class V1JobSpec:
     suspend: typing.Optional[bool]
     template: kubernetes.client.V1PodTemplateSpec
     ttl_seconds_after_finished: typing.Optional[int]
+
     def __init__(
         self,
         *,

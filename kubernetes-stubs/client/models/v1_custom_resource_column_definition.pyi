@@ -10,6 +10,7 @@ class V1CustomResourceColumnDefinition:
     name: str
     priority: typing.Optional[int]
     type: str
+
     def __init__(
         self,
         *,

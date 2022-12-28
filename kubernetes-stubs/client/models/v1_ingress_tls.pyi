@@ -6,6 +6,7 @@ import kubernetes.client
 class V1IngressTLS:
     hosts: typing.Optional[list[str]]
     secret_name: typing.Optional[str]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1beta1PodSecurityPolicy:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1beta1PodSecurityPolicySpec]
+
     def __init__(
         self,
         *,

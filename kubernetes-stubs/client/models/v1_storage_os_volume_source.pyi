@@ -9,6 +9,7 @@ class V1StorageOSVolumeSource:
     secret_ref: typing.Optional[kubernetes.client.V1LocalObjectReference]
     volume_name: typing.Optional[str]
     volume_namespace: typing.Optional[str]
+
     def __init__(
         self,
         *,

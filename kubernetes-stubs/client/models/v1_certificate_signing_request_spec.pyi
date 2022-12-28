@@ -12,6 +12,7 @@ class V1CertificateSigningRequestSpec:
     uid: typing.Optional[str]
     usages: typing.Optional[list[str]]
     username: typing.Optional[str]
+
     def __init__(
         self,
         *,

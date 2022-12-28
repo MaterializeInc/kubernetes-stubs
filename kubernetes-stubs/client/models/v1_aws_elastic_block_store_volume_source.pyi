@@ -8,6 +8,7 @@ class V1AWSElasticBlockStoreVolumeSource:
     partition: typing.Optional[int]
     read_only: typing.Optional[bool]
     volume_id: str
+
     def __init__(
         self,
         *,

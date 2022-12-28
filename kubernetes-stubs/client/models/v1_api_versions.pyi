@@ -8,6 +8,7 @@ class V1APIVersions:
     kind: typing.Optional[str]
     server_address_by_client_cid_rs: list[kubernetes.client.V1ServerAddressByClientCIDR]
     versions: list[str]
+
     def __init__(
         self,
         *,
