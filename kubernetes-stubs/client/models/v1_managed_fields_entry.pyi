@@ -11,6 +11,7 @@ class V1ManagedFieldsEntry:
     operation: typing.Optional[str]
     subresource: typing.Optional[str]
     time: typing.Optional[datetime.datetime]
+
     def __init__(
         self,
         *,

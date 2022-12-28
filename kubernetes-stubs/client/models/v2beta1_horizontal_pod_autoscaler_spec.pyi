@@ -8,6 +8,7 @@ class V2beta1HorizontalPodAutoscalerSpec:
     metrics: typing.Optional[list[kubernetes.client.V2beta1MetricSpec]]
     min_replicas: typing.Optional[int]
     scale_target_ref: kubernetes.client.V2beta1CrossVersionObjectReference
+
     def __init__(
         self,
         *,

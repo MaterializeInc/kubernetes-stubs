@@ -10,6 +10,7 @@ class V1LimitRangeItem:
     max_limit_request_ratio: typing.Optional[dict[str, str]]
     min: typing.Optional[dict[str, str]]
     type: str
+
     def __init__(
         self,
         *,

@@ -7,6 +7,7 @@ class V1NetworkPolicyPort:
     end_port: typing.Optional[int]
     port: typing.Optional[typing.Any]
     protocol: typing.Optional[str]
+
     def __init__(
         self,
         *,

@@ -14,6 +14,7 @@ class V1JobStatus:
     uncounted_terminated_pods: typing.Optional[
         kubernetes.client.V1UncountedTerminatedPods
     ]
+
     def __init__(
         self,
         *,

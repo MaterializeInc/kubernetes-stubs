@@ -9,6 +9,7 @@ class V1Toleration:
     operator: typing.Optional[str]
     toleration_seconds: typing.Optional[int]
     value: typing.Optional[str]
+
     def __init__(
         self,
         *,

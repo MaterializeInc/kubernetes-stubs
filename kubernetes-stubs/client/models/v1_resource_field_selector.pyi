@@ -7,6 +7,7 @@ class V1ResourceFieldSelector:
     container_name: typing.Optional[str]
     divisor: typing.Optional[str]
     resource: str
+
     def __init__(
         self,
         *,

@@ -10,6 +10,7 @@ class V2beta2HorizontalPodAutoscalerStatus:
     desired_replicas: int
     last_scale_time: typing.Optional[datetime.datetime]
     observed_generation: typing.Optional[int]
+
     def __init__(
         self,
         *,

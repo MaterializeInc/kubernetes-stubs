@@ -6,6 +6,7 @@ import kubernetes.client
 class V1UncountedTerminatedPods:
     failed: typing.Optional[list[str]]
     succeeded: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

@@ -9,6 +9,7 @@ class V1CertificateSigningRequest:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1CertificateSigningRequestSpec
     status: typing.Optional[kubernetes.client.V1CertificateSigningRequestStatus]
+
     def __init__(
         self,
         *,

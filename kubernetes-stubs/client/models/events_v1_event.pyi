@@ -21,6 +21,7 @@ class EventsV1Event:
     reporting_instance: typing.Optional[str]
     series: typing.Optional[kubernetes.client.EventsV1EventSeries]
     type: typing.Optional[str]
+
     def __init__(
         self,
         *,

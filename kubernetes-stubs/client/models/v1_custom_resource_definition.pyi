@@ -9,6 +9,7 @@ class V1CustomResourceDefinition:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1CustomResourceDefinitionSpec
     status: typing.Optional[kubernetes.client.V1CustomResourceDefinitionStatus]
+
     def __init__(
         self,
         *,

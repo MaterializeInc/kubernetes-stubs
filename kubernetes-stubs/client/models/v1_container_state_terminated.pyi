@@ -11,6 +11,7 @@ class V1ContainerStateTerminated:
     reason: typing.Optional[str]
     signal: typing.Optional[int]
     started_at: typing.Optional[datetime.datetime]
+
     def __init__(
         self,
         *,

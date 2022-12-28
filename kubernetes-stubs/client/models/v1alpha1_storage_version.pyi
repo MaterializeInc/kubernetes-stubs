@@ -9,6 +9,7 @@ class V1alpha1StorageVersion:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Any
     status: kubernetes.client.V1alpha1StorageVersionStatus
+
     def __init__(
         self,
         *,

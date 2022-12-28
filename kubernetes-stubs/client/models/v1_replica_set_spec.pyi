@@ -8,6 +8,7 @@ class V1ReplicaSetSpec:
     replicas: typing.Optional[int]
     selector: kubernetes.client.V1LabelSelector
     template: typing.Optional[kubernetes.client.V1PodTemplateSpec]
+
     def __init__(
         self,
         *,

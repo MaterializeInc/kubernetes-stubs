@@ -8,6 +8,7 @@ class V1TopologySpreadConstraint:
     max_skew: int
     topology_key: str
     when_unsatisfiable: str
+
     def __init__(
         self,
         *,

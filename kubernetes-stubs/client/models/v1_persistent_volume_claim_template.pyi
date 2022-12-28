@@ -6,6 +6,7 @@ import kubernetes.client
 class V1PersistentVolumeClaimTemplate:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: kubernetes.client.V1PersistentVolumeClaimSpec
+
     def __init__(
         self,
         *,

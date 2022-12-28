@@ -9,6 +9,7 @@ class V1CustomResourceDefinitionStatus:
         list[kubernetes.client.V1CustomResourceDefinitionCondition]
     ]
     stored_versions: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

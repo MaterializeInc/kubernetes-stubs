@@ -42,6 +42,7 @@ class V1Volume:
     secret: typing.Optional[kubernetes.client.V1SecretVolumeSource]
     storageos: typing.Optional[kubernetes.client.V1StorageOSVolumeSource]
     vsphere_volume: typing.Optional[kubernetes.client.V1VsphereVirtualDiskVolumeSource]
+
     def __init__(
         self,
         *,

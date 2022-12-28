@@ -41,6 +41,7 @@ class V1PodSpec:
         list[kubernetes.client.V1TopologySpreadConstraint]
     ]
     volumes: typing.Optional[list[kubernetes.client.V1Volume]]
+
     def __init__(
         self,
         *,

@@ -7,6 +7,7 @@ class V1beta1QueuingConfiguration:
     hand_size: typing.Optional[int]
     queue_length_limit: typing.Optional[int]
     queues: typing.Optional[int]
+
     def __init__(
         self,
         *,

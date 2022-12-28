@@ -12,6 +12,7 @@ class V1ReplicationControllerStatus:
     observed_generation: typing.Optional[int]
     ready_replicas: typing.Optional[int]
     replicas: int
+
     def __init__(
         self,
         *,

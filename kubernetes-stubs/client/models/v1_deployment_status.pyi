@@ -12,6 +12,7 @@ class V1DeploymentStatus:
     replicas: typing.Optional[int]
     unavailable_replicas: typing.Optional[int]
     updated_replicas: typing.Optional[int]
+
     def __init__(
         self,
         *,

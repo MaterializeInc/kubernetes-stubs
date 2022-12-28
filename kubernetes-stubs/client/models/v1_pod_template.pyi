@@ -8,6 +8,7 @@ class V1PodTemplate:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     template: typing.Optional[kubernetes.client.V1PodTemplateSpec]
+
     def __init__(
         self,
         *,

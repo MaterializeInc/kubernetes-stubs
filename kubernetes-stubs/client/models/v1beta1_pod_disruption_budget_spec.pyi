@@ -7,6 +7,7 @@ class V1beta1PodDisruptionBudgetSpec:
     max_unavailable: typing.Optional[typing.Any]
     min_available: typing.Optional[typing.Any]
     selector: typing.Optional[kubernetes.client.V1LabelSelector]
+
     def __init__(
         self,
         *,

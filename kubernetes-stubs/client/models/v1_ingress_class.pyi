@@ -8,6 +8,7 @@ class V1IngressClass:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1IngressClassSpec]
+
     def __init__(
         self,
         *,

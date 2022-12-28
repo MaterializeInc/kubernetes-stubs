@@ -6,6 +6,7 @@ import kubernetes.client
 class CoreV1EventSeries:
     count: typing.Optional[int]
     last_observed_time: typing.Optional[datetime.datetime]
+
     def __init__(
         self,
         *,

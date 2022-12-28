@@ -8,6 +8,7 @@ class V1AzureFilePersistentVolumeSource:
     secret_name: str
     secret_namespace: typing.Optional[str]
     share_name: str
+
     def __init__(
         self,
         *,

@@ -27,6 +27,7 @@ class V1EphemeralContainer:
     volume_devices: typing.Optional[list[kubernetes.client.V1VolumeDevice]]
     volume_mounts: typing.Optional[list[kubernetes.client.V1VolumeMount]]
     working_dir: typing.Optional[str]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1VsphereVirtualDiskVolumeSource:
     storage_policy_id: typing.Optional[str]
     storage_policy_name: typing.Optional[str]
     volume_path: str
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1TokenReviewStatus:
     authenticated: typing.Optional[bool]
     error: typing.Optional[str]
     user: typing.Optional[kubernetes.client.V1UserInfo]
+
     def __init__(
         self,
         *,

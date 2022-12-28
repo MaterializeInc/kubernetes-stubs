@@ -15,6 +15,7 @@ class V1ISCSIPersistentVolumeSource:
     read_only: typing.Optional[bool]
     secret_ref: typing.Optional[kubernetes.client.V1SecretReference]
     target_portal: str
+
     def __init__(
         self,
         *,

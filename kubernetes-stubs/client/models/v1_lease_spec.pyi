@@ -9,6 +9,7 @@ class V1LeaseSpec:
     lease_duration_seconds: typing.Optional[int]
     lease_transitions: typing.Optional[int]
     renew_time: typing.Optional[datetime.datetime]
+
     def __init__(
         self,
         *,

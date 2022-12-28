@@ -8,6 +8,7 @@ class V2beta1ContainerResourceMetricSource:
     name: str
     target_average_utilization: typing.Optional[int]
     target_average_value: typing.Optional[str]
+
     def __init__(
         self,
         *,

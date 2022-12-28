@@ -11,6 +11,7 @@ class V1APIServiceSpec:
     service: typing.Optional[kubernetes.client.ApiregistrationV1ServiceReference]
     version: typing.Optional[str]
     version_priority: int
+
     def __init__(
         self,
         *,

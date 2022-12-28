@@ -9,6 +9,7 @@ class V1DaemonSetSpec:
     selector: kubernetes.client.V1LabelSelector
     template: kubernetes.client.V1PodTemplateSpec
     update_strategy: typing.Optional[kubernetes.client.V1DaemonSetUpdateStrategy]
+
     def __init__(
         self,
         *,

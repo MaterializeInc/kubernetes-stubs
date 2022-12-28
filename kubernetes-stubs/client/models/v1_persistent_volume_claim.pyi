@@ -9,6 +9,7 @@ class V1PersistentVolumeClaim:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1PersistentVolumeClaimSpec]
     status: typing.Optional[kubernetes.client.V1PersistentVolumeClaimStatus]
+
     def __init__(
         self,
         *,

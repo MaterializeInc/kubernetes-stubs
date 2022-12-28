@@ -47,6 +47,7 @@ class V1JSONSchemaProps:
     x_kubernetes_list_type: typing.Optional[str]
     x_kubernetes_map_type: typing.Optional[str]
     x_kubernetes_preserve_unknown_fields: typing.Optional[bool]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1Eviction:
     delete_options: typing.Optional[kubernetes.client.V1DeleteOptions]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
+
     def __init__(
         self,
         *,

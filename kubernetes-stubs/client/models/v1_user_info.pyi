@@ -8,6 +8,7 @@ class V1UserInfo:
     groups: typing.Optional[list[str]]
     uid: typing.Optional[str]
     username: typing.Optional[str]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1ReplicationControllerSpec:
     replicas: typing.Optional[int]
     selector: typing.Optional[dict[str, str]]
     template: typing.Optional[kubernetes.client.V1PodTemplateSpec]
+
     def __init__(
         self,
         *,

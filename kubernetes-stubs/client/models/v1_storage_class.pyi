@@ -14,6 +14,7 @@ class V1StorageClass:
     provisioner: str
     reclaim_policy: typing.Optional[str]
     volume_binding_mode: typing.Optional[str]
+
     def __init__(
         self,
         *,

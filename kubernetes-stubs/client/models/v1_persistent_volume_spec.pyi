@@ -40,6 +40,7 @@ class V1PersistentVolumeSpec:
     storageos: typing.Optional[kubernetes.client.V1StorageOSPersistentVolumeSource]
     volume_mode: typing.Optional[str]
     vsphere_volume: typing.Optional[kubernetes.client.V1VsphereVirtualDiskVolumeSource]
+
     def __init__(
         self,
         *,

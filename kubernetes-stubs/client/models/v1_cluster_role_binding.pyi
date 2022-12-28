@@ -9,6 +9,7 @@ class V1ClusterRoleBinding:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     role_ref: kubernetes.client.V1RoleRef
     subjects: typing.Optional[list[kubernetes.client.V1Subject]]
+
     def __init__(
         self,
         *,

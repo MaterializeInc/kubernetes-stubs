@@ -8,6 +8,7 @@ class V1NodeSelectorTerm:
         list[kubernetes.client.V1NodeSelectorRequirement]
     ]
     match_fields: typing.Optional[list[kubernetes.client.V1NodeSelectorRequirement]]
+
     def __init__(
         self,
         *,

@@ -23,6 +23,7 @@ class V1ServiceSpec:
     session_affinity: typing.Optional[str]
     session_affinity_config: typing.Optional[kubernetes.client.V1SessionAffinityConfig]
     type: typing.Optional[str]
+
     def __init__(
         self,
         *,

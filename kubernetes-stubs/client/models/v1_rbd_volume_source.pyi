@@ -12,6 +12,7 @@ class V1RBDVolumeSource:
     read_only: typing.Optional[bool]
     secret_ref: typing.Optional[kubernetes.client.V1LocalObjectReference]
     user: typing.Optional[str]
+
     def __init__(
         self,
         *,

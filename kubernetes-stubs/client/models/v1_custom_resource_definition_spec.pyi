@@ -10,6 +10,7 @@ class V1CustomResourceDefinitionSpec:
     preserve_unknown_fields: typing.Optional[bool]
     scope: str
     versions: list[kubernetes.client.V1CustomResourceDefinitionVersion]
+
     def __init__(
         self,
         *,

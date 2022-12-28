@@ -9,6 +9,7 @@ class V1Pod:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1PodSpec]
     status: typing.Optional[kubernetes.client.V1PodStatus]
+
     def __init__(
         self,
         *,

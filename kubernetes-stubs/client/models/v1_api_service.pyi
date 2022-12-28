@@ -9,6 +9,7 @@ class V1APIService:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1APIServiceSpec]
     status: typing.Optional[kubernetes.client.V1APIServiceStatus]
+
     def __init__(
         self,
         *,

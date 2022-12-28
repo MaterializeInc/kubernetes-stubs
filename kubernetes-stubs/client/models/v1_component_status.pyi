@@ -8,6 +8,7 @@ class V1ComponentStatus:
     conditions: typing.Optional[list[kubernetes.client.V1ComponentCondition]]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
+
     def __init__(
         self,
         *,

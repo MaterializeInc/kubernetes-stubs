@@ -6,6 +6,7 @@ import kubernetes.client
 class EventsV1EventSeries:
     count: int
     last_observed_time: datetime.datetime
+
     def __init__(
         self, *, count: int, last_observed_time: datetime.datetime
     ) -> None: ...

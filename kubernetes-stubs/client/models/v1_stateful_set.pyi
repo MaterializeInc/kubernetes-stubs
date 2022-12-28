@@ -9,6 +9,7 @@ class V1StatefulSet:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1StatefulSetSpec]
     status: typing.Optional[kubernetes.client.V1StatefulSetStatus]
+
     def __init__(
         self,
         *,

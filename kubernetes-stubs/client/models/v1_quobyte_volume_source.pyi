@@ -10,6 +10,7 @@ class V1QuobyteVolumeSource:
     tenant: typing.Optional[str]
     user: typing.Optional[str]
     volume: str
+
     def __init__(
         self,
         *,

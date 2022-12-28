@@ -32,6 +32,7 @@ class V1beta1PodSecurityPolicySpec:
     se_linux: kubernetes.client.V1beta1SELinuxStrategyOptions
     supplemental_groups: kubernetes.client.V1beta1SupplementalGroupsStrategyOptions
     volumes: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

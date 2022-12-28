@@ -14,6 +14,7 @@ class V1PodSecurityContext:
     supplemental_groups: typing.Optional[list[int]]
     sysctls: typing.Optional[list[kubernetes.client.V1Sysctl]]
     windows_options: typing.Optional[kubernetes.client.V1WindowsSecurityContextOptions]
+
     def __init__(
         self,
         *,

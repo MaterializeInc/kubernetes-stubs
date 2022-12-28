@@ -13,6 +13,7 @@ class V1Probe:
     tcp_socket: typing.Optional[kubernetes.client.V1TCPSocketAction]
     termination_grace_period_seconds: typing.Optional[int]
     timeout_seconds: typing.Optional[int]
+
     def __init__(
         self,
         *,

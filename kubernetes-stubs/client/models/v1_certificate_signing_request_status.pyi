@@ -8,6 +8,7 @@ class V1CertificateSigningRequestStatus:
     conditions: typing.Optional[
         list[kubernetes.client.V1CertificateSigningRequestCondition]
     ]
+
     def __init__(
         self,
         *,

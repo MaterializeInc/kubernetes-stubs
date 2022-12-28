@@ -12,6 +12,7 @@ class V2beta1MetricStatus:
     pods: typing.Optional[kubernetes.client.V2beta1PodsMetricStatus]
     resource: typing.Optional[kubernetes.client.V2beta1ResourceMetricStatus]
     type: str
+
     def __init__(
         self,
         *,
