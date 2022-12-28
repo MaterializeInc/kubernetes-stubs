@@ -6,6 +6,7 @@ import kubernetes.client
 class V1beta1Scheduling:
     node_selector: typing.Optional[dict[str, str]]
     tolerations: typing.Optional[list[kubernetes.client.V1Toleration]]
+
     def __init__(
         self,
         *,

@@ -9,6 +9,7 @@ class V2beta1ObjectMetricStatus:
     metric_name: str
     selector: typing.Optional[kubernetes.client.V1LabelSelector]
     target: kubernetes.client.V2beta1CrossVersionObjectReference
+
     def __init__(
         self,
         *,

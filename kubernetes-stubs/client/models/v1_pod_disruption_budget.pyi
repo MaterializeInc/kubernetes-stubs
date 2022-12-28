@@ -9,6 +9,7 @@ class V1PodDisruptionBudget:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1PodDisruptionBudgetSpec]
     status: typing.Optional[kubernetes.client.V1PodDisruptionBudgetStatus]
+
     def __init__(
         self,
         *,

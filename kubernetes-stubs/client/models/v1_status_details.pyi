@@ -10,6 +10,7 @@ class V1StatusDetails:
     name: typing.Optional[str]
     retry_after_seconds: typing.Optional[int]
     uid: typing.Optional[str]
+
     def __init__(
         self,
         *,

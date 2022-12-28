@@ -8,6 +8,7 @@ class V1DaemonSetList:
     items: list[kubernetes.client.V1DaemonSet]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

@@ -11,6 +11,7 @@ class V1PriorityClass:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     preemption_policy: typing.Optional[str]
     value: int
+
     def __init__(
         self,
         *,

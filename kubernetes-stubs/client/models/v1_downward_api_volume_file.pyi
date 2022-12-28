@@ -8,6 +8,7 @@ class V1DownwardAPIVolumeFile:
     mode: typing.Optional[int]
     path: str
     resource_field_ref: typing.Optional[kubernetes.client.V1ResourceFieldSelector]
+
     def __init__(
         self,
         *,

@@ -10,6 +10,7 @@ class V1beta1EndpointSlice:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     ports: typing.Optional[list[kubernetes.client.V1beta1EndpointPort]]
+
     def __init__(
         self,
         *,

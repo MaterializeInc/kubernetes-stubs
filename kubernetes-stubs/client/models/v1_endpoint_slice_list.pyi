@@ -8,6 +8,7 @@ class V1EndpointSliceList:
     items: list[kubernetes.client.V1EndpointSlice]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

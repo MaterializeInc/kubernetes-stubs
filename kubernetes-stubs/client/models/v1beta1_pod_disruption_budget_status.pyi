@@ -11,6 +11,7 @@ class V1beta1PodDisruptionBudgetStatus:
     disruptions_allowed: int
     expected_pods: int
     observed_generation: typing.Optional[int]
+
     def __init__(
         self,
         *,

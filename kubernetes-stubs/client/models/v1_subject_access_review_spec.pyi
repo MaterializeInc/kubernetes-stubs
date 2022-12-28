@@ -10,6 +10,7 @@ class V1SubjectAccessReviewSpec:
     resource_attributes: typing.Optional[kubernetes.client.V1ResourceAttributes]
     uid: typing.Optional[str]
     user: typing.Optional[str]
+
     def __init__(
         self,
         *,

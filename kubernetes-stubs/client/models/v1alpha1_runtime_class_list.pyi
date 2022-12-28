@@ -8,6 +8,7 @@ class V1alpha1RuntimeClassList:
     items: list[kubernetes.client.V1alpha1RuntimeClass]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

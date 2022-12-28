@@ -8,6 +8,7 @@ class V1CSINodeDriver:
     name: str
     node_id: str
     topology_keys: typing.Optional[list[str]]
+
     def __init__(
         self,
         *,

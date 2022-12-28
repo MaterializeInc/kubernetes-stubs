@@ -9,6 +9,7 @@ class V1beta1PriorityLevelConfiguration:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1beta1PriorityLevelConfigurationSpec]
     status: typing.Optional[kubernetes.client.V1beta1PriorityLevelConfigurationStatus]
+
     def __init__(
         self,
         *,

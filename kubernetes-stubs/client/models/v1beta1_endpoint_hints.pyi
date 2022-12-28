@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1beta1EndpointHints:
     for_zones: typing.Optional[list[kubernetes.client.V1beta1ForZone]]
+
     def __init__(
         self,
         *,

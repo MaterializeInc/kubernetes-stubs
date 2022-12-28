@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1DaemonEndpoint:
     port: int
+
     def __init__(self, *, port: int) -> None: ...
     def to_dict(self) -> V1DaemonEndpointDict: ...
 

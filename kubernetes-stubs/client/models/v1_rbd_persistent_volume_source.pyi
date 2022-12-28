@@ -12,6 +12,7 @@ class V1RBDPersistentVolumeSource:
     read_only: typing.Optional[bool]
     secret_ref: typing.Optional[kubernetes.client.V1SecretReference]
     user: typing.Optional[str]
+
     def __init__(
         self,
         *,

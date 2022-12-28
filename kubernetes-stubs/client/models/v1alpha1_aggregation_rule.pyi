@@ -5,6 +5,7 @@ import kubernetes.client
 
 class V1alpha1AggregationRule:
     cluster_role_selectors: typing.Optional[list[kubernetes.client.V1LabelSelector]]
+
     def __init__(
         self,
         *,

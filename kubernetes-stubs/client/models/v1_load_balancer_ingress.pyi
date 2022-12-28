@@ -7,6 +7,7 @@ class V1LoadBalancerIngress:
     hostname: typing.Optional[str]
     ip: typing.Optional[str]
     ports: typing.Optional[list[kubernetes.client.V1PortStatus]]
+
     def __init__(
         self,
         *,

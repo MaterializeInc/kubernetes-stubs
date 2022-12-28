@@ -9,6 +9,7 @@ class V1PolicyRule:
     resource_names: typing.Optional[list[str]]
     resources: typing.Optional[list[str]]
     verbs: list[str]
+
     def __init__(
         self,
         *,

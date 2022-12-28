@@ -8,6 +8,7 @@ class V1SELinuxOptions:
     role: typing.Optional[str]
     type: typing.Optional[str]
     user: typing.Optional[str]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1beta1FlowSchemaList:
     items: list[kubernetes.client.V1beta1FlowSchema]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

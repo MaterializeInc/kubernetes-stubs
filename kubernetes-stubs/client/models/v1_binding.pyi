@@ -8,6 +8,7 @@ class V1Binding:
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     target: kubernetes.client.V1ObjectReference
+
     def __init__(
         self,
         *,

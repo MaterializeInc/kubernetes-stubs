@@ -9,6 +9,7 @@ class V1ConfigMapNodeConfigSource:
     namespace: str
     resource_version: typing.Optional[str]
     uid: typing.Optional[str]
+
     def __init__(
         self,
         *,

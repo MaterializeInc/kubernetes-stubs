@@ -6,6 +6,7 @@ import kubernetes.client
 class V2beta2ExternalMetricSource:
     metric: kubernetes.client.V2beta2MetricIdentifier
     target: kubernetes.client.V2beta2MetricTarget
+
     def __init__(
         self,
         *,

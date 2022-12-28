@@ -20,6 +20,7 @@ class V1ObjectMeta:
     resource_version: typing.Optional[str]
     self_link: typing.Optional[str]
     uid: typing.Optional[str]
+
     def __init__(
         self,
         *,

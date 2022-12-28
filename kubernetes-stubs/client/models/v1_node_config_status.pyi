@@ -8,6 +8,7 @@ class V1NodeConfigStatus:
     assigned: typing.Optional[kubernetes.client.V1NodeConfigSource]
     error: typing.Optional[str]
     last_known_good: typing.Optional[kubernetes.client.V1NodeConfigSource]
+
     def __init__(
         self,
         *,

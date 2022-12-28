@@ -14,6 +14,7 @@ class V1NodeSystemInfo:
     operating_system: str
     os_image: str
     system_uuid: str
+
     def __init__(
         self,
         *,

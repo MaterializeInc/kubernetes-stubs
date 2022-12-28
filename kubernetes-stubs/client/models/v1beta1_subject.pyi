@@ -8,6 +8,7 @@ class V1beta1Subject:
     kind: str
     service_account: typing.Optional[kubernetes.client.V1beta1ServiceAccountSubject]
     user: typing.Optional[kubernetes.client.V1beta1UserSubject]
+
     def __init__(
         self,
         *,

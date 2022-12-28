@@ -9,6 +9,7 @@ class V1Deployment:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1DeploymentSpec]
     status: typing.Optional[kubernetes.client.V1DeploymentStatus]
+
     def __init__(
         self,
         *,

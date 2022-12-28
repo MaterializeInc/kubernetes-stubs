@@ -11,6 +11,7 @@ class V1DeleteOptions:
     orphan_dependents: typing.Optional[bool]
     preconditions: typing.Optional[kubernetes.client.V1Preconditions]
     propagation_policy: typing.Optional[str]
+
     def __init__(
         self,
         *,

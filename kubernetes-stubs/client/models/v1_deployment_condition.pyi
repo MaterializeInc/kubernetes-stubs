@@ -10,6 +10,7 @@ class V1DeploymentCondition:
     reason: typing.Optional[str]
     status: str
     type: str
+
     def __init__(
         self,
         *,

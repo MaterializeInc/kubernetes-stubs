@@ -7,6 +7,7 @@ class V1HTTPIngressPath:
     backend: kubernetes.client.V1IngressBackend
     path: typing.Optional[str]
     path_type: str
+
     def __init__(
         self,
         *,

@@ -6,6 +6,7 @@ import kubernetes.client
 class V1beta1LimitedPriorityLevelConfiguration:
     assured_concurrency_shares: typing.Optional[int]
     limit_response: typing.Optional[kubernetes.client.V1beta1LimitResponse]
+
     def __init__(
         self,
         *,

@@ -8,6 +8,7 @@ class V1HorizontalPodAutoscalerSpec:
     min_replicas: typing.Optional[int]
     scale_target_ref: kubernetes.client.V1CrossVersionObjectReference
     target_cpu_utilization_percentage: typing.Optional[int]
+
     def __init__(
         self,
         *,

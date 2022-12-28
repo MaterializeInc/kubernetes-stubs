@@ -8,6 +8,7 @@ class V1alpha1ClusterRoleList:
     items: list[kubernetes.client.V1alpha1ClusterRole]
     kind: typing.Optional[str]
     metadata: typing.Optional[kubernetes.client.V1ListMeta]
+
     def __init__(
         self,
         *,

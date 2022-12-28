@@ -9,6 +9,7 @@ class V1RuleWithOperations:
     operations: typing.Optional[list[str]]
     resources: typing.Optional[list[str]]
     scope: typing.Optional[str]
+
     def __init__(
         self,
         *,

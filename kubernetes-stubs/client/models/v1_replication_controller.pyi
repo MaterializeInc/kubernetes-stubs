@@ -9,6 +9,7 @@ class V1ReplicationController:
     metadata: typing.Optional[kubernetes.client.V1ObjectMeta]
     spec: typing.Optional[kubernetes.client.V1ReplicationControllerSpec]
     status: typing.Optional[kubernetes.client.V1ReplicationControllerStatus]
+
     def __init__(
         self,
         *,

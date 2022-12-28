@@ -15,6 +15,7 @@ class V1StatefulSetSpec:
     volume_claim_templates: typing.Optional[
         list[kubernetes.client.V1PersistentVolumeClaim]
     ]
+
     def __init__(
         self,
         *,

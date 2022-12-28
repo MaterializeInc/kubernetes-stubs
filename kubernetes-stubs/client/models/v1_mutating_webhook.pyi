@@ -15,6 +15,7 @@ class V1MutatingWebhook:
     rules: typing.Optional[list[kubernetes.client.V1RuleWithOperations]]
     side_effects: str
     timeout_seconds: typing.Optional[int]
+
     def __init__(
         self,
         *,

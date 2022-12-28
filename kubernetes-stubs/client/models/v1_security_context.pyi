@@ -15,6 +15,7 @@ class V1SecurityContext:
     se_linux_options: typing.Optional[kubernetes.client.V1SELinuxOptions]
     seccomp_profile: typing.Optional[kubernetes.client.V1SeccompProfile]
     windows_options: typing.Optional[kubernetes.client.V1WindowsSecurityContextOptions]
+
     def __init__(
         self,
         *,
