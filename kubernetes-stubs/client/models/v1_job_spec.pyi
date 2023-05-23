@@ -10,6 +10,7 @@ class V1JobSpec:
     completions: typing.Optional[int]
     manual_selector: typing.Optional[bool]
     parallelism: typing.Optional[int]
+    pod_failure_policy: typing.Optional[kubernetes.client.V1PodFailurePolicy]
     selector: typing.Optional[kubernetes.client.V1LabelSelector]
     suspend: typing.Optional[bool]
     template: kubernetes.client.V1PodTemplateSpec
@@ -23,6 +24,7 @@ class V1JobSpec:
         completions: typing.Optional[int] = ...,
         manual_selector: typing.Optional[bool] = ...,
         parallelism: typing.Optional[int] = ...,
+        pod_failure_policy: typing.Optional[kubernetes.client.V1PodFailurePolicy] = ...,
         selector: typing.Optional[kubernetes.client.V1LabelSelector] = ...,
         suspend: typing.Optional[bool] = ...,
         template: kubernetes.client.V1PodTemplateSpec,
@@ -37,6 +39,7 @@ class V1JobSpecDict(typing.TypedDict, total=False):
     completions: typing.Optional[int]
     manualSelector: typing.Optional[bool]
     parallelism: typing.Optional[int]
+    podFailurePolicy: typing.Optional[kubernetes.client.V1PodFailurePolicyDict]
     selector: typing.Optional[kubernetes.client.V1LabelSelectorDict]
     suspend: typing.Optional[bool]
     template: kubernetes.client.V1PodTemplateSpecDict

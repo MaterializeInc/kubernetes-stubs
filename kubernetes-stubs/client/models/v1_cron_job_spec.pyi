@@ -11,6 +11,7 @@ class V1CronJobSpec:
     starting_deadline_seconds: typing.Optional[int]
     successful_jobs_history_limit: typing.Optional[int]
     suspend: typing.Optional[bool]
+    time_zone: typing.Optional[str]
     def __init__(
         self,
         *,
@@ -20,7 +21,8 @@ class V1CronJobSpec:
         schedule: str,
         starting_deadline_seconds: typing.Optional[int] = ...,
         successful_jobs_history_limit: typing.Optional[int] = ...,
-        suspend: typing.Optional[bool] = ...
+        suspend: typing.Optional[bool] = ...,
+        time_zone: typing.Optional[str] = ...
     ) -> None: ...
     def to_dict(self) -> V1CronJobSpecDict: ...
 
@@ -32,3 +34,4 @@ class V1CronJobSpecDict(typing.TypedDict, total=False):
     startingDeadlineSeconds: typing.Optional[int]
     successfulJobsHistoryLimit: typing.Optional[int]
     suspend: typing.Optional[bool]
+    timeZone: typing.Optional[str]

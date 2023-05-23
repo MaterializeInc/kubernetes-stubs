@@ -5,7 +5,6 @@ import kubernetes.client
 
 class V1ObjectMeta:
     annotations: typing.Optional[dict[str, str]]
-    cluster_name: typing.Optional[str]
     creation_timestamp: typing.Optional[datetime.datetime]
     deletion_grace_period_seconds: typing.Optional[int]
     deletion_timestamp: typing.Optional[datetime.datetime]
@@ -24,7 +23,6 @@ class V1ObjectMeta:
         self,
         *,
         annotations: typing.Optional[dict[str, str]] = ...,
-        cluster_name: typing.Optional[str] = ...,
         creation_timestamp: typing.Optional[datetime.datetime] = ...,
         deletion_grace_period_seconds: typing.Optional[int] = ...,
         deletion_timestamp: typing.Optional[datetime.datetime] = ...,
@@ -48,7 +46,6 @@ class V1ObjectMeta:
 
 class V1ObjectMetaDict(typing.TypedDict, total=False):
     annotations: typing.Optional[dict[str, str]]
-    clusterName: typing.Optional[str]
     creationTimestamp: typing.Optional[datetime.datetime]
     deletionGracePeriodSeconds: typing.Optional[int]
     deletionTimestamp: typing.Optional[datetime.datetime]
