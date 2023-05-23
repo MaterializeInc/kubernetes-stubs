@@ -47,6 +47,7 @@ class V1JSONSchemaProps:
     x_kubernetes_list_type: typing.Optional[str]
     x_kubernetes_map_type: typing.Optional[str]
     x_kubernetes_preserve_unknown_fields: typing.Optional[bool]
+    x_kubernetes_validations: typing.Optional[list[kubernetes.client.V1ValidationRule]]
     def __init__(
         self,
         *,
@@ -98,7 +99,10 @@ class V1JSONSchemaProps:
         x_kubernetes_list_map_keys: typing.Optional[list[str]] = ...,
         x_kubernetes_list_type: typing.Optional[str] = ...,
         x_kubernetes_map_type: typing.Optional[str] = ...,
-        x_kubernetes_preserve_unknown_fields: typing.Optional[bool] = ...
+        x_kubernetes_preserve_unknown_fields: typing.Optional[bool] = ...,
+        x_kubernetes_validations: typing.Optional[
+            list[kubernetes.client.V1ValidationRule]
+        ] = ...
     ) -> None: ...
     def to_dict(self) -> V1JSONSchemaPropsDict: ...
 
@@ -148,3 +152,6 @@ class V1JSONSchemaPropsDict(typing.TypedDict, total=False):
     x_kubernetes_list_type: typing.Optional[str]
     x_kubernetes_map_type: typing.Optional[str]
     x_kubernetes_preserve_unknown_fields: typing.Optional[bool]
+    x_kubernetes_validations: typing.Optional[
+        list[kubernetes.client.V1ValidationRuleDict]
+    ]

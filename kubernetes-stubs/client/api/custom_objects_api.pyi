@@ -6,6 +6,9 @@ class CustomObjectsApi:
     def __init__(
         self, api_client: typing.Optional[kubernetes.client.ApiClient] = ...
     ) -> None: ...
+    def get_api_resources(
+        self, group: str, version: str
+    ) -> kubernetes.client.V1APIResourceList: ...
     def list_cluster_custom_object(
         self,
         group: str,

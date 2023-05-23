@@ -8,6 +8,7 @@ class V1CSIPersistentVolumeSource:
     controller_publish_secret_ref: typing.Optional[kubernetes.client.V1SecretReference]
     driver: str
     fs_type: typing.Optional[str]
+    node_expand_secret_ref: typing.Optional[kubernetes.client.V1SecretReference]
     node_publish_secret_ref: typing.Optional[kubernetes.client.V1SecretReference]
     node_stage_secret_ref: typing.Optional[kubernetes.client.V1SecretReference]
     read_only: typing.Optional[bool]
@@ -24,6 +25,9 @@ class V1CSIPersistentVolumeSource:
         ] = ...,
         driver: str,
         fs_type: typing.Optional[str] = ...,
+        node_expand_secret_ref: typing.Optional[
+            kubernetes.client.V1SecretReference
+        ] = ...,
         node_publish_secret_ref: typing.Optional[
             kubernetes.client.V1SecretReference
         ] = ...,
@@ -41,6 +45,7 @@ class V1CSIPersistentVolumeSourceDict(typing.TypedDict, total=False):
     controllerPublishSecretRef: typing.Optional[kubernetes.client.V1SecretReferenceDict]
     driver: str
     fsType: typing.Optional[str]
+    nodeExpandSecretRef: typing.Optional[kubernetes.client.V1SecretReferenceDict]
     nodePublishSecretRef: typing.Optional[kubernetes.client.V1SecretReferenceDict]
     nodeStageSecretRef: typing.Optional[kubernetes.client.V1SecretReferenceDict]
     readOnly: typing.Optional[bool]

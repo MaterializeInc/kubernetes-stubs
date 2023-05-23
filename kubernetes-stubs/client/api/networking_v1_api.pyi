@@ -27,7 +27,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1IngressClass: ...
     def delete_collection_ingress_class(
         self,
@@ -56,7 +57,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1IngressClass: ...
     def delete_ingress_class(
         self,
@@ -77,6 +79,7 @@ class NetworkingV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1IngressClass: ...
     def list_ingress_for_all_namespaces(
@@ -115,7 +118,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Ingress: ...
     def delete_collection_namespaced_ingress(
         self,
@@ -146,7 +150,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Ingress: ...
     def delete_namespaced_ingress(
         self,
@@ -169,6 +174,7 @@ class NetworkingV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Ingress: ...
     def read_namespaced_ingress_status(
@@ -182,7 +188,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1Ingress: ...
     def patch_namespaced_ingress_status(
         self,
@@ -193,6 +200,7 @@ class NetworkingV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1Ingress: ...
     def list_namespaced_network_policy(
@@ -217,7 +225,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1NetworkPolicy: ...
     def delete_collection_namespaced_network_policy(
         self,
@@ -248,7 +257,8 @@ class NetworkingV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1NetworkPolicy: ...
     def delete_namespaced_network_policy(
         self,
@@ -271,6 +281,33 @@ class NetworkingV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
+        force: typing.Optional[bool] = ...
+    ) -> kubernetes.client.V1NetworkPolicy: ...
+    def read_namespaced_network_policy_status(
+        self, name: str, namespace: str, *, pretty: typing.Optional[str] = ...
+    ) -> kubernetes.client.V1NetworkPolicy: ...
+    def replace_namespaced_network_policy_status(
+        self,
+        name: str,
+        namespace: str,
+        body: kubernetes.client.V1NetworkPolicy,
+        *,
+        pretty: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
+    ) -> kubernetes.client.V1NetworkPolicy: ...
+    def patch_namespaced_network_policy_status(
+        self,
+        name: str,
+        namespace: str,
+        body: typing.Any,
+        *,
+        pretty: typing.Optional[str] = ...,
+        dry_run: typing.Optional[str] = ...,
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1NetworkPolicy: ...
     def list_network_policy_for_all_namespaces(

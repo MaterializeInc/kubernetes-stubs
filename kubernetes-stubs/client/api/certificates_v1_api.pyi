@@ -27,7 +27,8 @@ class CertificatesV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
     def delete_collection_certificate_signing_request(
         self,
@@ -56,7 +57,8 @@ class CertificatesV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
     def delete_certificate_signing_request(
         self,
@@ -77,6 +79,7 @@ class CertificatesV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
     def read_certificate_signing_request_approval(
@@ -89,7 +92,8 @@ class CertificatesV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
     def patch_certificate_signing_request_approval(
         self,
@@ -99,6 +103,7 @@ class CertificatesV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
     def read_certificate_signing_request_status(
@@ -111,7 +116,8 @@ class CertificatesV1Api:
         *,
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
-        field_manager: typing.Optional[str] = ...
+        field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
     def patch_certificate_signing_request_status(
         self,
@@ -121,5 +127,6 @@ class CertificatesV1Api:
         pretty: typing.Optional[str] = ...,
         dry_run: typing.Optional[str] = ...,
         field_manager: typing.Optional[str] = ...,
+        field_validation: typing.Optional[str] = ...,
         force: typing.Optional[bool] = ...
     ) -> kubernetes.client.V1CertificateSigningRequest: ...
